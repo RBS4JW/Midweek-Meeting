@@ -47,6 +47,38 @@ const fmtShort = iso => { const d = new Date(iso + 'T00:00:00'); return (d.getMo
 const MONTHS = ['Ene','Peb','Mar','Abr','May','Hun','Hul','Ago','Sep','Okt','Nob','Dis'];
 const fmtMonth = iso => MONTHS[new Date(iso + 'T00:00:00').getMonth()];
 
+// ---- auto week-label (continues the sequence from existing weeks) ----
+const CEBU_MONTHS = ['ENERO','PEBRERO','MARSO','ABRIL','MAYO','HUNYO','HULYO','AGOSTO','SEPTIYEMBRE','OKTUBRE','NOBYEMBRE','DISYEMBRE'];
+function parseLabelEnd(label, year) {
+  if (!label) return null;
+  const s = label.trim().toUpperCase().replace(/[–—]/g, '-');
+  let m = s.match(/^([A-ZÑ]+)\s+(\d+)\s*-\s*([A-ZÑ]+)\s+(\d+)$/);   // cross-month: "SEPTIYEMBRE 28 - OKTUBRE 4"
+  if (m) { const sm = CEBU_MONTHS.indexOf(m[1]), em = CEBU_MONTHS.indexOf(m[3]); if (sm < 0 || em < 0) return null; return new Date(em < sm ? year + 1 : year, em, +m[4]); }
+  m = s.match(/^([A-ZÑ]+)\s+(\d+)\s*-\s*(\d+)$/);                   // same-month: "OKTUBRE 5-11"
+  if (m) { const mm = CEBU_MONTHS.indexOf(m[1]); if (mm < 0) return null; return new Date(year, mm, +m[3]); }
+  return null;
+}
+function fmtWeekLabel(start, end) {
+  const sM = CEBU_MONTHS[start.getMonth()], sD = start.getDate(), eM = CEBU_MONTHS[end.getMonth()], eD = end.getDate();
+  return start.getMonth() === end.getMonth() ? `${sM} ${sD}-${eD}` : `${sM} ${sD} - ${eM} ${eD}`;
+}
+function baseYear() {
+  const ys = state.assigns.map(a => +String(a.meeting_date).slice(0, 4)).filter(Boolean);
+  return ys.length ? Math.max(...ys) : new Date().getFullYear();
+}
+// the next 7-day week after the latest existing week; falls back to the
+// current week when nothing parseable exists yet.
+function nextWeekLabel() {
+  const yr = baseYear();
+  let maxEnd = null;
+  for (const mt of state.meetings) { const e = parseLabelEnd(mt.week_label, yr); if (e && (!maxEnd || e > maxEnd)) maxEnd = e; }
+  let start;
+  if (maxEnd) { start = new Date(maxEnd); start.setDate(start.getDate() + 1); }
+  else { start = new Date(); start.setDate(start.getDate() - ((start.getDay() + 6) % 7)); } // this week's Monday
+  const end = new Date(start); end.setDate(end.getDate() + 6);
+  return fmtWeekLabel(start, end);
+}
+
 /* ----------------------------- data ----------------------------------- */
 async function loadAll() {
   const grab = (t, order) => sb.from(t).select('*').order(order);
@@ -106,7 +138,7 @@ function viewEskedyul() {
 
 async function newMeeting() {
   const { data, error } = await sb.from('meetings')
-    .insert({ week_label: 'Bag-ong semana', sort: (state.meetings.length + 1) * 10 }).select().single();
+    .insert({ week_label: nextWeekLabel(), sort: (state.meetings.length + 1) * 10 }).select().single();
   if (error) return toast('Error: ' + error.message);
   // standard skeleton
   const skel = [
