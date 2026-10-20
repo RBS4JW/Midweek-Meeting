@@ -1,0 +1,4955 @@
+{
+ "people": [
+  {
+   "name": "Jemve Sanopao",
+   "pools": {
+    "elder": {
+     "note": null,
+     "src_num": 1
+    },
+    "female": {
+     "note": null,
+     "src_num": 41
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pools": {
+    "elder": {
+     "note": null,
+     "src_num": 2
+    },
+    "female": {
+     "note": null,
+     "src_num": 40
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Vigie Agbon",
+   "pools": {
+    "elder": {
+     "note": null,
+     "src_num": 3
+    },
+    "female": {
+     "note": null,
+     "src_num": 48
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Leonardo Arche",
+   "pools": {
+    "elder": {
+     "note": null,
+     "src_num": 4
+    },
+    "female": {
+     "note": null,
+     "src_num": 44
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Selime Reponte",
+   "pools": {
+    "elder": {
+     "note": null,
+     "src_num": 5
+    },
+    "female": {
+     "note": null,
+     "src_num": 47
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Diosdado Domutan",
+   "pools": {
+    "elder": {
+     "note": null,
+     "src_num": 6
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Gerarld Agbon",
+   "pools": {
+    "ms": {
+     "note": null,
+     "src_num": 1
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Reponte, S.",
+   "pools": {
+    "ms": {
+     "note": "ENB only",
+     "src_num": 2
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pools": {
+    "ms": {
+     "note": null,
+     "src_num": 3
+    },
+    "female": {
+     "note": null,
+     "src_num": 46
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Frankdio Arche",
+   "pools": {
+    "ms": {
+     "note": null,
+     "src_num": 4
+    },
+    "female": {
+     "note": null,
+     "src_num": 38
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Mark Domutan",
+   "pools": {
+    "ms": {
+     "note": null,
+     "src_num": 5
+    },
+    "female": {
+     "note": null,
+     "src_num": 45
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Joaquin Domutan",
+   "pools": {
+    "ms": {
+     "note": null,
+     "src_num": 6
+    },
+    "bible_reading": {
+     "note": null,
+     "src_num": 1
+    },
+    "female": {
+     "note": null,
+     "src_num": 43
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Jepte Domutan",
+   "pools": {
+    "ms": {
+     "note": null,
+     "src_num": 7
+    },
+    "bible_reading": {
+     "note": null,
+     "src_num": 6
+    },
+    "female": {
+     "note": null,
+     "src_num": 42
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Edwin Arquio",
+   "pools": {
+    "ms": {
+     "note": null,
+     "src_num": 8
+    },
+    "bible_reading": {
+     "note": null,
+     "src_num": 7
+    },
+    "female": {
+     "note": null,
+     "src_num": 37
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "James Agbon",
+   "pools": {
+    "ms": {
+     "note": null,
+     "src_num": 9
+    },
+    "bible_reading": {
+     "note": null,
+     "src_num": 2
+    },
+    "female": {
+     "note": null,
+     "src_num": 39
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Tony James Namoc",
+   "pools": {
+    "bible_reading": {
+     "note": null,
+     "src_num": 3
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Matt Louis Domutan",
+   "pools": {
+    "bible_reading": {
+     "note": null,
+     "src_num": 4
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Brooklyn Anora",
+   "pools": {
+    "bible_reading": {
+     "note": null,
+     "src_num": 5
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Bon Regie Agbon",
+   "pools": {
+    "bible_reading": {
+     "note": null,
+     "src_num": 8
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Aida Villahermosa",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 1
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Alfenita Duaves",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 2
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Alonie Domutan",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 3
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Althea Domutan",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 4
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Analee Arche",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 5
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Arlyn Dairocas",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 6
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Babie Rima Daung",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 7
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Catherine Lofranco",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 8
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Cenderilla Arche",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 9
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Cesaria Omac",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 10
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Chierwayne Arquio",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 11
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Damaris Alcampado",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 12
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Eunice Arche",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 13
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Eunice Ugsod",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 14
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Harcy Joy Dela Cruz",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 15
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Hariet Joy Anora",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 16
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Helen Mendez",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 17
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Janine Arego",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 18
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Jessa Sanopao",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 19
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Jocelyn Reponte",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 20
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Johannah Mendez",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 21
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Juliana Anora",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 22
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Kathleen Satulombon",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 23
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Kenel Joy Sanopao",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 24
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Kristine Domutan",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 25
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Leah Arche",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 26
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Lumilo Namoc",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 27
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Luminada Domutan",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 28
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Martha Daung",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 29
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Melecita Mendez",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 30
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Mirarie Agbon",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 31
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Nerissa Magdura",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 32
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Noeda Ligad",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 33
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Noemi Aparri",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 34
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Shanice Arche",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 35
+    }
+   },
+   "active": true
+  },
+  {
+   "name": "Zapphire Sanopao",
+   "pools": {
+    "female": {
+     "note": null,
+     "src_num": 36
+    }
+   },
+   "active": true
+  }
+ ],
+ "assignments": [
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-01-15",
+   "code": "KP1"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-01-29",
+   "code": "CBS"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-02-05",
+   "code": "COP"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-02-12",
+   "code": "CLP"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-02-19",
+   "code": "KP1"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-03-05",
+   "code": "CBS"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-03-12",
+   "code": "COP"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-03-19",
+   "code": "KP2"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-03-26",
+   "code": "CLP"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-04-09",
+   "code": "KP1"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-04-16",
+   "code": "COP"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-04-23",
+   "code": "CBS"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-04-30",
+   "code": "CLP"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-05-07",
+   "code": "KP1"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-05-14",
+   "code": "COP"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-05-21",
+   "code": "CBS"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-06-04",
+   "code": "KP1"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-06-11",
+   "code": "COP"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-06-18",
+   "code": "CBS"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-06-25",
+   "code": "CLP"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-07-02",
+   "code": "KP1"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-07-09",
+   "code": "COP"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-07-23",
+   "code": "CBS"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-08-06",
+   "code": "KP1"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-08-13",
+   "code": "COP"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-08-20",
+   "code": "CBS"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-09-03",
+   "code": "KP1"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-09-10",
+   "code": "COP"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-09-17",
+   "code": "CBS"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-09-24",
+   "code": "CLP"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-10-01",
+   "code": "CH"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-10-08",
+   "code": "CH"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-10-22",
+   "code": "KP1"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "elder",
+   "date": "2026-10-29",
+   "code": "OP"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-01-08",
+   "code": "KP2"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-01-15",
+   "code": "CBS"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-01-22",
+   "code": "CLP"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-01-29",
+   "code": "COP"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-02-05",
+   "code": "KP1"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-02-19",
+   "code": "CBS"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-02-26",
+   "code": "CLP"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-03-05",
+   "code": "COP"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-03-12",
+   "code": "KP1"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-03-19",
+   "code": "CBS"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-03-26",
+   "code": "KP1"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-04-09",
+   "code": "COP"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-04-16",
+   "code": "CBS"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-04-30",
+   "code": "KP1"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-05-07",
+   "code": "COP"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-05-14",
+   "code": "CBS"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-05-21",
+   "code": "CLP"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-05-28",
+   "code": "KP1"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-06-04",
+   "code": "COP"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-06-11",
+   "code": "CBS"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-06-18",
+   "code": "KP2"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-06-25",
+   "code": "KP1"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-07-02",
+   "code": "COP"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-07-09",
+   "code": "CBS"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-07-30",
+   "code": "KP1"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-08-06",
+   "code": "COP"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-08-13",
+   "code": "CBS"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-08-25",
+   "code": "KP1"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-09-03",
+   "code": "COP"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-09-10",
+   "code": "CBS"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-09-17",
+   "code": "KP2"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-09-24",
+   "code": "KP1"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-10-01",
+   "code": "CBS"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-10-08",
+   "code": "PP1"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-10-22",
+   "code": "CH"
+  },
+  {
+   "name": "Jemuel Domutan",
+   "pool": "elder",
+   "date": "2026-10-29",
+   "code": "CBS"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-01-08",
+   "code": "KP1"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-01-15",
+   "code": "CLP"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-01-22",
+   "code": "COP"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-02-05",
+   "code": "CBS"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-02-12",
+   "code": "KP1"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-02-26",
+   "code": "COP"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-03-05",
+   "code": "KP2"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-03-12",
+   "code": "CBS"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-03-19",
+   "code": "KP1"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-03-26",
+   "code": "COP"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-04-09",
+   "code": "CBS"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-04-23",
+   "code": "KP1"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-04-30",
+   "code": "COP"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-05-07",
+   "code": "CBS"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-05-21",
+   "code": "KP1"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-05-28",
+   "code": "COP"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-06-04",
+   "code": "CBS"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-06-11",
+   "code": "KP2"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-06-18",
+   "code": "KP1"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-06-25",
+   "code": "COP"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-07-02",
+   "code": "CBS"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-07-09",
+   "code": "CLP"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-07-23",
+   "code": "KP1"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-07-30",
+   "code": "COP"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-08-06",
+   "code": "CBS"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-08-13",
+   "code": "PP1"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-08-20",
+   "code": "KP1"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-08-25",
+   "code": "COP"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-09-03",
+   "code": "CBS"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-09-10",
+   "code": "CLP"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-09-17",
+   "code": "KP1"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-09-24",
+   "code": "COP"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-10-01",
+   "code": "KP1"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-10-08",
+   "code": "CBS"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-10-22",
+   "code": "CLP"
+  },
+  {
+   "name": "Vigie Agbon",
+   "pool": "elder",
+   "date": "2026-10-29",
+   "code": "KP1"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-01-08",
+   "code": "COP"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-01-22",
+   "code": "CBS"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-01-29",
+   "code": "KP1"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-02-12",
+   "code": "COP"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-02-26",
+   "code": "CBS"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-03-05",
+   "code": "KP1"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-03-12",
+   "code": "CLP"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-03-19",
+   "code": "COP"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-03-26",
+   "code": "CBS"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-04-09",
+   "code": "CLP"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-04-16",
+   "code": "KP1"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-04-23",
+   "code": "COP"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-04-30",
+   "code": "CBS"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-05-07",
+   "code": "CLP"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-05-14",
+   "code": "KP1"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-05-21",
+   "code": "COP"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-05-28",
+   "code": "CBS"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-06-04",
+   "code": "KP2"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-06-11",
+   "code": "KP1"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-06-18",
+   "code": "COP"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-06-25",
+   "code": "CBS"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-07-09",
+   "code": "KP1"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-07-23",
+   "code": "COP"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-07-30",
+   "code": "CBS"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-08-06",
+   "code": "CLP"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-08-13",
+   "code": "KP1"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-08-20",
+   "code": "COP"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-08-25",
+   "code": "KP2"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-09-03",
+   "code": "PP1"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-09-10",
+   "code": "KP1"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-09-17",
+   "code": "COP"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-09-24",
+   "code": "CBS"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-10-08",
+   "code": "KP1"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-10-22",
+   "code": "CBS"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "elder",
+   "date": "2026-10-29",
+   "code": "CH"
+  },
+  {
+   "name": "Selime Reponte",
+   "pool": "elder",
+   "date": "2026-02-05",
+   "code": "CLP"
+  },
+  {
+   "name": "Selime Reponte",
+   "pool": "elder",
+   "date": "2026-04-16",
+   "code": "CLP"
+  },
+  {
+   "name": "Selime Reponte",
+   "pool": "elder",
+   "date": "2026-05-14",
+   "code": "CLP"
+  },
+  {
+   "name": "Selime Reponte",
+   "pool": "elder",
+   "date": "2026-06-04",
+   "code": "CLP"
+  },
+  {
+   "name": "Selime Reponte",
+   "pool": "elder",
+   "date": "2026-06-18",
+   "code": "CLP"
+  },
+  {
+   "name": "Selime Reponte",
+   "pool": "elder",
+   "date": "2026-07-23",
+   "code": "CLP"
+  },
+  {
+   "name": "Selime Reponte",
+   "pool": "elder",
+   "date": "2026-08-13",
+   "code": "CLP"
+  },
+  {
+   "name": "Selime Reponte",
+   "pool": "elder",
+   "date": "2026-09-03",
+   "code": "CLP"
+  },
+  {
+   "name": "Selime Reponte",
+   "pool": "elder",
+   "date": "2026-10-01",
+   "code": "CLP"
+  },
+  {
+   "name": "Diosdado Domutan",
+   "pool": "elder",
+   "date": "2026-01-08",
+   "code": "CLP"
+  },
+  {
+   "name": "Diosdado Domutan",
+   "pool": "elder",
+   "date": "2026-02-19",
+   "code": "CLP"
+  },
+  {
+   "name": "Diosdado Domutan",
+   "pool": "elder",
+   "date": "2026-03-05",
+   "code": "CLP"
+  },
+  {
+   "name": "Diosdado Domutan",
+   "pool": "elder",
+   "date": "2026-04-23",
+   "code": "CLP"
+  },
+  {
+   "name": "Diosdado Domutan",
+   "pool": "elder",
+   "date": "2026-05-28",
+   "code": "CLP"
+  },
+  {
+   "name": "Diosdado Domutan",
+   "pool": "elder",
+   "date": "2026-06-11",
+   "code": "CLP"
+  },
+  {
+   "name": "Diosdado Domutan",
+   "pool": "elder",
+   "date": "2026-07-02",
+   "code": "CLP"
+  },
+  {
+   "name": "Diosdado Domutan",
+   "pool": "elder",
+   "date": "2026-07-30",
+   "code": "CLP"
+  },
+  {
+   "name": "Diosdado Domutan",
+   "pool": "elder",
+   "date": "2026-08-20",
+   "code": "CLP"
+  },
+  {
+   "name": "Diosdado Domutan",
+   "pool": "elder",
+   "date": "2026-09-17",
+   "code": "CLP"
+  },
+  {
+   "name": "Diosdado Domutan",
+   "pool": "elder",
+   "date": "2026-10-08",
+   "code": "CLP"
+  },
+  {
+   "name": "Diosdado Domutan",
+   "pool": "elder",
+   "date": "2026-10-29",
+   "code": "CLP"
+  },
+  {
+   "name": "Gerarld Agbon",
+   "pool": "ms",
+   "date": "2026-01-22",
+   "code": "ENB"
+  },
+  {
+   "name": "Gerarld Agbon",
+   "pool": "ms",
+   "date": "2026-01-29",
+   "code": "PP1"
+  },
+  {
+   "name": "Gerarld Agbon",
+   "pool": "ms",
+   "date": "2026-03-12",
+   "code": "PP1"
+  },
+  {
+   "name": "Gerarld Agbon",
+   "pool": "ms",
+   "date": "2026-04-09",
+   "code": "PP1"
+  },
+  {
+   "name": "Gerarld Agbon",
+   "pool": "ms",
+   "date": "2026-04-23",
+   "code": "ENB"
+  },
+  {
+   "name": "Gerarld Agbon",
+   "pool": "ms",
+   "date": "2026-04-30",
+   "code": "CBSR"
+  },
+  {
+   "name": "Gerarld Agbon",
+   "pool": "ms",
+   "date": "2026-05-07",
+   "code": "PP1"
+  },
+  {
+   "name": "Gerarld Agbon",
+   "pool": "ms",
+   "date": "2026-05-21",
+   "code": "ENB"
+  },
+  {
+   "name": "Gerarld Agbon",
+   "pool": "ms",
+   "date": "2026-06-04",
+   "code": "PP1"
+  },
+  {
+   "name": "Gerarld Agbon",
+   "pool": "ms",
+   "date": "2026-06-18",
+   "code": "ENB"
+  },
+  {
+   "name": "Gerarld Agbon",
+   "pool": "ms",
+   "date": "2026-07-02",
+   "code": "CBSR"
+  },
+  {
+   "name": "Gerarld Agbon",
+   "pool": "ms",
+   "date": "2026-07-09",
+   "code": "PP1"
+  },
+  {
+   "name": "Gerarld Agbon",
+   "pool": "ms",
+   "date": "2026-07-23",
+   "code": "ENB"
+  },
+  {
+   "name": "Reponte, S.",
+   "pool": "ms",
+   "date": "2026-01-15",
+   "code": "PP1"
+  },
+  {
+   "name": "Reponte, S.",
+   "pool": "ms",
+   "date": "2026-02-05",
+   "code": "ENB"
+  },
+  {
+   "name": "Reponte, S.",
+   "pool": "ms",
+   "date": "2026-02-12",
+   "code": "CBSR"
+  },
+  {
+   "name": "Reponte, S.",
+   "pool": "ms",
+   "date": "2026-03-05",
+   "code": "ENB"
+  },
+  {
+   "name": "Reponte, S.",
+   "pool": "ms",
+   "date": "2026-03-26",
+   "code": "ENB"
+  },
+  {
+   "name": "Reponte, S.",
+   "pool": "ms",
+   "date": "2026-05-07",
+   "code": "ENB"
+  },
+  {
+   "name": "Reponte, S.",
+   "pool": "ms",
+   "date": "2026-06-11",
+   "code": "ENB"
+  },
+  {
+   "name": "Reponte, S.",
+   "pool": "ms",
+   "date": "2026-07-09",
+   "code": "ENB"
+  },
+  {
+   "name": "Reponte, S.",
+   "pool": "ms",
+   "date": "2026-08-06",
+   "code": "ENB"
+  },
+  {
+   "name": "Reponte, S.",
+   "pool": "ms",
+   "date": "2026-08-27",
+   "code": "ENB"
+  },
+  {
+   "name": "Reponte, S.",
+   "pool": "ms",
+   "date": "2026-09-24",
+   "code": "ENB"
+  },
+  {
+   "name": "Reponte, S.",
+   "pool": "ms",
+   "date": "2026-10-29",
+   "code": "ENB"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-01-15",
+   "code": "ENB"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-02-05",
+   "code": "PP1"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-02-26",
+   "code": "CBSR"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-03-05",
+   "code": "PP1"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-03-12",
+   "code": "CBSR"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-03-19",
+   "code": "ENB"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-04-16",
+   "code": "ENB"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-04-23",
+   "code": "PP1"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-05-14",
+   "code": "CBSR"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-05-21",
+   "code": "PP1"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-05-28",
+   "code": "ENB"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-06-18",
+   "code": "CBSR"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-06-25",
+   "code": "PP1"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-07-02",
+   "code": "ENB"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-07-23",
+   "code": "PP1"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-08-06",
+   "code": "PP1"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-08-13",
+   "code": "CBSR"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-08-20",
+   "code": "ENB"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-09-10",
+   "code": "PP1"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-09-17",
+   "code": "ENB"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-09-24",
+   "code": "CBSR"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-10-01",
+   "code": "PP1"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-10-08",
+   "code": "ENB"
+  },
+  {
+   "name": "Ronald Satulombon",
+   "pool": "ms",
+   "date": "2026-10-22",
+   "code": "OP"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-01-22",
+   "code": "CBSR"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-02-19",
+   "code": "ENB"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-02-26",
+   "code": "PP1"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-03-19",
+   "code": "PP1"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-04-09",
+   "code": "ENB"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-04-30",
+   "code": "PP1"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-05-14",
+   "code": "ENB"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-05-21",
+   "code": "CBSR"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-05-28",
+   "code": "PP1"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-06-18",
+   "code": "PP1"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-06-25",
+   "code": "ENB"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-07-30",
+   "code": "PP1"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-08-06",
+   "code": "CBSR"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-08-13",
+   "code": "ENB"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-08-20",
+   "code": "PP1"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-09-03",
+   "code": "CBSR"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-09-10",
+   "code": "ENB"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-09-17",
+   "code": "PP1"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-10-01",
+   "code": "ENB"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-10-08",
+   "code": "OP"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-10-22",
+   "code": "PP1"
+  },
+  {
+   "name": "Frankdio Arche",
+   "pool": "ms",
+   "date": "2026-10-29",
+   "code": "CBSR"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-01-08",
+   "code": "PP2"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-01-15",
+   "code": "CBSR"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-02-12",
+   "code": "ENB"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-02-19",
+   "code": "PP1"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-03-12",
+   "code": "ENB"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-03-26",
+   "code": "PP1"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-04-09",
+   "code": "CBSR"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-04-16",
+   "code": "PP1"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-04-30",
+   "code": "ENB"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-05-14",
+   "code": "PP1"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-05-28",
+   "code": "CBSR"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-06-04",
+   "code": "ENB"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-06-11",
+   "code": "PP1"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-07-02",
+   "code": "PP1"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-07-23",
+   "code": "CBSR"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-07-30",
+   "code": "ENB"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-08-20",
+   "code": "CBSR"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-08-27",
+   "code": "PP1"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-09-03",
+   "code": "ENB"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-09-17",
+   "code": "CBSR"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-09-24",
+   "code": "PP1"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-10-01",
+   "code": "OP"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-10-22",
+   "code": "ENB"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "ms",
+   "date": "2026-10-29",
+   "code": "PP1"
+  },
+  {
+   "name": "Joaquin Domutan",
+   "pool": "ms",
+   "date": "2026-01-08",
+   "code": "CBSR"
+  },
+  {
+   "name": "Joaquin Domutan",
+   "pool": "ms",
+   "date": "2026-02-12",
+   "code": "PP2"
+  },
+  {
+   "name": "Joaquin Domutan",
+   "pool": "ms",
+   "date": "2026-03-05",
+   "code": "CBSR"
+  },
+  {
+   "name": "Joaquin Domutan",
+   "pool": "ms",
+   "date": "2026-04-16",
+   "code": "CBSR"
+  },
+  {
+   "name": "Joaquin Domutan",
+   "pool": "ms",
+   "date": "2026-04-30",
+   "code": "PP2"
+  },
+  {
+   "name": "Joaquin Domutan",
+   "pool": "ms",
+   "date": "2026-06-04",
+   "code": "CBSR"
+  },
+  {
+   "name": "Joaquin Domutan",
+   "pool": "ms",
+   "date": "2026-07-09",
+   "code": "PP2"
+  },
+  {
+   "name": "Joaquin Domutan",
+   "pool": "ms",
+   "date": "2026-07-30",
+   "code": "CBSR"
+  },
+  {
+   "name": "Joaquin Domutan",
+   "pool": "ms",
+   "date": "2026-08-27",
+   "code": "PP2"
+  },
+  {
+   "name": "Joaquin Domutan",
+   "pool": "ms",
+   "date": "2026-09-10",
+   "code": "CBSR"
+  },
+  {
+   "name": "Jepte Domutan",
+   "pool": "ms",
+   "date": "2026-03-26",
+   "code": "CBSR"
+  },
+  {
+   "name": "Jepte Domutan",
+   "pool": "ms",
+   "date": "2026-04-23",
+   "code": "PP2"
+  },
+  {
+   "name": "Jepte Domutan",
+   "pool": "ms",
+   "date": "2026-05-07",
+   "code": "CBSR"
+  },
+  {
+   "name": "Jepte Domutan",
+   "pool": "ms",
+   "date": "2026-06-25",
+   "code": "CBSR"
+  },
+  {
+   "name": "Jepte Domutan",
+   "pool": "ms",
+   "date": "2026-07-02",
+   "code": "PP2"
+  },
+  {
+   "name": "Jepte Domutan",
+   "pool": "ms",
+   "date": "2026-08-06",
+   "code": "PP2"
+  },
+  {
+   "name": "Jepte Domutan",
+   "pool": "ms",
+   "date": "2026-08-27",
+   "code": "CBSR"
+  },
+  {
+   "name": "Jepte Domutan",
+   "pool": "ms",
+   "date": "2026-10-08",
+   "code": "CBSR"
+  },
+  {
+   "name": "Edwin Arquio",
+   "pool": "ms",
+   "date": "2026-09-03",
+   "code": "PP2"
+  },
+  {
+   "name": "Edwin Arquio",
+   "pool": "ms",
+   "date": "2026-10-22",
+   "code": "CBSR"
+  },
+  {
+   "name": "James Agbon",
+   "pool": "ms",
+   "date": "2026-01-15",
+   "code": "PP2"
+  },
+  {
+   "name": "James Agbon",
+   "pool": "ms",
+   "date": "2026-01-29",
+   "code": "CBSR"
+  },
+  {
+   "name": "James Agbon",
+   "pool": "ms",
+   "date": "2026-03-05",
+   "code": "PP2"
+  },
+  {
+   "name": "James Agbon",
+   "pool": "ms",
+   "date": "2026-03-19",
+   "code": "CBSR"
+  },
+  {
+   "name": "James Agbon",
+   "pool": "ms",
+   "date": "2026-04-23",
+   "code": "CBSR"
+  },
+  {
+   "name": "James Agbon",
+   "pool": "ms",
+   "date": "2026-05-07",
+   "code": "PP2"
+  },
+  {
+   "name": "James Agbon",
+   "pool": "ms",
+   "date": "2026-06-11",
+   "code": "CBSR"
+  },
+  {
+   "name": "James Agbon",
+   "pool": "ms",
+   "date": "2026-07-23",
+   "code": "PP2"
+  },
+  {
+   "name": "James Agbon",
+   "pool": "ms",
+   "date": "2026-09-10",
+   "code": "BR"
+  },
+  {
+   "name": "James Agbon",
+   "pool": "ms",
+   "date": "2026-10-01",
+   "code": "CBSR"
+  },
+  {
+   "name": "James Agbon",
+   "pool": "ms",
+   "date": "2026-10-22",
+   "code": "PP2"
+  },
+  {
+   "name": "Joaquin Domutan",
+   "pool": "bible_reading",
+   "date": "2026-02-05",
+   "code": "BR"
+  },
+  {
+   "name": "Joaquin Domutan",
+   "pool": "bible_reading",
+   "date": "2026-04-23",
+   "code": "BR"
+  },
+  {
+   "name": "James Agbon",
+   "pool": "bible_reading",
+   "date": "2026-02-12",
+   "code": "BR"
+  },
+  {
+   "name": "James Agbon",
+   "pool": "bible_reading",
+   "date": "2026-05-14",
+   "code": "BR"
+  },
+  {
+   "name": "Tony James Namoc",
+   "pool": "bible_reading",
+   "date": "2026-02-19",
+   "code": "BR"
+  },
+  {
+   "name": "Tony James Namoc",
+   "pool": "bible_reading",
+   "date": "2026-03-26",
+   "code": "BR"
+  },
+  {
+   "name": "Tony James Namoc",
+   "pool": "bible_reading",
+   "date": "2026-05-07",
+   "code": "BR"
+  },
+  {
+   "name": "Tony James Namoc",
+   "pool": "bible_reading",
+   "date": "2026-06-11",
+   "code": "BR"
+  },
+  {
+   "name": "Tony James Namoc",
+   "pool": "bible_reading",
+   "date": "2026-07-09",
+   "code": "BR"
+  },
+  {
+   "name": "Tony James Namoc",
+   "pool": "bible_reading",
+   "date": "2026-08-13",
+   "code": "BR"
+  },
+  {
+   "name": "Tony James Namoc",
+   "pool": "bible_reading",
+   "date": "2026-09-17",
+   "code": "BR"
+  },
+  {
+   "name": "Tony James Namoc",
+   "pool": "bible_reading",
+   "date": "2026-10-22",
+   "code": "BR"
+  },
+  {
+   "name": "Matt Louis Domutan",
+   "pool": "bible_reading",
+   "date": "2026-01-08",
+   "code": "BR"
+  },
+  {
+   "name": "Matt Louis Domutan",
+   "pool": "bible_reading",
+   "date": "2026-02-26",
+   "code": "BR"
+  },
+  {
+   "name": "Matt Louis Domutan",
+   "pool": "bible_reading",
+   "date": "2026-04-09",
+   "code": "BR"
+  },
+  {
+   "name": "Matt Louis Domutan",
+   "pool": "bible_reading",
+   "date": "2026-05-21",
+   "code": "BR"
+  },
+  {
+   "name": "Matt Louis Domutan",
+   "pool": "bible_reading",
+   "date": "2026-06-18",
+   "code": "BR"
+  },
+  {
+   "name": "Matt Louis Domutan",
+   "pool": "bible_reading",
+   "date": "2026-07-23",
+   "code": "BR"
+  },
+  {
+   "name": "Matt Louis Domutan",
+   "pool": "bible_reading",
+   "date": "2026-08-20",
+   "code": "BR"
+  },
+  {
+   "name": "Matt Louis Domutan",
+   "pool": "bible_reading",
+   "date": "2026-09-24",
+   "code": "BR"
+  },
+  {
+   "name": "Matt Louis Domutan",
+   "pool": "bible_reading",
+   "date": "2026-10-29",
+   "code": "BR"
+  },
+  {
+   "name": "Brooklyn Anora",
+   "pool": "bible_reading",
+   "date": "2026-01-15",
+   "code": "BR"
+  },
+  {
+   "name": "Brooklyn Anora",
+   "pool": "bible_reading",
+   "date": "2026-03-12",
+   "code": "BR"
+  },
+  {
+   "name": "Brooklyn Anora",
+   "pool": "bible_reading",
+   "date": "2026-04-16",
+   "code": "BR"
+  },
+  {
+   "name": "Brooklyn Anora",
+   "pool": "bible_reading",
+   "date": "2026-05-28",
+   "code": "BR"
+  },
+  {
+   "name": "Brooklyn Anora",
+   "pool": "bible_reading",
+   "date": "2026-06-25",
+   "code": "BR"
+  },
+  {
+   "name": "Brooklyn Anora",
+   "pool": "bible_reading",
+   "date": "2026-07-30",
+   "code": "BR"
+  },
+  {
+   "name": "Brooklyn Anora",
+   "pool": "bible_reading",
+   "date": "2026-08-27",
+   "code": "BR"
+  },
+  {
+   "name": "Brooklyn Anora",
+   "pool": "bible_reading",
+   "date": "2026-10-01",
+   "code": "BR"
+  },
+  {
+   "name": "Jepte Domutan",
+   "pool": "bible_reading",
+   "date": "2026-01-22",
+   "code": "BR"
+  },
+  {
+   "name": "Jepte Domutan",
+   "pool": "bible_reading",
+   "date": "2026-03-05",
+   "code": "BR"
+  },
+  {
+   "name": "Bon Regie Agbon",
+   "pool": "bible_reading",
+   "date": "2026-01-29",
+   "code": "BR"
+  },
+  {
+   "name": "Bon Regie Agbon",
+   "pool": "bible_reading",
+   "date": "2026-03-19",
+   "code": "BR"
+  },
+  {
+   "name": "Bon Regie Agbon",
+   "pool": "bible_reading",
+   "date": "2026-04-30",
+   "code": "BR"
+  },
+  {
+   "name": "Bon Regie Agbon",
+   "pool": "bible_reading",
+   "date": "2026-06-04",
+   "code": "BR"
+  },
+  {
+   "name": "Bon Regie Agbon",
+   "pool": "bible_reading",
+   "date": "2026-07-02",
+   "code": "BR"
+  },
+  {
+   "name": "Bon Regie Agbon",
+   "pool": "bible_reading",
+   "date": "2026-08-06",
+   "code": "BR"
+  },
+  {
+   "name": "Bon Regie Agbon",
+   "pool": "bible_reading",
+   "date": "2026-09-03",
+   "code": "BR"
+  },
+  {
+   "name": "Bon Regie Agbon",
+   "pool": "bible_reading",
+   "date": "2026-10-08",
+   "code": "BR"
+  },
+  {
+   "name": "Aida Villahermosa",
+   "pool": "female",
+   "date": "2026-01-29",
+   "code": "6A"
+  },
+  {
+   "name": "Aida Villahermosa",
+   "pool": "female",
+   "date": "2026-02-26",
+   "code": "4E"
+  },
+  {
+   "name": "Aida Villahermosa",
+   "pool": "female",
+   "date": "2026-04-16",
+   "code": "4A"
+  },
+  {
+   "name": "Aida Villahermosa",
+   "pool": "female",
+   "date": "2026-05-28",
+   "code": "6E"
+  },
+  {
+   "name": "Aida Villahermosa",
+   "pool": "female",
+   "date": "2026-06-25",
+   "code": "6A"
+  },
+  {
+   "name": "Aida Villahermosa",
+   "pool": "female",
+   "date": "2026-08-13",
+   "code": "5E"
+  },
+  {
+   "name": "Aida Villahermosa",
+   "pool": "female",
+   "date": "2026-10-01",
+   "code": "5A"
+  },
+  {
+   "name": "Alfenita Duaves",
+   "pool": "female",
+   "date": "2026-02-12",
+   "code": "4E"
+  },
+  {
+   "name": "Alfenita Duaves",
+   "pool": "female",
+   "date": "2026-04-09",
+   "code": "5A"
+  },
+  {
+   "name": "Alfenita Duaves",
+   "pool": "female",
+   "date": "2026-05-28",
+   "code": "4E"
+  },
+  {
+   "name": "Alfenita Duaves",
+   "pool": "female",
+   "date": "2026-07-02",
+   "code": "5A"
+  },
+  {
+   "name": "Alfenita Duaves",
+   "pool": "female",
+   "date": "2026-08-20",
+   "code": "6E"
+  },
+  {
+   "name": "Alfenita Duaves",
+   "pool": "female",
+   "date": "2026-10-08",
+   "code": "4A"
+  },
+  {
+   "name": "Alonie Domutan",
+   "pool": "female",
+   "date": "2026-03-12",
+   "code": "6A"
+  },
+  {
+   "name": "Alonie Domutan",
+   "pool": "female",
+   "date": "2026-05-07",
+   "code": "4E"
+  },
+  {
+   "name": "Alonie Domutan",
+   "pool": "female",
+   "date": "2026-06-11",
+   "code": "4A"
+  },
+  {
+   "name": "Alonie Domutan",
+   "pool": "female",
+   "date": "2026-07-30",
+   "code": "5E"
+  },
+  {
+   "name": "Alonie Domutan",
+   "pool": "female",
+   "date": "2026-09-17",
+   "code": "6A"
+  },
+  {
+   "name": "Althea Domutan",
+   "pool": "female",
+   "date": "2026-01-15",
+   "code": "4E"
+  },
+  {
+   "name": "Althea Domutan",
+   "pool": "female",
+   "date": "2026-02-19",
+   "code": "6A"
+  },
+  {
+   "name": "Althea Domutan",
+   "pool": "female",
+   "date": "2026-03-12",
+   "code": "4A"
+  },
+  {
+   "name": "Althea Domutan",
+   "pool": "female",
+   "date": "2026-04-23",
+   "code": "6E"
+  },
+  {
+   "name": "Althea Domutan",
+   "pool": "female",
+   "date": "2026-06-04",
+   "code": "4A"
+  },
+  {
+   "name": "Althea Domutan",
+   "pool": "female",
+   "date": "2026-07-09",
+   "code": "5E"
+  },
+  {
+   "name": "Althea Domutan",
+   "pool": "female",
+   "date": "2026-08-25",
+   "code": "4A"
+  },
+  {
+   "name": "Althea Domutan",
+   "pool": "female",
+   "date": "2026-10-08",
+   "code": "7E"
+  },
+  {
+   "name": "Analee Arche",
+   "pool": "female",
+   "date": "2026-01-22",
+   "code": "5A"
+  },
+  {
+   "name": "Analee Arche",
+   "pool": "female",
+   "date": "2026-03-19",
+   "code": "5E"
+  },
+  {
+   "name": "Analee Arche",
+   "pool": "female",
+   "date": "2026-04-30",
+   "code": "4A"
+  },
+  {
+   "name": "Analee Arche",
+   "pool": "female",
+   "date": "2026-06-04",
+   "code": "6E"
+  },
+  {
+   "name": "Analee Arche",
+   "pool": "female",
+   "date": "2026-07-23",
+   "code": "4A"
+  },
+  {
+   "name": "Analee Arche",
+   "pool": "female",
+   "date": "2026-09-10",
+   "code": "5E"
+  },
+  {
+   "name": "Arlyn Dairocas",
+   "pool": "female",
+   "date": "2026-01-15",
+   "code": "5A"
+  },
+  {
+   "name": "Arlyn Dairocas",
+   "pool": "female",
+   "date": "2026-03-19",
+   "code": "6E"
+  },
+  {
+   "name": "Arlyn Dairocas",
+   "pool": "female",
+   "date": "2026-05-14",
+   "code": "4A"
+  },
+  {
+   "name": "Arlyn Dairocas",
+   "pool": "female",
+   "date": "2026-06-18",
+   "code": "6E"
+  },
+  {
+   "name": "Arlyn Dairocas",
+   "pool": "female",
+   "date": "2026-08-13",
+   "code": "4A"
+  },
+  {
+   "name": "Arlyn Dairocas",
+   "pool": "female",
+   "date": "2026-10-01",
+   "code": "5E"
+  },
+  {
+   "name": "Babie Rima Daung",
+   "pool": "female",
+   "date": "2026-01-29",
+   "code": "5E"
+  },
+  {
+   "name": "Babie Rima Daung",
+   "pool": "female",
+   "date": "2026-04-09",
+   "code": "4E"
+  },
+  {
+   "name": "Babie Rima Daung",
+   "pool": "female",
+   "date": "2026-05-21",
+   "code": "6A"
+  },
+  {
+   "name": "Babie Rima Daung",
+   "pool": "female",
+   "date": "2026-06-25",
+   "code": "4E"
+  },
+  {
+   "name": "Babie Rima Daung",
+   "pool": "female",
+   "date": "2026-09-03",
+   "code": "4A"
+  },
+  {
+   "name": "Babie Rima Daung",
+   "pool": "female",
+   "date": "2026-10-22",
+   "code": "6E"
+  },
+  {
+   "name": "Catherine Lofranco",
+   "pool": "female",
+   "date": "2026-01-08",
+   "code": "5E"
+  },
+  {
+   "name": "Catherine Lofranco",
+   "pool": "female",
+   "date": "2026-02-26",
+   "code": "4A"
+  },
+  {
+   "name": "Catherine Lofranco",
+   "pool": "female",
+   "date": "2026-03-05",
+   "code": "4E"
+  },
+  {
+   "name": "Catherine Lofranco",
+   "pool": "female",
+   "date": "2026-04-16",
+   "code": "5A"
+  },
+  {
+   "name": "Catherine Lofranco",
+   "pool": "female",
+   "date": "2026-05-21",
+   "code": "6E"
+  },
+  {
+   "name": "Catherine Lofranco",
+   "pool": "female",
+   "date": "2026-06-18",
+   "code": "5A"
+  },
+  {
+   "name": "Catherine Lofranco",
+   "pool": "female",
+   "date": "2026-08-06",
+   "code": "5E"
+  },
+  {
+   "name": "Catherine Lofranco",
+   "pool": "female",
+   "date": "2026-09-17",
+   "code": "5A"
+  },
+  {
+   "name": "Cenderilla Arche",
+   "pool": "female",
+   "date": "2026-02-19",
+   "code": "4A"
+  },
+  {
+   "name": "Cenderilla Arche",
+   "pool": "female",
+   "date": "2026-03-26",
+   "code": "4E"
+  },
+  {
+   "name": "Cenderilla Arche",
+   "pool": "female",
+   "date": "2026-05-14",
+   "code": "6E"
+  },
+  {
+   "name": "Cenderilla Arche",
+   "pool": "female",
+   "date": "2026-06-11",
+   "code": "6A"
+  },
+  {
+   "name": "Cenderilla Arche",
+   "pool": "female",
+   "date": "2026-07-30",
+   "code": "4E"
+  },
+  {
+   "name": "Cenderilla Arche",
+   "pool": "female",
+   "date": "2026-09-10",
+   "code": "5A"
+  },
+  {
+   "name": "Cesaria Omac",
+   "pool": "female",
+   "date": "2026-02-12",
+   "code": "4A"
+  },
+  {
+   "name": "Cesaria Omac",
+   "pool": "female",
+   "date": "2026-03-05",
+   "code": "5A"
+  },
+  {
+   "name": "Cesaria Omac",
+   "pool": "female",
+   "date": "2026-04-16",
+   "code": "4E"
+  },
+  {
+   "name": "Cesaria Omac",
+   "pool": "female",
+   "date": "2026-05-28",
+   "code": "5A"
+  },
+  {
+   "name": "Cesaria Omac",
+   "pool": "female",
+   "date": "2026-07-23",
+   "code": "5E"
+  },
+  {
+   "name": "Cesaria Omac",
+   "pool": "female",
+   "date": "2026-08-25",
+   "code": "5A"
+  },
+  {
+   "name": "Cesaria Omac",
+   "pool": "female",
+   "date": "2026-10-22",
+   "code": "5E"
+  },
+  {
+   "name": "Chierwayne Arquio",
+   "pool": "female",
+   "date": "2026-01-22",
+   "code": "4E"
+  },
+  {
+   "name": "Chierwayne Arquio",
+   "pool": "female",
+   "date": "2026-02-26",
+   "code": "6A"
+  },
+  {
+   "name": "Chierwayne Arquio",
+   "pool": "female",
+   "date": "2026-04-09",
+   "code": "4A"
+  },
+  {
+   "name": "Chierwayne Arquio",
+   "pool": "female",
+   "date": "2026-05-28",
+   "code": "5E"
+  },
+  {
+   "name": "Chierwayne Arquio",
+   "pool": "female",
+   "date": "2026-07-02",
+   "code": "4A"
+  },
+  {
+   "name": "Chierwayne Arquio",
+   "pool": "female",
+   "date": "2026-08-25",
+   "code": "4E"
+  },
+  {
+   "name": "Chierwayne Arquio",
+   "pool": "female",
+   "date": "2026-10-22",
+   "code": "4A"
+  },
+  {
+   "name": "Damaris Alcampado",
+   "pool": "female",
+   "date": "2026-01-08",
+   "code": "5A"
+  },
+  {
+   "name": "Damaris Alcampado",
+   "pool": "female",
+   "date": "2026-02-19",
+   "code": "6E"
+  },
+  {
+   "name": "Damaris Alcampado",
+   "pool": "female",
+   "date": "2026-03-05",
+   "code": "5E"
+  },
+  {
+   "name": "Damaris Alcampado",
+   "pool": "female",
+   "date": "2026-04-23",
+   "code": "4A"
+  },
+  {
+   "name": "Damaris Alcampado",
+   "pool": "female",
+   "date": "2026-06-04",
+   "code": "5E"
+  },
+  {
+   "name": "Damaris Alcampado",
+   "pool": "female",
+   "date": "2026-07-09",
+   "code": "4A"
+  },
+  {
+   "name": "Damaris Alcampado",
+   "pool": "female",
+   "date": "2026-08-25",
+   "code": "5E"
+  },
+  {
+   "name": "Damaris Alcampado",
+   "pool": "female",
+   "date": "2026-10-22",
+   "code": "6A"
+  },
+  {
+   "name": "Eunice Arche",
+   "pool": "female",
+   "date": "2026-02-05",
+   "code": "6A"
+  },
+  {
+   "name": "Eunice Arche",
+   "pool": "female",
+   "date": "2026-03-19",
+   "code": "6A"
+  },
+  {
+   "name": "Eunice Arche",
+   "pool": "female",
+   "date": "2026-05-14",
+   "code": "5E"
+  },
+  {
+   "name": "Eunice Arche",
+   "pool": "female",
+   "date": "2026-06-18",
+   "code": "4A"
+  },
+  {
+   "name": "Eunice Arche",
+   "pool": "female",
+   "date": "2026-08-13",
+   "code": "6E"
+  },
+  {
+   "name": "Eunice Arche",
+   "pool": "female",
+   "date": "2026-09-24",
+   "code": "4A"
+  },
+  {
+   "name": "Eunice Ugsod",
+   "pool": "female",
+   "date": "2026-01-29",
+   "code": "5A"
+  },
+  {
+   "name": "Eunice Ugsod",
+   "pool": "female",
+   "date": "2026-04-30",
+   "code": "4E"
+  },
+  {
+   "name": "Eunice Ugsod",
+   "pool": "female",
+   "date": "2026-06-11",
+   "code": "5A"
+  },
+  {
+   "name": "Harcy Joy Dela Cruz",
+   "pool": "female",
+   "date": "2026-02-05",
+   "code": "5E"
+  },
+  {
+   "name": "Harcy Joy Dela Cruz",
+   "pool": "female",
+   "date": "2026-03-12",
+   "code": "7E"
+  },
+  {
+   "name": "Harcy Joy Dela Cruz",
+   "pool": "female",
+   "date": "2026-04-23",
+   "code": "4E"
+  },
+  {
+   "name": "Harcy Joy Dela Cruz",
+   "pool": "female",
+   "date": "2026-05-28",
+   "code": "6A"
+  },
+  {
+   "name": "Harcy Joy Dela Cruz",
+   "pool": "female",
+   "date": "2026-07-02",
+   "code": "5E"
+  },
+  {
+   "name": "Hariet Joy Anora",
+   "pool": "female",
+   "date": "2026-02-12",
+   "code": "5A"
+  },
+  {
+   "name": "Hariet Joy Anora",
+   "pool": "female",
+   "date": "2026-03-19",
+   "code": "4E"
+  },
+  {
+   "name": "Hariet Joy Anora",
+   "pool": "female",
+   "date": "2026-05-07",
+   "code": "4A"
+  },
+  {
+   "name": "Hariet Joy Anora",
+   "pool": "female",
+   "date": "2026-06-11",
+   "code": "5E"
+  },
+  {
+   "name": "Hariet Joy Anora",
+   "pool": "female",
+   "date": "2026-07-30",
+   "code": "6A"
+  },
+  {
+   "name": "Hariet Joy Anora",
+   "pool": "female",
+   "date": "2026-09-03",
+   "code": "4E"
+  },
+  {
+   "name": "Hariet Joy Anora",
+   "pool": "female",
+   "date": "2026-10-22",
+   "code": "5A"
+  },
+  {
+   "name": "Jessa Sanopao",
+   "pool": "female",
+   "date": "2026-01-29",
+   "code": "7E"
+  },
+  {
+   "name": "Jessa Sanopao",
+   "pool": "female",
+   "date": "2026-04-09",
+   "code": "6E"
+  },
+  {
+   "name": "Jessa Sanopao",
+   "pool": "female",
+   "date": "2026-05-14",
+   "code": "6A"
+  },
+  {
+   "name": "Jessa Sanopao",
+   "pool": "female",
+   "date": "2026-06-18",
+   "code": "4E"
+  },
+  {
+   "name": "Jessa Sanopao",
+   "pool": "female",
+   "date": "2026-08-06",
+   "code": "5A"
+  },
+  {
+   "name": "Jessa Sanopao",
+   "pool": "female",
+   "date": "2026-09-17",
+   "code": "6E"
+  },
+  {
+   "name": "Jessa Sanopao",
+   "pool": "female",
+   "date": "2026-10-29",
+   "code": "4A"
+  },
+  {
+   "name": "Jocelyn Reponte",
+   "pool": "female",
+   "date": "2026-02-05",
+   "code": "6E"
+  },
+  {
+   "name": "Jocelyn Reponte",
+   "pool": "female",
+   "date": "2026-03-05",
+   "code": "4A"
+  },
+  {
+   "name": "Jocelyn Reponte",
+   "pool": "female",
+   "date": "2026-04-16",
+   "code": "6A"
+  },
+  {
+   "name": "Jocelyn Reponte",
+   "pool": "female",
+   "date": "2026-05-28",
+   "code": "7E"
+  },
+  {
+   "name": "Jocelyn Reponte",
+   "pool": "female",
+   "date": "2026-07-09",
+   "code": "5A"
+  },
+  {
+   "name": "Jocelyn Reponte",
+   "pool": "female",
+   "date": "2026-08-20",
+   "code": "4A"
+  },
+  {
+   "name": "Jocelyn Reponte",
+   "pool": "female",
+   "date": "2026-10-08",
+   "code": "4E"
+  },
+  {
+   "name": "Johannah Mendez",
+   "pool": "female",
+   "date": "2026-01-29",
+   "code": "4A"
+  },
+  {
+   "name": "Johannah Mendez",
+   "pool": "female",
+   "date": "2026-04-16",
+   "code": "6E"
+  },
+  {
+   "name": "Johannah Mendez",
+   "pool": "female",
+   "date": "2026-05-28",
+   "code": "4A"
+  },
+  {
+   "name": "Johannah Mendez",
+   "pool": "female",
+   "date": "2026-07-02",
+   "code": "4E"
+  },
+  {
+   "name": "Johannah Mendez",
+   "pool": "female",
+   "date": "2026-08-20",
+   "code": "5A"
+  },
+  {
+   "name": "Johannah Mendez",
+   "pool": "female",
+   "date": "2026-09-24",
+   "code": "4E"
+  },
+  {
+   "name": "Juliana Anora",
+   "pool": "female",
+   "date": "2026-02-05",
+   "code": "4E"
+  },
+  {
+   "name": "Juliana Anora",
+   "pool": "female",
+   "date": "2026-04-09",
+   "code": "6A"
+  },
+  {
+   "name": "Juliana Anora",
+   "pool": "female",
+   "date": "2026-05-21",
+   "code": "5E"
+  },
+  {
+   "name": "Juliana Anora",
+   "pool": "female",
+   "date": "2026-06-18",
+   "code": "6A"
+  },
+  {
+   "name": "Juliana Anora",
+   "pool": "female",
+   "date": "2026-07-30",
+   "code": "6E"
+  },
+  {
+   "name": "Juliana Anora",
+   "pool": "female",
+   "date": "2026-09-03",
+   "code": "5A"
+  },
+  {
+   "name": "Juliana Anora",
+   "pool": "female",
+   "date": "2026-10-22",
+   "code": "4E"
+  },
+  {
+   "name": "Kathleen Satulombon",
+   "pool": "female",
+   "date": "2026-01-22",
+   "code": "4A"
+  },
+  {
+   "name": "Kathleen Satulombon",
+   "pool": "female",
+   "date": "2026-04-16",
+   "code": "5E"
+  },
+  {
+   "name": "Kathleen Satulombon",
+   "pool": "female",
+   "date": "2026-05-28",
+   "code": "7A"
+  },
+  {
+   "name": "Kathleen Satulombon",
+   "pool": "female",
+   "date": "2026-06-25",
+   "code": "5E"
+  },
+  {
+   "name": "Kathleen Satulombon",
+   "pool": "female",
+   "date": "2026-09-10",
+   "code": "6A"
+  },
+  {
+   "name": "Kenel Joy Sanopao",
+   "pool": "female",
+   "date": "2026-02-12",
+   "code": "5E"
+  },
+  {
+   "name": "Kenel Joy Sanopao",
+   "pool": "female",
+   "date": "2026-03-12",
+   "code": "7A"
+  },
+  {
+   "name": "Kenel Joy Sanopao",
+   "pool": "female",
+   "date": "2026-04-23",
+   "code": "5E"
+  },
+  {
+   "name": "Kenel Joy Sanopao",
+   "pool": "female",
+   "date": "2026-06-04",
+   "code": "6A"
+  },
+  {
+   "name": "Kenel Joy Sanopao",
+   "pool": "female",
+   "date": "2026-07-09",
+   "code": "4E"
+  },
+  {
+   "name": "Kenel Joy Sanopao",
+   "pool": "female",
+   "date": "2026-08-20",
+   "code": "6A"
+  },
+  {
+   "name": "Kenel Joy Sanopao",
+   "pool": "female",
+   "date": "2026-09-24",
+   "code": "5E"
+  },
+  {
+   "name": "Kristine Domutan",
+   "pool": "female",
+   "date": "2026-01-22",
+   "code": "5E"
+  },
+  {
+   "name": "Kristine Domutan",
+   "pool": "female",
+   "date": "2026-03-26",
+   "code": "5E"
+  },
+  {
+   "name": "Kristine Domutan",
+   "pool": "female",
+   "date": "2026-05-07",
+   "code": "5A"
+  },
+  {
+   "name": "Kristine Domutan",
+   "pool": "female",
+   "date": "2026-06-11",
+   "code": "6E"
+  },
+  {
+   "name": "Kristine Domutan",
+   "pool": "female",
+   "date": "2026-07-30",
+   "code": "5A"
+  },
+  {
+   "name": "Kristine Domutan",
+   "pool": "female",
+   "date": "2026-09-10",
+   "code": "4E"
+  },
+  {
+   "name": "Kristine Domutan",
+   "pool": "female",
+   "date": "2026-10-29",
+   "code": "6E"
+  },
+  {
+   "name": "Leah Arche",
+   "pool": "female",
+   "date": "2026-01-15",
+   "code": "4A"
+  },
+  {
+   "name": "Leah Arche",
+   "pool": "female",
+   "date": "2026-02-26",
+   "code": "5E"
+  },
+  {
+   "name": "Leah Arche",
+   "pool": "female",
+   "date": "2026-03-12",
+   "code": "5A"
+  },
+  {
+   "name": "Leah Arche",
+   "pool": "female",
+   "date": "2026-04-30",
+   "code": "6E"
+  },
+  {
+   "name": "Leah Arche",
+   "pool": "female",
+   "date": "2026-06-04",
+   "code": "5A"
+  },
+  {
+   "name": "Leah Arche",
+   "pool": "female",
+   "date": "2026-07-23",
+   "code": "4E"
+  },
+  {
+   "name": "Leah Arche",
+   "pool": "female",
+   "date": "2026-09-10",
+   "code": "4A"
+  },
+  {
+   "name": "Leah Arche",
+   "pool": "female",
+   "date": "2026-10-29",
+   "code": "5E"
+  },
+  {
+   "name": "Lumilo Namoc",
+   "pool": "female",
+   "date": "2026-01-29",
+   "code": "6E"
+  },
+  {
+   "name": "Lumilo Namoc",
+   "pool": "female",
+   "date": "2026-03-26",
+   "code": "5A"
+  },
+  {
+   "name": "Lumilo Namoc",
+   "pool": "female",
+   "date": "2026-05-21",
+   "code": "4A"
+  },
+  {
+   "name": "Lumilo Namoc",
+   "pool": "female",
+   "date": "2026-08-13",
+   "code": "4E"
+  },
+  {
+   "name": "Lumilo Namoc",
+   "pool": "female",
+   "date": "2026-10-08",
+   "code": "5A"
+  },
+  {
+   "name": "Luminada Domutan",
+   "pool": "female",
+   "date": "2026-01-29",
+   "code": "7A"
+  },
+  {
+   "name": "Luminada Domutan",
+   "pool": "female",
+   "date": "2026-03-26",
+   "code": "6E"
+  },
+  {
+   "name": "Luminada Domutan",
+   "pool": "female",
+   "date": "2026-05-14",
+   "code": "5A"
+  },
+  {
+   "name": "Luminada Domutan",
+   "pool": "female",
+   "date": "2026-06-18",
+   "code": "5E"
+  },
+  {
+   "name": "Luminada Domutan",
+   "pool": "female",
+   "date": "2026-08-13",
+   "code": "5A"
+  },
+  {
+   "name": "Luminada Domutan",
+   "pool": "female",
+   "date": "2026-09-17",
+   "code": "4E"
+  },
+  {
+   "name": "Martha Daung",
+   "pool": "female",
+   "date": "2026-01-15",
+   "code": "5E"
+  },
+  {
+   "name": "Martha Daung",
+   "pool": "female",
+   "date": "2026-02-19",
+   "code": "5A"
+  },
+  {
+   "name": "Martha Daung",
+   "pool": "female",
+   "date": "2026-03-12",
+   "code": "4E"
+  },
+  {
+   "name": "Martha Daung",
+   "pool": "female",
+   "date": "2026-04-23",
+   "code": "5A"
+  },
+  {
+   "name": "Martha Daung",
+   "pool": "female",
+   "date": "2026-06-11",
+   "code": "7E"
+  },
+  {
+   "name": "Martha Daung",
+   "pool": "female",
+   "date": "2026-07-30",
+   "code": "4A"
+  },
+  {
+   "name": "Martha Daung",
+   "pool": "female",
+   "date": "2026-09-17",
+   "code": "5E"
+  },
+  {
+   "name": "Martha Daung",
+   "pool": "female",
+   "date": "2026-10-29",
+   "code": "5A"
+  },
+  {
+   "name": "Melecita Mendez",
+   "pool": "female",
+   "date": "2026-01-08",
+   "code": "4A"
+  },
+  {
+   "name": "Melecita Mendez",
+   "pool": "female",
+   "date": "2026-02-19",
+   "code": "5E"
+  },
+  {
+   "name": "Melecita Mendez",
+   "pool": "female",
+   "date": "2026-03-19",
+   "code": "5A"
+  },
+  {
+   "name": "Melecita Mendez",
+   "pool": "female",
+   "date": "2026-05-21",
+   "code": "4E"
+  },
+  {
+   "name": "Melecita Mendez",
+   "pool": "female",
+   "date": "2026-06-25",
+   "code": "5A"
+  },
+  {
+   "name": "Melecita Mendez",
+   "pool": "female",
+   "date": "2026-08-20",
+   "code": "5E"
+  },
+  {
+   "name": "Melecita Mendez",
+   "pool": "female",
+   "date": "2026-09-24",
+   "code": "5A"
+  },
+  {
+   "name": "Mirarie Agbon",
+   "pool": "female",
+   "date": "2026-01-08",
+   "code": "4E"
+  },
+  {
+   "name": "Mirarie Agbon",
+   "pool": "female",
+   "date": "2026-02-26",
+   "code": "5A"
+  },
+  {
+   "name": "Mirarie Agbon",
+   "pool": "female",
+   "date": "2026-03-26",
+   "code": "4A"
+  },
+  {
+   "name": "Mirarie Agbon",
+   "pool": "female",
+   "date": "2026-04-09",
+   "code": "5E"
+  },
+  {
+   "name": "Mirarie Agbon",
+   "pool": "female",
+   "date": "2026-05-21",
+   "code": "5A"
+  },
+  {
+   "name": "Mirarie Agbon",
+   "pool": "female",
+   "date": "2026-06-25",
+   "code": "6E"
+  },
+  {
+   "name": "Mirarie Agbon",
+   "pool": "female",
+   "date": "2026-08-13",
+   "code": "6A"
+  },
+  {
+   "name": "Mirarie Agbon",
+   "pool": "female",
+   "date": "2026-09-17",
+   "code": "7E"
+  },
+  {
+   "name": "Nerissa Magdura",
+   "pool": "female",
+   "date": "2026-01-15",
+   "code": "6A"
+  },
+  {
+   "name": "Nerissa Magdura",
+   "pool": "female",
+   "date": "2026-02-26",
+   "code": "7E"
+  },
+  {
+   "name": "Nerissa Magdura",
+   "pool": "female",
+   "date": "2026-03-12",
+   "code": "6E"
+  },
+  {
+   "name": "Nerissa Magdura",
+   "pool": "female",
+   "date": "2026-04-30",
+   "code": "6A"
+  },
+  {
+   "name": "Nerissa Magdura",
+   "pool": "female",
+   "date": "2026-06-04",
+   "code": "4E"
+  },
+  {
+   "name": "Nerissa Magdura",
+   "pool": "female",
+   "date": "2026-07-23",
+   "code": "5A"
+  },
+  {
+   "name": "Nerissa Magdura",
+   "pool": "female",
+   "date": "2026-09-10",
+   "code": "6E"
+  },
+  {
+   "name": "Nerissa Magdura",
+   "pool": "female",
+   "date": "2026-10-29",
+   "code": "6A"
+  },
+  {
+   "name": "Noeda Ligad",
+   "pool": "female",
+   "date": "2026-09-17",
+   "code": "4A"
+  },
+  {
+   "name": "Noemi Aparri",
+   "pool": "female",
+   "date": "2026-02-19",
+   "code": "4E"
+  },
+  {
+   "name": "Noemi Aparri",
+   "pool": "female",
+   "date": "2026-03-26",
+   "code": "6A"
+  },
+  {
+   "name": "Noemi Aparri",
+   "pool": "female",
+   "date": "2026-05-14",
+   "code": "4E"
+  },
+  {
+   "name": "Noemi Aparri",
+   "pool": "female",
+   "date": "2026-06-25",
+   "code": "4A"
+  },
+  {
+   "name": "Noemi Aparri",
+   "pool": "female",
+   "date": "2026-08-20",
+   "code": "4E"
+  },
+  {
+   "name": "Noemi Aparri",
+   "pool": "female",
+   "date": "2026-10-08",
+   "code": "5E"
+  },
+  {
+   "name": "Shanice Arche",
+   "pool": "female",
+   "date": "2026-01-22",
+   "code": "6A"
+  },
+  {
+   "name": "Shanice Arche",
+   "pool": "female",
+   "date": "2026-02-26",
+   "code": "6E"
+  },
+  {
+   "name": "Shanice Arche",
+   "pool": "female",
+   "date": "2026-03-19",
+   "code": "4A"
+  },
+  {
+   "name": "Shanice Arche",
+   "pool": "female",
+   "date": "2026-05-07",
+   "code": "5E"
+  },
+  {
+   "name": "Shanice Arche",
+   "pool": "female",
+   "date": "2026-06-11",
+   "code": "7A"
+  },
+  {
+   "name": "Shanice Arche",
+   "pool": "female",
+   "date": "2026-08-06",
+   "code": "4E"
+  },
+  {
+   "name": "Shanice Arche",
+   "pool": "female",
+   "date": "2026-09-17",
+   "code": "7A"
+  },
+  {
+   "name": "Zapphire Sanopao",
+   "pool": "female",
+   "date": "2026-02-05",
+   "code": "5A"
+  },
+  {
+   "name": "Zapphire Sanopao",
+   "pool": "female",
+   "date": "2026-03-12",
+   "code": "5E"
+  },
+  {
+   "name": "Zapphire Sanopao",
+   "pool": "female",
+   "date": "2026-04-23",
+   "code": "6A"
+  },
+  {
+   "name": "Zapphire Sanopao",
+   "pool": "female",
+   "date": "2026-06-11",
+   "code": "4E"
+  },
+  {
+   "name": "Zapphire Sanopao",
+   "pool": "female",
+   "date": "2026-08-06",
+   "code": "4A"
+  },
+  {
+   "name": "Zapphire Sanopao",
+   "pool": "female",
+   "date": "2026-09-03",
+   "code": "5E"
+  },
+  {
+   "name": "Zapphire Sanopao",
+   "pool": "female",
+   "date": "2026-10-08",
+   "code": "7A"
+  },
+  {
+   "name": "Edwin Arquio",
+   "pool": "female",
+   "date": "2026-10-01",
+   "code": "4A"
+  },
+  {
+   "name": "James Agbon",
+   "pool": "female",
+   "date": "2026-10-22",
+   "code": "7E"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "female",
+   "date": "2026-10-01",
+   "code": "6E"
+  },
+  {
+   "name": "Jemve Sanopao",
+   "pool": "female",
+   "date": "2026-10-29",
+   "code": "4E"
+  },
+  {
+   "name": "Joaquin Domutan",
+   "pool": "female",
+   "date": "2026-10-08",
+   "code": "6A"
+  },
+  {
+   "name": "Leonardo Arche",
+   "pool": "female",
+   "date": "2026-10-01",
+   "code": "4E"
+  },
+  {
+   "name": "Mark Domutan",
+   "pool": "female",
+   "date": "2026-10-08",
+   "code": "6E"
+  }
+ ],
+ "catalog": [
+  {
+   "pool": "elder",
+   "code": "CH",
+   "label": "Chairman (Tsirman)"
+  },
+  {
+   "pool": "elder",
+   "code": "COP",
+   "label": "Bahandi — Pakigpulong (10 min.)  [confirm label]"
+  },
+  {
+   "pool": "elder",
+   "code": "KP1",
+   "label": "Kristohanong Pagkinabuhi 1"
+  },
+  {
+   "pool": "elder",
+   "code": "KP2",
+   "label": "Kristohanong Pagkinabuhi 2 (optional)"
+  },
+  {
+   "pool": "elder",
+   "code": "CBS",
+   "label": "Tigdumala — Pagtuon sa Kongregasyon sa Bibliya"
+  },
+  {
+   "pool": "elder",
+   "code": "CLP",
+   "label": "Closing Prayer"
+  },
+  {
+   "pool": "elder",
+   "code": "OP",
+   "label": "Opening Prayer"
+  },
+  {
+   "pool": "ms",
+   "code": "PP1",
+   "label": "Bahandi Gikan sa Pulong sa Diyos — Pakigpulong (10 min.)"
+  },
+  {
+   "pool": "ms",
+   "code": "ENB",
+   "label": "Espirituwal nga Bahandi (10 min.)"
+  },
+  {
+   "pool": "ms",
+   "code": "PP2",
+   "label": "Magmaepektibo — Pakigpulong (5 min., optional)"
+  },
+  {
+   "pool": "ms",
+   "code": "CBSR",
+   "label": "Tig-basa sa Pagtuon sa Kongregasyon sa Bibliya"
+  },
+  {
+   "pool": "ms",
+   "code": "OP",
+   "label": "Opening Prayer"
+  },
+  {
+   "pool": "ms",
+   "code": "BR",
+   "label": "Pagbasa sa Bibliya"
+  },
+  {
+   "pool": "bible_reading",
+   "code": "BR",
+   "label": "Pagbasa sa Bibliya"
+  },
+  {
+   "pool": "female",
+   "code": "4E",
+   "label": "Magmaepektibo — #4 Estudyante"
+  },
+  {
+   "pool": "female",
+   "code": "4A",
+   "label": "Magmaepektibo — #4 Assistant"
+  },
+  {
+   "pool": "female",
+   "code": "5E",
+   "label": "Magmaepektibo — #5 Estudyante"
+  },
+  {
+   "pool": "female",
+   "code": "5A",
+   "label": "Magmaepektibo — #5 Assistant"
+  },
+  {
+   "pool": "female",
+   "code": "6E",
+   "label": "Magmaepektibo — #6 Estudyante"
+  },
+  {
+   "pool": "female",
+   "code": "6A",
+   "label": "Magmaepektibo — #6 Assistant"
+  },
+  {
+   "pool": "female",
+   "code": "7E",
+   "label": "Magmaepektibo — #7 Estudyante"
+  },
+  {
+   "pool": "female",
+   "code": "7A",
+   "label": "Magmaepektibo — #7 Assistant"
+  },
+  {
+   "pool": "elder",
+   "code": "PP1",
+   "label": "PP1 (from schedule)"
+  }
+ ],
+ "programs": [
+  {
+   "idx": 1,
+   "week_label": "SEPTIYEMBRE 28 - OKTUBRE 4",
+   "reading": "JEREMIAS 38-39",
+   "special": null,
+   "chairman": "Jemve Sanopao",
+   "opening_prayer": "Mark Domutan",
+   "opening_song": "Awit 102",
+   "rows": [
+    {
+     "A": "BAHANDI GIKAN SA PULONG SA DIYOS",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "1",
+     "B": "Padayong Tabangi ang Usag Usa (10 min.)",
+     "H": null,
+     "I": "Ronald Satulombon"
+    },
+    {
+     "A": "2",
+     "B": "Espirituwal nga Bahandi (10 min.)",
+     "H": null,
+     "I": "Frankdio Arche"
+    },
+    {
+     "A": "3",
+     "B": "Pagbasa sa Bibliya (4 min.)",
+     "H": "Estudyante:",
+     "I": "Brooklyn Añora"
+    },
+    {
+     "A": "MAGMAEPEKTIBO SA MINISTERYO",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "4",
+     "B": "Dihang Magsugod ug Panag-estorya (3 min.)",
+     "H": "Estudyante:",
+     "I": "Leonardo Arche"
+    },
+    {
+     "A": null,
+     "B": "IMPORMAL NGA PAGSANGYAW",
+     "H": "Assistant:",
+     "I": "Edwin Arquio"
+    },
+    {
+     "A": "5",
+     "B": "Dihang Makig-estorya Pag-usab (4 min.)",
+     "H": "Estudyante:",
+     "I": "Arlyn Dairocas"
+    },
+    {
+     "A": null,
+     "B": "IMPORMAL NGA PAGSANGYAW",
+     "H": "Assistant:",
+     "I": "Aida Villahermosa"
+    },
+    {
+     "A": "6",
+     "B": "Unsay Imong Isulti (6 min.)",
+     "H": null,
+     "I": "Jemve Sanopao"
+    },
+    {
+     "A": null,
+     "B": "Pakighisgot",
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "KRISTOHANONG PAGKINABUHI",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": null,
+     "B": "Awit 90",
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "7",
+     "B": "Kinsay Mihikap Nako?' (15 min.)",
+     "H": null,
+     "I": "Vigie Agbon"
+    },
+    {
+     "A": null,
+     "B": null,
+     "H": null,
+     "I": "`"
+    },
+    {
+     "A": "8",
+     "B": "Pagtuon sa Kongregasyon sa Bibliya (30 min.)",
+     "H": "Tigdumala:",
+     "I": "Jemuel Domutan"
+    },
+    {
+     "A": null,
+     "B": null,
+     "H": "Tagabasa:",
+     "I": "James Agbon"
+    },
+    {
+     "A": null,
+     "B": "Konklusyon (3 min.)",
+     "H": null,
+     "I": null
+    },
+    {
+     "A": null,
+     "B": "Awit 56",
+     "H": "Pag-ampo:",
+     "I": "Selime Reponte"
+    }
+   ]
+  },
+  {
+   "idx": 2,
+   "week_label": "OKTUBRE 5-11",
+   "reading": "JEREMIAS 40-41",
+   "special": null,
+   "chairman": "Jemve Sanopao",
+   "opening_prayer": "Frankdio Arche",
+   "opening_song": "Awit 33",
+   "rows": [
+    {
+     "A": "BAHANDI GIKAN SA PULONG SA DIYOS",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "1",
+     "B": "Hustong Panglantaw sa Proteksiyon nga Ihatag ni Jehova (10 min.)",
+     "H": null,
+     "I": "Jemuel Domutan"
+    },
+    {
+     "A": "2",
+     "B": "Espirituwal nga Bahandi (10 min.)",
+     "H": null,
+     "I": "Ronald Satulombon"
+    },
+    {
+     "A": "3",
+     "B": "Pagbasa sa Bibliya (4 min.)",
+     "H": "Estudyante:",
+     "I": "Bon Regie Agbon"
+    },
+    {
+     "A": "MAGMAEPEKTIBO SA MINISTERYO",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "4",
+     "B": "Dihang Magsugod ug Panag-estorya (2 min.)",
+     "H": "Estudyante:",
+     "I": "Jocelyn Reponte"
+    },
+    {
+     "A": null,
+     "B": "PAGPAMALAYBALAY",
+     "H": "Assistant:",
+     "I": "Alfenita Duaves"
+    },
+    {
+     "A": "5",
+     "B": "Dihang Magsugod ug Panag-estorya (2 min.)",
+     "H": "Estudyante:",
+     "I": "Noemi Aparri"
+    },
+    {
+     "A": null,
+     "B": "IMPORMAL NGA PAGSANGYAW",
+     "H": "Assistant:",
+     "I": "Lumilo Namoc"
+    },
+    {
+     "A": "6",
+     "B": "Dihang Magsugod ug Panag-estorya (4 min.)",
+     "H": "Estudyante:",
+     "I": "Mark Domutan"
+    },
+    {
+     "A": null,
+     "B": "PUBLIKONG PAGSANGYAW",
+     "H": "Assistant:",
+     "I": "Joaquin Domutan"
+    },
+    {
+     "A": "7",
+     "B": "Pagpatin-aw sa Imong Tinuohan (3 min.)",
+     "H": "Estudyante:",
+     "I": "Althea Domutan"
+    },
+    {
+     "A": null,
+     "B": "PASUNDAYAG",
+     "H": "Assistant:",
+     "I": "Red Zapphire Sanopao"
+    },
+    {
+     "A": "KRISTOHANONG PAGKINABUHI",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": null,
+     "B": "Awit 17",
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "8",
+     "B": "Si Jehova ang Tigpanalipod sa mga Babayeng Balo (15 min.)",
+     "H": null,
+     "I": "Leonardo Arche"
+    },
+    {
+     "A": "9",
+     "B": "Pagtuon sa Kongregasyon sa Bibliya (30 min.)",
+     "H": "Tigdumala:",
+     "I": "Vigie Agbon"
+    },
+    {
+     "A": null,
+     "B": null,
+     "H": "Tagabasa:",
+     "I": "Jepte Domutan"
+    },
+    {
+     "A": null,
+     "B": "Konklusyon (3 min.)",
+     "H": null,
+     "I": null
+    },
+    {
+     "A": null,
+     "B": "Awit 38",
+     "H": "Pag-ampo:",
+     "I": "Selime Reponte"
+    }
+   ]
+  },
+  {
+   "idx": 3,
+   "week_label": "OKTUBRE 12-18",
+   "reading": "JEREMIAS 42-44",
+   "special": "WALAY MIDWEEK NGA TIGOM",
+   "chairman": null,
+   "opening_prayer": null,
+   "opening_song": null,
+   "rows": [
+    {
+     "A": "\"MALIPAYON KADTONG NAGASALIG KANG JEHOVA\"",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "DATE: OKTUBRE 18, 2026",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "LOKASYON: Limketkai Atrium, Limketkai Center, Lapasan, Cagayan de Oro City",
+     "B": null,
+     "H": null,
+     "I": null
+    }
+   ]
+  },
+  {
+   "idx": 4,
+   "week_label": "OKTUBRE 19-25",
+   "reading": "JEREMIAS 45-46",
+   "special": null,
+   "chairman": "Jemuel Domutan",
+   "opening_prayer": "Ronald Satulombon",
+   "opening_song": "Awit 21",
+   "rows": [
+    {
+     "A": "BAHANDI GIKAN SA PULONG SA DIYOS",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "1",
+     "B": "Ang Paglaom Makatabang Nato nga Mahimong Kontento (10 min.)",
+     "H": null,
+     "I": "Frankdio Arche"
+    },
+    {
+     "A": "2",
+     "B": "Espirituwal nga Bahandi (10 min.)",
+     "H": null,
+     "I": "Mark Domutan"
+    },
+    {
+     "A": "3",
+     "B": "Pagbasa sa Bibliya (4 min.)",
+     "H": "Estudyante:",
+     "I": "Tony James Namoc"
+    },
+    {
+     "A": "MAGMAEPEKTIBO SA MINISTERYO",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "4",
+     "B": "Dihang Magsugod ug Panag-estorya (3 min.)",
+     "H": "Estudyante:",
+     "I": "Ma. Juliana Añora"
+    },
+    {
+     "A": null,
+     "B": "IMPORMAL NGA PAGSANGYAW",
+     "H": "Assistant:",
+     "I": "Cheirwayne Arquio"
+    },
+    {
+     "A": "5",
+     "B": "Dihang Magsugod ug Panag-estorya (2 min.)",
+     "H": "Estudyante:",
+     "I": "Cesaria Omac"
+    },
+    {
+     "A": null,
+     "B": "PAGPAMALAYBALAY",
+     "H": "Assistant:",
+     "I": "Hariet Joy Añora"
+    },
+    {
+     "A": "6",
+     "B": "Dihang Magsugod ug Panag-estorya (2 min.)",
+     "H": "Estudyante:",
+     "I": "Babie Rima Daung"
+    },
+    {
+     "A": null,
+     "B": "PAGPAMALAYBALAY",
+     "H": "Assistant:",
+     "I": "Damaris Alcampado"
+    },
+    {
+     "A": "7",
+     "B": "Pakigpulong (4 min.)",
+     "H": "Estudyante:",
+     "I": "James Agbon"
+    },
+    {
+     "A": "KRISTOHANONG PAGKINABUHI",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": null,
+     "B": "Awit 117",
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "8",
+     "B": "\"Ipaambit sa Uban kon Unsay Imong Nabatonan\" (15 min.)",
+     "H": null,
+     "I": "Jemve Sanopao"
+    },
+    {
+     "A": "9",
+     "B": "Pagtuon sa Kongregasyon sa Bibliya (30 min.)",
+     "H": "Tigdumala:",
+     "I": "Leonardo Arche"
+    },
+    {
+     "A": null,
+     "B": null,
+     "H": "Tagabasa:",
+     "I": "Edwin Arquio"
+    },
+    {
+     "A": null,
+     "B": "Konklusyon (3 min.)",
+     "H": null,
+     "I": null
+    },
+    {
+     "A": null,
+     "B": "Awit 87",
+     "H": "Pag-ampo:",
+     "I": "Vigie Agbon"
+    }
+   ]
+  },
+  {
+   "idx": 5,
+   "week_label": "OKTUBRE 26-NOBYEMBRE 1",
+   "reading": "JEREMIAS 47-48",
+   "special": null,
+   "chairman": "Leonardo Arche",
+   "opening_prayer": "Jemve Sanopao",
+   "opening_song": "Awit 125",
+   "rows": [
+    {
+     "A": "BAHANDI GIKAN SA PULONG SA DIYOS",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "1",
+     "B": "Si Jehova Maoy Matarong ug Maluluy-ong Maghuhukom (10 min.)",
+     "H": null,
+     "I": "Mark Domutan"
+    },
+    {
+     "A": "2",
+     "B": "Espirituwal nga Bahandi (10 min.)",
+     "H": null,
+     "I": "Selime Reponte"
+    },
+    {
+     "A": "3",
+     "B": "Pagbasa sa Bibliya (4 min.)",
+     "H": "Estudyante:",
+     "I": "Matt Loius Domutan"
+    },
+    {
+     "A": "MAGMAEPEKTIBO SA MINISTERYO",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "4",
+     "B": "Dihang Magsugod ug Panag-estorya (3 min.)",
+     "H": "Estudyante:",
+     "I": "Jemve Sanopao"
+    },
+    {
+     "A": null,
+     "B": "PAGPAMALAYBALAY",
+     "H": "Assistant:",
+     "I": "Jessa Sanopao"
+    },
+    {
+     "A": "5",
+     "B": "Dihang Makig-estorya Pag-usab (4 min.)",
+     "H": "Estudyante:",
+     "I": "Leah Arche"
+    },
+    {
+     "A": null,
+     "B": "IMPORMAL NGA PAGSANGYAW",
+     "H": "Assistant:",
+     "I": "Martha Daung"
+    },
+    {
+     "A": "6",
+     "B": "Dihang Maghimog Tinun-an (5 min.)",
+     "H": "Estudyante:",
+     "I": "Kristine Domutan"
+    },
+    {
+     "A": null,
+     "B": null,
+     "H": "Assistant:",
+     "I": "Nerissa Magdura"
+    },
+    {
+     "A": "KRISTOHANONG PAGKINABUHI",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": null,
+     "B": "Awit 158",
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "7",
+     "B": "Lokal nga mga Pangunahanglan (15 min.)",
+     "H": null,
+     "I": "Vigie Agbon"
+    },
+    {
+     "A": "8",
+     "B": "Pagtuon sa Kongregasyon sa Bibliya (30 min.)",
+     "H": "Tigdumala:",
+     "I": "Jemuel Domutan"
+    },
+    {
+     "A": null,
+     "B": null,
+     "H": "Tagabasa:",
+     "I": "Frankdio Arche"
+    },
+    {
+     "A": null,
+     "B": "Konklusyon (3 min.)",
+     "H": null,
+     "I": null
+    },
+    {
+     "A": null,
+     "B": "Awit 54",
+     "H": "Pag-ampo:",
+     "I": "Diosdado Domutan"
+    }
+   ]
+  },
+  {
+   "idx": 6,
+   "week_label": "SEPTIYEMBRE 7-13",
+   "reading": "JEREMIAS 32-33",
+   "special": null,
+   "chairman": "Jemve Sanopao",
+   "opening_prayer": "Jemve Sanopao",
+   "opening_song": "Awit 1",
+   "rows": [
+    {
+     "A": "BAHANDI GIKAN SA PULONG SA DIYOS",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "1",
+     "B": "Ang Pagpamalandong sa mga Hiyas ni Jehova Makapaligon sa Pagtuo (10 min.)",
+     "H": null,
+     "I": "Ronald Satulombon"
+    },
+    {
+     "A": "2",
+     "B": "Espirituwal nga Bahandi (10 min.)",
+     "H": null,
+     "I": "Frankdio Arche"
+    },
+    {
+     "A": "3",
+     "B": "Pagbasa sa Bibliya (4 min.)",
+     "H": "Estudyante:",
+     "I": "James Michael Agbon"
+    },
+    {
+     "A": "MAGMAEPEKTIBO SA MINISTERYO",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "4",
+     "B": "Dihang Magsugod ug Panag-estorya (3 min.)",
+     "H": "Estudyante:",
+     "I": "Kristine Domutan"
+    },
+    {
+     "A": null,
+     "B": "PAGPAMALAYBALAY",
+     "H": "Assistant:",
+     "I": "Leah Arche"
+    },
+    {
+     "A": "5",
+     "B": "Dihang Magsugod ug Panag-estorya (4 min.)",
+     "H": "Estudyante:",
+     "I": "Analee Arche"
+    },
+    {
+     "A": null,
+     "B": "IMPORMAL NGA PAGSANGYAW",
+     "H": "Assistant:",
+     "I": "Cinderella Arche"
+    },
+    {
+     "A": "6",
+     "B": "Dihang Makig-estorya Pag-usab (5 min.)",
+     "H": "Estudyante:",
+     "I": "Nerissa Magdura"
+    },
+    {
+     "A": null,
+     "B": "PAGPAMALAYBALAY",
+     "H": "Assistant:",
+     "I": "Kathleen Satulombon"
+    },
+    {
+     "A": "KRISTOHANONG PAGKINABUHI",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": null,
+     "B": "Awit 128",
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "7",
+     "B": "Pahimusli Pag-ayo ang mga Kahigayonan Panahon sa Kampanya (15 min.)",
+     "H": null,
+     "I": "Leonardo Arche"
+    },
+    {
+     "A": "8",
+     "B": "Pagtuon sa Kongregasyon sa Bibliya (30 min.)",
+     "H": "Tigdumala:",
+     "I": "Jemuel Domutan"
+    },
+    {
+     "A": null,
+     "B": null,
+     "H": "Tagabasa:",
+     "I": "Joaquin Domutan"
+    },
+    {
+     "A": null,
+     "B": "Konklusyon (3 min.)",
+     "H": null,
+     "I": null
+    },
+    {
+     "A": null,
+     "B": "Awit 143",
+     "H": "Pag-ampo:",
+     "I": "Vigie Agbon"
+    }
+   ]
+  },
+  {
+   "idx": 7,
+   "week_label": "SEPTIYEMBRE 14-20",
+   "reading": "JEREMIAS 34-35",
+   "special": null,
+   "chairman": "Leonardo Arche",
+   "opening_prayer": "Leonardo Arche",
+   "opening_song": "Awit 161",
+   "rows": [
+    {
+     "A": "BAHANDI GIKAN SA PULONG SA DIYOS",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "1",
+     "B": "Gantihan ni Jehova Kadtong Masinugtanon (10 min.)",
+     "H": null,
+     "I": "Frankdio Arche"
+    },
+    {
+     "A": "2",
+     "B": "Espirituwal nga Bahandi (10 min.)",
+     "H": null,
+     "I": "Ronald Satulombon"
+    },
+    {
+     "A": "3",
+     "B": "Pagbasa sa Bibliya (4 min.)",
+     "H": "Estudyante:",
+     "I": "Tony James Namoc"
+    },
+    {
+     "A": "MAGMAEPEKTIBO SA MINISTERYO",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "4",
+     "B": "Dihang Magsugod ug Panag-estorya (2 min.)",
+     "H": "Estudyante:",
+     "I": "Luminada Domutan"
+    },
+    {
+     "A": null,
+     "B": "PAGPAMALAYBALAY",
+     "H": "Assistant:",
+     "I": "Noeda Ligad"
+    },
+    {
+     "A": "5",
+     "B": "Dihang Makig-estorya Pag-usab (2 min.)",
+     "H": "Estudyante:",
+     "I": "Martha Daung"
+    },
+    {
+     "A": null,
+     "B": "PAGPAMALAYBALAY",
+     "H": "Assistant:",
+     "I": "Catherine Lofranco"
+    },
+    {
+     "A": "6",
+     "B": "Dihang Makig-estorya Pag-usab (3 min.)",
+     "H": "Estudyante:",
+     "I": "Jessa Sanopao"
+    },
+    {
+     "A": null,
+     "B": "IMPORMAL NGA PAGSANGYAW",
+     "H": "Assistant:",
+     "I": "Alonie Domutan"
+    },
+    {
+     "A": "7",
+     "B": "Dihang Maghimog Tinun-an (4 min.)",
+     "H": "Estudyante:",
+     "I": "Mirarie Agbon"
+    },
+    {
+     "A": null,
+     "B": null,
+     "H": "Assistant:",
+     "I": "Shanice Arche"
+    },
+    {
+     "A": "KRISTOHANONG PAGKINABUHI",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": null,
+     "B": "Awit 121",
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "8",
+     "B": "Ang Pagpugong sa Kaugalingon Makatabang Nato nga Magmasinugtanon (6 min.)",
+     "H": null,
+     "I": "Vigie Agbon"
+    },
+    {
+     "A": "9",
+     "B": "Mga Nalampos sa Organisasyon Para sa Septiyembre (9 min.)",
+     "H": null,
+     "I": "Jemuel Domutan"
+    },
+    {
+     "A": "10",
+     "B": "Pagtuon sa Kongregasyon sa Bibliya (30 min.)",
+     "H": "Tigdumala:",
+     "I": "Jemve Sanopao"
+    },
+    {
+     "A": null,
+     "B": null,
+     "H": "Tagabasa:",
+     "I": "Mark Domutan"
+    },
+    {
+     "A": null,
+     "B": "Konklusyon (3 min.)",
+     "H": null,
+     "I": null
+    },
+    {
+     "A": null,
+     "B": "Awit 28",
+     "H": "Pag-ampo:",
+     "I": "Diosdado Domutan"
+    }
+   ]
+  },
+  {
+   "idx": 8,
+   "week_label": "SEPTIYEMBRE 21-27",
+   "reading": "JEREMIAS 36-37",
+   "special": null,
+   "chairman": "Vigie Agbon",
+   "opening_prayer": "Vigie Agbon",
+   "opening_song": "Awit 74",
+   "rows": [
+    {
+     "A": "BAHANDI GIKAN SA PULONG SA DIYOS",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "1",
+     "B": "Tabangan ni Jehova Kadtong Maunongon sa Iyang Gingharian (10 min.)",
+     "H": null,
+     "I": "Mark Domutan"
+    },
+    {
+     "A": "2",
+     "B": "Espirituwal nga Bahandi (10 min.)",
+     "H": null,
+     "I": "Selime Reponte"
+    },
+    {
+     "A": "3",
+     "B": "Pagbasa sa Bibliya (4 min.)",
+     "H": "Estudyante:",
+     "I": "Matt Loius Domutan"
+    },
+    {
+     "A": "MAGMAEPEKTIBO SA MINISTERYO",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "4",
+     "B": "Dihang Magsugod ug Panag-estorya (3 min.)",
+     "H": "Estudyante:",
+     "I": "Johannah Mendez"
+    },
+    {
+     "A": null,
+     "B": "PUBLIKONG PAGSANGYAW",
+     "H": "Assistant:",
+     "I": "Eunice Arche"
+    },
+    {
+     "A": "5",
+     "B": "Dihang Makig-estorya Pag-usab (4 min.)",
+     "H": "Estudyante:",
+     "I": "Kenel Joy Sanopao"
+    },
+    {
+     "A": null,
+     "B": "PAGPAMALAYBALAY",
+     "H": "Assistant:",
+     "I": "Melecita Mendez"
+    },
+    {
+     "A": "6",
+     "B": "Unsay Imong Isulti?",
+     "H": null,
+     "I": "Vigie Agbon"
+    },
+    {
+     "A": null,
+     "B": "Pakighisgot (6 min.)",
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "KRISTOHANONG PAGKINABUHI",
+     "B": null,
+     "H": null,
+     "I": null
+    },
+    {
+     "A": null,
+     "B": "Awit 142",
+     "H": null,
+     "I": null
+    },
+    {
+     "A": "7",
+     "B": "Magpabiling Neyutral Diha sa Atong Kasingkasing (15 min.)",
+     "H": null,
+     "I": "Jemuel Domutan"
+    },
+    {
+     "A": "8",
+     "B": "Pagtuon sa Kongregasyon sa Bibliya (30 min.)",
+     "H": "Tigdumala:",
+     "I": "Leonardo Arche"
+    },
+    {
+     "A": null,
+     "B": null,
+     "H": "Tagabasa:",
+     "I": "Ronald Satulombon"
+    },
+    {
+     "A": null,
+     "B": "Konklusyon (3 min.)",
+     "H": null,
+     "I": null
+    },
+    {
+     "A": null,
+     "B": "Awit 134",
+     "H": "Pag-ampo:",
+     "I": "Jemve Sanopao"
+    }
+   ]
+  }
+ ]
+}

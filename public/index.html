@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JW · Sta. Fe — Eskedyul sa Midweek nga Tigom</title>
+  <meta name="description" content="Assign bahin and prepare the Midweek Meeting schedule for the Proper Sta. Fe Congregation." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗓️</text></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ============================ SETUP (fallback) ========================= -->
+<section id="setup-screen" class="fullscreen hidden">
+  <div class="auth-card">
+    <div class="brand"><div class="brand-mark">🗓️</div>
+      <div><h1>Eskedyul sa Midweek nga Tigom</h1>
+        <p class="sub">One-time connection setup</p></div></div>
+    <label class="field"><span>Project URL</span>
+      <input id="cfg-url" type="url" placeholder="https://xxxx.supabase.co" /></label>
+    <label class="field"><span>Anon public key</span>
+      <input id="cfg-key" type="text" placeholder="eyJhbGciOi..." /></label>
+    <button id="cfg-save" class="btn primary block">Connect</button>
+    <p id="cfg-msg" class="msg"></p>
+  </div>
+</section>
+
+<!-- ============================== APP =================================== -->
+<div id="app" class="hidden">
+  <header class="topbar no-print">
+    <div class="brand small"><div class="brand-mark">🗓️</div>
+      <div><strong>PROPER STA. FE</strong><span class="sub">Eskedyul sa Midweek nga Tigom</span></div></div>
+    <nav class="tabs">
+      <button class="tab" data-view="eskedyul">Eskedyul</button>
+      <button class="tab" data-view="assign">Assign Bahin</button>
+      <button class="tab" data-view="members">Members</button>
+      <button class="tab" data-view="legend">Legend</button>
+    </nav>
+    <div class="topbar-right">
+      <button id="theme-btn" class="btn ghost" title="Toggle dark mode">🌙</button>
+    </div>
+  </header>
+
+  <main id="view" class="view"></main>
+
+  <div id="toast" class="toast hidden"></div>
+</div>
+
+<!-- print area (filled on demand) -->
+<div id="print-root" class="print-only"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
