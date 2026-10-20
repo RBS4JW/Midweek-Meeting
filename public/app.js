@@ -416,12 +416,9 @@ function editMeeting(id) {
       titleInp.addEventListener('input', () => p.title = titleInp.value);
       l1.append(titleInp);
     }
-    // setting (Magmaepektibo students only)
-    if (f.hasSetting) {
-      const setInp = el('input', { class: 'setting', value: p.setting ?? '', placeholder: 'SETTING (optional)' });
-      setInp.addEventListener('input', () => p.setting = setInp.value.toUpperCase());
-      l1.append(setInp);
-    } else { p.setting = null; }
+    // setting (Magmaepektibo students only) — dropdown with a "+ new" option
+    if (f.hasSetting) l1.append(settingSelect(p));
+    else p.setting = null;
     body.append(l1);
     // line 2: assignee / assistant
     if (f.hasAssignee) body.append(assignLine(p, 'assignee', 'assignee_role', load));
@@ -487,6 +484,29 @@ function editMeeting(id) {
 const SEC_COLOR = { BAHANDI: '#2b5ba7', MAGMAEPEKTIBO: '#c0601f', 'KRISTOHANONG PAGKINABUHI': '#c21f24' };
 const BARRED = new Set(['BAHANDI', 'MAGMAEPEKTIBO', 'KRISTOHANONG PAGKINABUHI']);
 const PART_TIMES = [1, 2, 3, 4, 5];
+
+// Magmaepektibo setting dropdown (fixed list + custom ones kept in localStorage)
+const BASE_SETTINGS = ['N/A', 'PAGPAMALAYBALAY', 'IMPORMAL NGA PAGSANGYAW', 'PASUNDAYAG', 'PUBLIKONG PAGSANGYAW'];
+function customSettings() { try { return JSON.parse(localStorage.getItem('mw_settings') || '[]'); } catch { return []; } }
+function addCustomSetting(v) { const c = customSettings(); if (!c.includes(v)) { c.push(v); try { localStorage.setItem('mw_settings', JSON.stringify(c)); } catch {} } }
+function settingSelect(p) {
+  const cur = p.setting || 'N/A';
+  const list = [...BASE_SETTINGS, ...customSettings()];
+  if (p.setting && !list.includes(p.setting)) list.push(p.setting);
+  const sel = el('select', { class: 'setting', style: 'flex:1;min-width:160px' });
+  for (const opt of list) sel.append(el('option', { value: opt, ...(opt === cur ? { selected: '' } : {}) }, opt));
+  sel.append(el('option', { value: '__new__' }, '➕ Bag-ong setting…'));
+  sel.addEventListener('change', () => {
+    if (sel.value === '__new__') {
+      const v = (prompt('Bag-ong setting:') || '').trim().toUpperCase();
+      if (v) { addCustomSetting(v); p.setting = v; }
+      sel.replaceWith(settingSelect(p));
+      return;
+    }
+    p.setting = sel.value === 'N/A' ? null : sel.value;
+  });
+  return sel;
+}
 
 // split "Topic (10 min.)" into {topic, min}; rebuild with withTime()
 function splitTime(title) {
