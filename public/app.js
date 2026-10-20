@@ -326,44 +326,80 @@ function editMeeting(id) {
 
   // ---- parts editor ----
   const ed = el('div', { class: 'ed-grid' });
+  function addMagma() {
+    const idxs = parts.map((p, i) => p.section === 'MAGMAEPEKTIBO' ? i : -1).filter(i => i >= 0);
+    const maxNo = Math.max(0, ...parts.filter(p => p.section === 'MAGMAEPEKTIBO' && /^\d+$/.test(p.item_no || '')).map(p => +p.item_no));
+    const at = idxs.length ? idxs[idxs.length - 1] + 1 : parts.length;
+    parts.splice(at, 0, { section: 'MAGMAEPEKTIBO', item_no: String(maxNo + 1), title: 'Bag-ong bahin (3 min.)', setting: '', assignee_role: 'Estudyante', assistant_role: 'Assistant', is_song: false });
+    redraw();
+  }
   function redraw() {
     ed.innerHTML = '';
     let lastSec = null;
     parts.forEach((p, idx) => {
       if (p.section !== lastSec) {
         lastSec = p.section;
-        if (SECTION_TITLE[p.section]) ed.append(el('div', { class: 'sectionbar' }, SECTION_TITLE[p.section]));
+        if (SECTION_TITLE[p.section]) {
+          const bar = el('div', { class: 'sectionbar' }, SECTION_TITLE[p.section]);
+          if (SEC_COLOR[p.section]) { bar.style.background = SEC_COLOR[p.section]; bar.style.color = '#fff'; }
+          ed.append(bar);
+        }
       }
       ed.append(partRow(p, idx));
+      if (p.section === 'MAGMAEPEKTIBO' && (idx === parts.length - 1 || parts[idx + 1].section !== 'MAGMAEPEKTIBO'))
+        ed.append(el('button', { class: 'btn sm', style: 'margin:2px 0 10px', onclick: addMagma }, '+ Dugang # (Magmaepektibo)'));
     });
     ed.append(el('button', { class: 'btn sm', style: 'margin-top:8px;justify-self:start', onclick: () => {
-      parts.push({ section: 'MAGMAEPEKTIBO', item_no: '', title: '', is_song: false }); redraw();
+      parts.push({ section: 'KRISTOHANONG PAGKINABUHI', item_no: '', title: '', is_song: false }); redraw();
     } }, '+ Add part'));
   }
   function partRow(p, idx) {
+    const f = partFlags(p);
     const body = el('div', { class: 'body' });
-    // line 1: number + title + setting
     const l1 = el('div', { class: 'ln' });
-    const noInp = el('input', { value: p.item_no ?? '', style: 'width:42px', placeholder: '#' });
-    noInp.addEventListener('input', () => p.item_no = noInp.value || null);
-    const titleInp = el('input', { class: 'title', value: p.title ?? '', placeholder: p.is_song ? 'Awit __' : 'Ulohan sa bahin (min.)' });
-    titleInp.addEventListener('input', () => p.title = titleInp.value);
-    l1.append(noInp, titleInp);
-    if (!p.is_song) {
+    // number (numbered items only)
+    if (!p.is_song && !f.intro && !f.konk) {
+      const noInp = el('input', { value: p.item_no ?? '', style: 'width:42px', placeholder: '#' });
+      noInp.addEventListener('input', () => p.item_no = noInp.value || null);
+      l1.append(noInp);
+    }
+    // title
+    if (f.fixedTitle) {
+      p.title = f.gems ? 'Espirituwal nga Bahandi (10 min.)' : 'Pagbasa sa Bibliya (4 min.)';
+      l1.append(el('div', { class: 'title', style: 'flex:1;padding:.4em .5em;font-weight:600' }, p.title));
+    } else if (f.constMin) {
+      const { topic } = splitTime(p.title);
+      const tInp = el('input', { class: 'title', value: topic, placeholder: 'Ulohan sa pakigpulong' });
+      tInp.addEventListener('input', () => p.title = withTime(tInp.value, f.constMin));
+      p.title = withTime(topic, f.constMin);
+      l1.append(tInp, el('span', { class: 'hint', style: 'white-space:nowrap' }, `(${f.constMin} min.)`));
+    } else if (f.hasTime) {
+      const { topic, min } = splitTime(p.title);
+      const tInp = el('input', { class: 'title', value: topic, placeholder: 'Ulohan sa bahin' });
+      const sel = el('select', {}, PART_TIMES.map(n => el('option', { value: n, ...(n === min ? { selected: '' } : {}) }, n + ' min.')));
+      const apply = () => p.title = withTime(tInp.value, +sel.value);
+      tInp.addEventListener('input', apply);
+      sel.addEventListener('change', apply);
+      if (min == null) { sel.value = '3'; apply(); }
+      l1.append(tInp, sel);
+    } else {
+      const titleInp = el('input', { class: 'title', value: p.title ?? '', placeholder: p.is_song ? 'Awit __' : 'Ulohan sa bahin' });
+      titleInp.addEventListener('input', () => p.title = titleInp.value);
+      l1.append(titleInp);
+    }
+    // setting (Magmaepektibo students only)
+    if (f.hasSetting) {
       const setInp = el('input', { class: 'setting', value: p.setting ?? '', placeholder: 'SETTING (optional)' });
       setInp.addEventListener('input', () => p.setting = setInp.value.toUpperCase());
       l1.append(setInp);
-    }
+    } else { p.setting = null; }
     body.append(l1);
-    // line 2: assignee + assistant (not for songs)
-    if (!p.is_song) {
-      body.append(assignLine(p, 'assignee', 'assignee_role', load));
-      if (p.assistant != null || p.assistant_role || /30 min|Panag-estorya|Makig-estorya|Maghimog|Pasundayag|Tinuohan|Pakigpulong \(.*min/.test(p.title || '') || p.assistant_role) {
-        body.append(assignLine(p, 'assistant', 'assistant_role', load));
-      } else {
-        body.append(el('button', { class: 'btn sm', onclick: (e) => { p.assistant = ''; e.target.replaceWith(assignLine(p, 'assistant', 'assistant_role', load)); } }, '+ assistant/reader'));
-      }
-    }
+    // line 2: assignee / assistant
+    if (f.hasAssignee) body.append(assignLine(p, 'assignee', 'assignee_role', load));
+    if (f.hasAssistant) {
+      if (p.assistant != null) body.append(assignLine(p, 'assistant', 'assistant_role', load));
+      else body.append(el('button', { class: 'btn sm', onclick: (e) => { p.assistant = ''; e.target.replaceWith(assignLine(p, 'assistant', 'assistant_role', load)); } }, '+ assistant/reader'));
+    } else { p.assistant = null; }
     // controls
     const ctl = el('div', { class: 'ln' }, [
       el('button', { class: 'btn sm', onclick: () => { if (idx > 0) { [parts[idx-1], parts[idx]] = [parts[idx], parts[idx-1]]; redraw(); } } }, '↑'),
@@ -421,6 +457,35 @@ function editMeeting(id) {
 /* ---- printable sheet (A4, matches the posted layout) ---- */
 const SEC_COLOR = { BAHANDI: '#2b5ba7', MAGMAEPEKTIBO: '#c0601f', 'KRISTOHANONG PAGKINABUHI': '#c21f24' };
 const BARRED = new Set(['BAHANDI', 'MAGMAEPEKTIBO', 'KRISTOHANONG PAGKINABUHI']);
+const PART_TIMES = [1, 2, 3, 4, 5];
+
+// split "Topic (10 min.)" into {topic, min}; rebuild with withTime()
+function splitTime(title) {
+  const m = /^(.*?)\s*\((\d+)\s*min\.?\)\s*$/i.exec(title || '');
+  return m ? { topic: m[1].trim(), min: +m[2] } : { topic: (title || '').trim(), min: null };
+}
+const withTime = (topic, min) => (topic || '').trim() + (min ? ` (${min} min.)` : '');
+
+// what inputs a program part needs, from its section + title
+function partFlags(p) {
+  const t = (p.title || '').toLowerCase();
+  const reading = /pagbasa sa bibliya/.test(t);
+  const gems = /espirituwal nga bahandi/.test(t);
+  const cbs = /pagtuon sa kongregasyon/.test(t);
+  const student = p.section === 'MAGMAEPEKTIBO' && !p.is_song;
+  const treasures = p.section === 'BAHANDI' && !gems && !reading && !p.is_song && !!p.item_no;
+  const intro = p.section === 'INTRO' || /introduksyon/.test(t);
+  const konk = p.section === 'KONKLUSYON' && !p.is_song;
+  return {
+    reading, gems, cbs, student, treasures, intro, konk,
+    hasAssignee: !p.is_song && !intro && !konk,
+    hasSetting: student,
+    hasAssistant: student || cbs,
+    hasTime: student,
+    constMin: treasures ? 10 : (gems ? 10 : (reading ? 4 : null)),
+    fixedTitle: gems || reading,
+  };
+}
 function meetingSheetHTML(mt, parts) {
   const h = [];
   const preRow = (text, bold, trCls) => `<tr class="${trCls || ''}"><td class="num"></td><td colspan="3" class="pre${bold ? ' song' : ''}">${esc(text)}</td></tr>`;
@@ -470,8 +535,10 @@ function meetingSheetHTML(mt, parts) {
     if (!p.item_no) { h.push(preRow(p.title || '', false, p.section === 'KONKLUSYON' ? 'itm' : '')); continue; }
 
     h.push(nmRow(p.item_no, p.title, '', p.assignee_role ? p.assignee_role + ':' : '', p.assignee, 'itm'));
-    if (p.setting || p.assistant || p.assistant_role) {
-      const arole = p.assistant_role ? p.assistant_role + ':' : (p.assistant ? 'Assistant:' : '');
+    // second line only when there's a setting or an actual assistant name —
+    // no blank "Assistant: ____" lines when nobody is assigned
+    if (p.setting || p.assistant) {
+      const arole = p.assistant ? (p.assistant_role || 'Assistant') + ':' : '';
       h.push(nmRow('', p.setting || '', 'setting', arole, p.assistant || ''));
     }
   }
