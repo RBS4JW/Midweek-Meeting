@@ -532,7 +532,7 @@ function recencyWarning(memberId, pool, d) {
   for (const a of state.assigns) {
     if (a.member_id === memberId && a.pool === pool && a.meeting_date !== d) {
       const diff = Math.abs(new Date(a.meeting_date + 'T00:00:00') - target) / 86400000;
-      if (diff < 28 && (!best || diff < best.diff)) best = { date: a.meeting_date, diff, code: a.code };
+      if (diff < 35 && (!best || diff < best.diff)) best = { date: a.meeting_date, diff, code: a.code };
     }
   }
   return best;
@@ -556,7 +556,7 @@ function assignWarnings(mb, d, code) {
   const out = [];
   if (gridPool !== 'female') return out;
   const r = recencyWarning(mb.id, 'female', d);
-  if (r) out.push(`⏱ Si ${mb.name} may bahin (${r.code}) niadtong ${fmtFull(r.date)} — ${Math.round(r.diff)} ka adlaw ra ang kalainan, ubos sa 4 ka semana.`);
+  if (r) out.push(`⏱ Si ${mb.name} may bahin (${r.code}) niadtong ${fmtFull(r.date)} — ${Math.round(r.diff)} ka adlaw ra ang kalainan, ubos sa 5 ka semana.`);
   const mm = /^(\d)([EA])$/.exec(code);
   if (mm) {
     const partner = mm[1] + (mm[2] === 'E' ? 'A' : 'E');
@@ -566,13 +566,16 @@ function assignWarnings(mb, d, code) {
       const g = priorGroupings(mb.id, pa.member_id).filter(x => x !== d);
       if (g.length) out.push(`👥 Si ${mb.name} ug ${P ? P.name : '?'} nag-grupo na niadtong ${g.map(fmtFull).join(', ')}.`);
     }
-    // Estudyante again, right after being Estudyante (no Assistant in between)
-    if (mm[2] === 'E') {
-      const prior = state.assigns
-        .filter(a => a.member_id === mb.id && a.pool === 'female' && a.meeting_date < d)
-        .sort((a, b) => b.meeting_date.localeCompare(a.meeting_date))[0];
-      if (prior && /^\dE$/.test(prior.code))
+    // same role twice in a row (Estudyante→Estudyante or Assistant→Assistant)
+    const prior = state.assigns
+      .filter(a => a.member_id === mb.id && a.pool === 'female' && a.meeting_date < d)
+      .sort((a, b) => b.meeting_date.localeCompare(a.meeting_date))[0];
+    const pm = prior && /^\d([EA])$/.exec(prior.code);
+    if (pm && pm[1] === mm[2]) {
+      if (mm[2] === 'E')
         out.push(`📘 Si ${mb.name} kay Estudyante (${prior.code}) na niadtong ${fmtFull(prior.meeting_date)} — kini Estudyante (${code}) na usab, wala pa Assistant (A).`);
+      else
+        out.push(`📗 Si ${mb.name} kay Assistant (${prior.code}) na niadtong ${fmtFull(prior.meeting_date)} — kini Assistant (${code}) na usab, wala pa Estudyante (E).`);
     }
   }
   return out;
