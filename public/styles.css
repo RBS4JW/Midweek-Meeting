@@ -74,6 +74,8 @@ body{font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background
 table.grid{border-collapse:separate;border-spacing:0;font-size:.82em;min-width:100%}
 table.grid th,table.grid td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:4px 6px;text-align:center;white-space:nowrap}
 table.grid thead th{position:sticky;top:0;background:var(--panel);z-index:2;font-weight:600}
+table.grid thead th.datehdr{cursor:pointer}
+table.grid thead th.datehdr:hover{color:var(--brand);text-decoration:underline}
 table.grid td.name,table.grid th.name{position:sticky;left:0;background:var(--panel);text-align:left;z-index:1;min-width:150px;font-weight:600}
 table.grid thead th.name{z-index:3}
 table.grid td.cell{cursor:pointer;min-width:42px;background:var(--cell)}

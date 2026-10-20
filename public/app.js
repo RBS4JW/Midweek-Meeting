@@ -98,6 +98,19 @@ function codePill(code) {
   return p;
 }
 
+// ---- Assign Bahin: empty columns added this session + Thursday helper ----
+const extraDates = { elder: new Set(), ms: new Set(), bible_reading: new Set(), female: new Set() };
+const isoDate = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+// next midweek meeting date (Thursday): 7 days after the latest column, snapped
+// to Thursday; or the upcoming Thursday when there are no columns yet.
+function nextMeetingDate(dts) {
+  let d;
+  if (dts.length) { d = new Date(dts[dts.length - 1] + 'T00:00:00'); d.setDate(d.getDate() + 7); }
+  else { d = new Date(); }
+  d.setDate(d.getDate() + ((4 - d.getDay() + 7) % 7)); // snap forward to Thursday (day 4)
+  return isoDate(d);
+}
+
 /* ----------------------------- data ----------------------------------- */
 async function loadAll() {
   const grab = (t, order) => sb.from(t).select('*').order(order);
@@ -392,7 +405,10 @@ function viewAssign() {
       el('button', { class: 'tab' + (p.key === gridPool ? ' active' : ''), onclick: () => { gridPool = p.key; viewAssign(); } }, p.label))),
   ]));
 
-  const dates = [...new Set(state.assigns.filter(a => a.pool === gridPool).map(a => a.meeting_date))].sort();
+  const dates = [...new Set([
+    ...state.assigns.filter(a => a.pool === gridPool).map(a => a.meeting_date),
+    ...extraDates[gridPool],
+  ])].sort();
   const members = membersInPool(gridPool);
   const cell = (mid, d) => state.assigns.find(a => a.member_id === mid && a.pool === gridPool && a.meeting_date === d);
 
@@ -410,8 +426,8 @@ function viewAssign() {
   let lastMonth = null;
   for (const d of dates) {
     const mo = fmtMonth(d);
-    const th = el('th', {}, fmtShort(d));
-    if (mo !== lastMonth) { th.classList.add('month-sep'); th.title = mo; lastMonth = mo; }
+    const th = el('th', { class: 'datehdr', title: 'I-klik aron usbon ang petsa', onclick: () => editColumnDate(d) }, fmtShort(d));
+    if (mo !== lastMonth) { th.classList.add('month-sep'); th.title = mo + ' · i-klik aron usbon'; lastMonth = mo; }
     thr.append(th);
   }
   tbl.append(el('thead', {}, thr));
@@ -467,16 +483,27 @@ function viewAssign() {
     await sb.from('assignments').delete().match({ member_id: mid, pool: gridPool, meeting_date: d });
     await loadAll(); viewAssign();
   }
-  async function addWeek() {
-    const v = prompt('Petsa sa tigom (YYYY-MM-DD):');
-    if (!v || !/^\d{4}-\d{2}-\d{2}$/.test(v)) return;
-    // a column exists only if a cell exists; seed a placeholder on the first member so it shows
-    if (!members.length) return toast('Add a member first');
-    await setCell(members[0].id, v, '');
-    await sb.from('assignments').delete().match({ member_id: members[0].id, pool: gridPool, meeting_date: v });
-    // instead just re-render with the date injected
-    state.assigns.push({ member_id: -1, pool: gridPool, meeting_date: v, code: '' });
+  // auto-add the next Thursday as a new (empty) column — no prompt
+  function addWeek() {
+    const next = nextMeetingDate(dates);
+    if (dates.includes(next)) { toast('Naa na: ' + fmtShort(next)); return; }
+    extraDates[gridPool].add(next);
+    toast('Gidugang: ' + fmtShort(next));
     viewAssign();
+  }
+  // click a column date to change it (moves any assignments in that column)
+  async function editColumnDate(oldDate) {
+    const v = prompt('Petsa sa tigom (YYYY-MM-DD):', oldDate);
+    if (v == null) return;
+    const nv = v.trim();
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(nv)) { toast('Format: YYYY-MM-DD'); return; }
+    if (nv === oldDate) return;
+    if (dates.includes(nv)) { toast('Naa nay petsa nga ' + fmtShort(nv)); return; }
+    const { error } = await sb.from('assignments').update({ meeting_date: nv })
+      .match({ pool: gridPool, meeting_date: oldDate });
+    if (error) return toast('Error: ' + error.message);
+    const s = extraDates[gridPool]; if (s.has(oldDate)) { s.delete(oldDate); s.add(nv); }
+    await loadAll(); viewAssign();
   }
   async function addToPool() {
     const name = prompt('Member name (existing or new):'); if (!name) return;
