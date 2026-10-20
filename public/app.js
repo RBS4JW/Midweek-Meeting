@@ -413,9 +413,13 @@ const BARRED = new Set(['BAHANDI', 'MAGMAEPEKTIBO', 'KRISTOHANONG PAGKINABUHI'])
 function meetingSheetHTML(mt, parts) {
   const h = [];
   const preRow = (text, bold, trCls) => `<tr class="${trCls || ''}"><td class="num"></td><td colspan="3" class="pre${bold ? ' song' : ''}">${esc(text)}</td></tr>`;
-  const nmRow = (num, title, titleCls, role, name, trCls) =>
-    `<tr class="${trCls || ''}"><td class="num">${esc(num || '')}</td><td class="ttl2 ${titleCls || ''}">${esc(title || '')}</td>` +
-    `<td class="role">${esc(role || '')}</td><td class="nm2">${esc(name || '')}</td></tr>`;
+  const nmRow = (num, title, titleCls, role, name, trCls) => {
+    // when there's no role label, let the title use the role column too (wider)
+    const mid = role
+      ? `<td class="ttl2 ${titleCls || ''}">${esc(title || '')}</td><td class="role">${esc(role)}</td>`
+      : `<td class="ttl2 ${titleCls || ''}" colspan="2">${esc(title || '')}</td>`;
+    return `<tr class="${trCls || ''}"><td class="num">${esc(num || '')}</td>${mid}<td class="nm2">${esc(name || '')}</td></tr>`;
+  };
 
   h.push('<div class="sheet">');
   h.push('<div class="hdr"><div class="cong">PROPER STA. FE CONGREGATION</div><div class="ttl">ESKEDYUL SA MIDWEEK NGA TIGOM</div></div>');
@@ -463,20 +467,40 @@ function meetingSheetHTML(mt, parts) {
   h.push('</table></div>');
   return h.join('');
 }
+const A4_PRINT_PX = Math.round((297 - 24) / 25.4 * 96);  // printable height, 12mm margins (~1032)
+const A4_WIDTH_PX = Math.round((210 - 24) / 25.4 * 96);   // printable width (~703)
+// measure the sheet at print proportions; return per-gap px that spreads the
+// content down to fill one page (0 when it already fills or would overflow)
+function computeExtra(html) {
+  const meas = el('div');
+  meas.style.cssText = `position:fixed;left:-99999px;top:0;width:${A4_WIDTH_PX}px;background:#fff`;
+  meas.innerHTML = html; document.body.appendChild(meas);
+  const natural = meas.querySelector('.sheet').scrollHeight;
+  const absorbers = meas.querySelectorAll('tr.itm').length + meas.querySelectorAll('.secbar').length;
+  let extra = 0;
+  if (absorbers > 0 && natural < A4_PRINT_PX * 0.97)
+    extra = Math.min(46, (A4_PRINT_PX * 0.97 - natural) / absorbers);
+  meas.remove();
+  return extra;
+}
 function printMeeting(mt, parts) {
-  $('#print-root').innerHTML = meetingSheetHTML(mt, [...parts].sort((a, b) => (a.pos ?? 0) - (b.pos ?? 0)));
+  const html = meetingSheetHTML(mt, [...parts].sort((a, b) => (a.pos ?? 0) - (b.pos ?? 0)));
+  const root = $('#print-root');
+  root.innerHTML = html;
+  root.querySelector('.sheet').style.setProperty('--extra', computeExtra(html).toFixed(1) + 'px');
   window.print();
 }
 function pdfMeeting(mt, parts) {
   if (!window.html2pdf) { toast('PDF library wala pa ma-load — sulayi usab'); return; }
-  const sorted = [...parts].sort((a, b) => (a.pos ?? 0) - (b.pos ?? 0));
+  const html = meetingSheetHTML(mt, [...parts].sort((a, b) => (a.pos ?? 0) - (b.pos ?? 0)));
   const holder = el('div');
-  holder.style.cssText = 'position:fixed;left:-10000px;top:0;width:190mm;background:#fff';
-  holder.innerHTML = meetingSheetHTML(mt, sorted);
+  holder.style.cssText = `position:fixed;left:-10000px;top:0;width:${A4_WIDTH_PX}px;background:#fff`;
+  holder.innerHTML = html;
+  holder.querySelector('.sheet').style.setProperty('--extra', computeExtra(html).toFixed(1) + 'px');
   document.body.appendChild(holder);
   const fn = `Eskedyul ${mt.week_label || 'tigom'}.pdf`.replace(/[\\/:*?"<>|]/g, '-');
   window.html2pdf().set({
-    margin: [10, 8, 12, 8], filename: fn, image: { type: 'jpeg', quality: 0.98 },
+    margin: [12, 8, 12, 8], filename: fn, image: { type: 'jpeg', quality: 0.98 },
     html2canvas: { scale: 2, useCORS: true }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
   }).from(holder.firstElementChild).save().finally(() => holder.remove());
   toast('Gi-download ang PDF…');

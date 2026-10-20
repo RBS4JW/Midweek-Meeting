@@ -129,8 +129,8 @@ table.list th{color:var(--muted);font-size:.82em;text-transform:uppercase;letter
   .sheet{max-width:none!important}
 }
 /* printable program sheet — matches the posted A4 layout */
-.sheet{background:#fff;color:#000;width:100%;max-width:190mm;margin:0 auto;
-       font-family:"Times New Roman",Georgia,serif;font-size:11.5pt;line-height:1.38;
+.sheet{background:#fff;color:#000;width:100%;max-width:190mm;margin:0 auto;--extra:0px;
+       font-family:"Times New Roman",Georgia,serif;font-size:12pt;line-height:1.4;
        -webkit-print-color-adjust:exact;print-color-adjust:exact}
 .sheet .hdr{border-top:2px solid #000;border-bottom:3px solid #000;text-align:center;padding:6px 0;margin-bottom:10px}
 .sheet .cong{font-weight:700;font-size:17pt;letter-spacing:.02em}
@@ -144,7 +144,7 @@ table.list th{color:var(--muted);font-size:.82em;text-transform:uppercase;letter
 .sheet .fld .nm{flex:1;border-bottom:1px solid #000;min-height:1.3em;padding:0 6px;font-weight:600}
 .sheet table.prog{width:100%;border-collapse:collapse}
 .sheet table.prog td{vertical-align:bottom;padding:3px 3px}
-.sheet table.prog tr.itm td{padding-top:9px}
+.sheet table.prog tr.itm td{padding-top:calc(8px + var(--extra,0px))}
 .sheet td.num{width:16px;text-align:left;vertical-align:top}
 .sheet td.ttl2{vertical-align:top}
 .sheet td.role{width:76px;text-align:right;white-space:nowrap;color:#111}
@@ -152,7 +152,7 @@ table.list th{color:var(--muted);font-size:.82em;text-transform:uppercase;letter
 .sheet .pre{padding-left:8mm!important}
 .sheet .setting{font-style:italic;font-size:11.5pt}
 .sheet .song{font-weight:700}
-.sheet .secbar{color:#fff;font-weight:700;font-size:13pt;letter-spacing:.02em;padding:5px 10px;margin:14px 0 6px;
+.sheet .secbar{color:#fff;font-weight:700;font-size:13pt;letter-spacing:.02em;padding:5px 10px;margin:calc(12px + var(--extra,0px)) 0 6px;
   -webkit-print-color-adjust:exact;print-color-adjust:exact}
 .sheet .special{text-align:center;font-weight:700;margin:30px 0;font-size:15pt;line-height:1.9}
 @media (max-width:640px){
