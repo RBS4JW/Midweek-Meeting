@@ -155,6 +155,7 @@ table.list th{color:var(--muted);font-size:.82em;text-transform:uppercase;letter
 .sheet td.role{width:76px;text-align:right;white-space:nowrap;color:#111}
 .sheet td.nm2{width:172px;border-bottom:1px solid #000;font-weight:600;min-height:1.3em}
 .sheet .pre{padding-left:8mm!important}
+.sheet td.ttl2.ind{padding-left:8mm}
 .sheet .setting{font-style:italic;font-size:11.5pt}
 .sheet .song{font-weight:700}
 .sheet .secbar{color:#fff;font-weight:700;font-size:13pt;letter-spacing:.02em;padding:5px 10px;margin:calc(12px + var(--extra,0px)) 0 6px;

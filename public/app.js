@@ -504,12 +504,7 @@ function meetingSheetHTML(mt, parts) {
   h.push(`<div class="wk">${esc(mt.week_label || '')}</div>`);
   if (mt.reading) h.push(`<div class="rd">${esc(mt.reading)}</div>`);
   h.push('</div>');
-  if (!mt.is_special) {
-    h.push('<div class="right">');
-    h.push(`<div class="fld"><span class="lbl">Tsirman:</span><span class="nm">${esc(mt.chairman || '')}</span></div>`);
-    h.push(`<div class="fld"><span class="lbl">Pag-ampo:</span><span class="nm">${esc(mt.opening_prayer || '')}</span></div>`);
-    h.push('</div>');
-  }
+  // Tsirman / opening Pag-ampo now sit on the Awit / Introduksyon rows below
   h.push('</div>');
 
   if (mt.is_special) {
@@ -518,8 +513,11 @@ function meetingSheetHTML(mt, parts) {
   }
 
   h.push('<table class="prog">');
-  if (mt.opening_song) h.push(preRow(mt.opening_song, true));
+  // opening song row carries the Tsirman on the right
+  if (mt.opening_song || mt.chairman)
+    h.push(nmRow('', mt.opening_song || '', 'song ind', mt.chairman ? 'Tsirman:' : '', mt.chairman || ''));
   const barred = new Set();
+  let introDone = false;
   for (const p of parts) {
     if (BARRED.has(p.section) && !barred.has(p.section)) {
       barred.add(p.section);
@@ -528,11 +526,20 @@ function meetingSheetHTML(mt, parts) {
 
     if (p.is_song) {
       if (p.section === 'KONKLUSYON' && mt.closing_prayer)
-        h.push(nmRow('', p.title || 'Awit', 'song', 'Pag-ampo:', mt.closing_prayer));
+        h.push(nmRow('', p.title || 'Awit', 'song ind', 'Pag-ampo:', mt.closing_prayer));
       else h.push(preRow(p.title || 'Awit', true));
       continue;
     }
-    if (!p.item_no) { h.push(preRow(p.title || '', false, p.section === 'KONKLUSYON' ? 'itm' : '')); continue; }
+    if (!p.item_no) {
+      const isIntro = p.section === 'INTRO' || /introduksyon/i.test(p.title || '');
+      if (isIntro && !introDone) {   // Introduksyon row carries the opening Pag-ampo
+        introDone = true;
+        h.push(nmRow('', p.title || '', 'ind', mt.opening_prayer ? 'Pag-ampo:' : '', mt.opening_prayer || ''));
+      } else {
+        h.push(preRow(p.title || '', false, p.section === 'KONKLUSYON' ? 'itm' : ''));
+      }
+      continue;
+    }
 
     h.push(nmRow(p.item_no, p.title, '', p.assignee_role ? p.assignee_role + ':' : '', p.assignee, 'itm'));
     // second line only when there's a setting or an actual assistant name —
