@@ -162,6 +162,19 @@ function autofillFromGrid(mt, parts) {
   if (!date) return 0;
   const map = codeNameMap(date);
   const pick = codes => { for (const c of codes) if (map[c]) return map[c]; return null; };
+  // ensure a Magmaepektibo student part exists for each grid number (#4..#7)
+  const gridNums = new Set();
+  for (const a of state.assigns) if (a.meeting_date === date && a.pool === 'female') { const g = /^(\d)[EA]$/.exec(a.code); if (g) gridNums.add(+g[1]); }
+  const needed = gridNums.size ? Math.max(...gridNums) - 3 : 0;   // #4..#max → count
+  const defaults = { 4: 3, 5: 4, 6: 5, 7: 4 };
+  let count = () => parts.filter(p => p.section === 'MAGMAEPEKTIBO' && !p.is_song).length;
+  while (count() < needed) {
+    const idxs = parts.map((p, i) => p.section === 'MAGMAEPEKTIBO' && !p.is_song ? i : -1).filter(i => i >= 0);
+    const at = idxs.length ? idxs[idxs.length - 1] + 1 : parts.length;
+    const num = count() + 4;   // the grid number this part maps to
+    parts.splice(at, 0, { section: 'MAGMAEPEKTIBO', item_no: '', title: `Bahin (${defaults[num] || 3} min.)`, setting: '', assignee_role: 'Estudyante', assistant_role: 'Assistant', is_song: false });
+  }
+  renumberParts(parts);
   let n = 0;
   const set = (obj, key, val) => { if (val) { obj[key] = val; n++; } };
   set(mt, 'chairman', map['CH']);
@@ -237,6 +250,7 @@ function viewEskedyul() {
       ]),
     ]);
     card.style.borderLeft = `5px solid ${col}`;
+    if (mt.printed) { card.style.position = 'relative'; card.append(el('span', { class: 'stamp' }, 'PRINTED')); }
     cards.append(card);
   }
   root.append(cards);
@@ -283,6 +297,7 @@ function editMeeting(id) {
   const dl = el('datalist', { id: 'memberlist' }, names.map(n => el('option', { value: n })));
   root.append(dl);
 
+  const printedBtn = el('button', { onclick: () => togglePrinted() });
   root.append(el('div', { class: 'page-head' }, [
     el('button', { class: 'btn ghost', onclick: () => viewEskedyul() }, '← Back'),
     el('h2', {}, mt.week_label || 'Week'),
@@ -290,9 +305,18 @@ function editMeeting(id) {
     el('button', { class: 'btn', title: 'Kuhaa ang pangalan gikan sa Assign Bahin', onclick: syncNames }, '↻ Pangalan'),
     el('button', { class: 'btn', onclick: () => printMeeting(mt, parts) }, '🖨 Print'),
     el('button', { class: 'btn', onclick: () => pdfMeeting(mt, parts) }, '⬇ PDF'),
+    printedBtn,
     el('button', { class: 'btn primary', onclick: save }, 'Save'),
     el('button', { class: 'btn danger', onclick: del }, 'Delete'),
   ]));
+  function paintPrinted() { printedBtn.className = 'btn' + (mt.printed ? ' primary' : ''); printedBtn.textContent = mt.printed ? '✓ Printed' : 'Markahi Printed'; }
+  async function togglePrinted() {
+    mt.printed = !mt.printed; paintPrinted();
+    const { error } = await sb.from('meetings').update({ printed: mt.printed }).eq('id', id);
+    if (error) { mt.printed = !mt.printed; paintPrinted(); return toast('Error: ' + error.message); }
+    toast(mt.printed ? 'Markado nga Printed ✓' : 'Gikuha ang Printed');
+  }
+  paintPrinted();
   // auto-fill names from the grid when the program has none yet
   if (!mt.is_special && !mt.chairman && !mt.opening_prayer && !parts.some(p => p.assignee || p.assistant))
     autofillFromGrid(mt, parts);
@@ -327,13 +351,20 @@ function editMeeting(id) {
   // ---- parts editor ----
   const ed = el('div', { class: 'ed-grid' });
   function addMagma() {
-    const idxs = parts.map((p, i) => p.section === 'MAGMAEPEKTIBO' ? i : -1).filter(i => i >= 0);
-    const maxNo = Math.max(0, ...parts.filter(p => p.section === 'MAGMAEPEKTIBO' && /^\d+$/.test(p.item_no || '')).map(p => +p.item_no));
+    const idxs = parts.map((p, i) => p.section === 'MAGMAEPEKTIBO' && !p.is_song ? i : -1).filter(i => i >= 0);
     const at = idxs.length ? idxs[idxs.length - 1] + 1 : parts.length;
-    parts.splice(at, 0, { section: 'MAGMAEPEKTIBO', item_no: String(maxNo + 1), title: 'Bag-ong bahin (3 min.)', setting: '', assignee_role: 'Estudyante', assistant_role: 'Assistant', is_song: false });
+    parts.splice(at, 0, { section: 'MAGMAEPEKTIBO', item_no: '', title: 'Bag-ong bahin (3 min.)', setting: '', assignee_role: 'Estudyante', assistant_role: 'Assistant', is_song: false });
+    redraw();
+  }
+  function addKP() {   // insert a KP part before the Congregation Bible Study (or at section end)
+    const cbsIdx = parts.findIndex(p => p.section === 'KRISTOHANONG PAGKINABUHI' && /pagtuon sa kongregasyon/i.test(p.title || ''));
+    const kpIdxs = parts.map((p, i) => p.section === 'KRISTOHANONG PAGKINABUHI' ? i : -1).filter(i => i >= 0);
+    const at = cbsIdx >= 0 ? cbsIdx : (kpIdxs.length ? kpIdxs[kpIdxs.length - 1] + 1 : parts.length);
+    parts.splice(at, 0, { section: 'KRISTOHANONG PAGKINABUHI', item_no: '', title: 'Bag-ong bahin (15 min.)', is_song: false });
     redraw();
   }
   function redraw() {
+    renumberParts(parts);
     ed.innerHTML = '';
     let lastSec = null;
     parts.forEach((p, idx) => {
@@ -346,8 +377,11 @@ function editMeeting(id) {
         }
       }
       ed.append(partRow(p, idx));
-      if (p.section === 'MAGMAEPEKTIBO' && (idx === parts.length - 1 || parts[idx + 1].section !== 'MAGMAEPEKTIBO'))
+      const endOf = sec => p.section === sec && (idx === parts.length - 1 || parts[idx + 1].section !== sec);
+      if (endOf('MAGMAEPEKTIBO'))
         ed.append(el('button', { class: 'btn sm', style: 'margin:2px 0 10px', onclick: addMagma }, '+ Dugang # (Magmaepektibo)'));
+      if (endOf('KRISTOHANONG PAGKINABUHI'))
+        ed.append(el('button', { class: 'btn sm', style: 'margin:2px 0 10px', onclick: addKP }, '+ Dugang # (Kristohanong Pagkinabuhi)'));
     });
     ed.append(el('button', { class: 'btn sm', style: 'margin-top:8px;justify-self:start', onclick: () => {
       parts.push({ section: 'KRISTOHANONG PAGKINABUHI', item_no: '', title: '', is_song: false }); redraw();
@@ -357,12 +391,7 @@ function editMeeting(id) {
     const f = partFlags(p);
     const body = el('div', { class: 'body' });
     const l1 = el('div', { class: 'ln' });
-    // number (numbered items only)
-    if (!p.is_song && !f.intro && !f.konk) {
-      const noInp = el('input', { value: p.item_no ?? '', style: 'width:42px', placeholder: '#' });
-      noInp.addEventListener('input', () => p.item_no = noInp.value || null);
-      l1.append(noInp);
-    }
+    // (number is auto-assigned and shown in the left badge)
     // title
     if (f.fixedTitle) {
       p.title = f.gems ? 'Espirituwal nga Bahandi (10 min.)' : 'Pagbasa sa Bibliya (4 min.)';
@@ -429,7 +458,7 @@ function editMeeting(id) {
       week_label: mt.week_label, reading: mt.reading, meeting_date: mt.meeting_date || null,
       is_special: !!mt.is_special, special_text: mt.special_text || null,
       chairman: mt.chairman, opening_prayer: mt.opening_prayer, closing_prayer: mt.closing_prayer,
-      opening_song: mt.opening_song,
+      opening_song: mt.opening_song, printed: !!mt.printed,
     }).eq('id', id);
     if (e1) { toast('Error: ' + e1.message); return false; }
     await sb.from('meeting_parts').delete().eq('meeting_id', id);
@@ -465,6 +494,17 @@ function splitTime(title) {
   return m ? { topic: m[1].trim(), min: +m[2] } : { topic: (title || '').trim(), min: null };
 }
 const withTime = (topic, min) => (topic || '').trim() + (min ? ` (${min} min.)` : '');
+
+// renumber the numbered parts (skip songs / Introduksyon / Konklusyon) 1..N in order
+function renumberParts(parts) {
+  let n = 0;
+  for (const p of parts) {
+    if (p.is_song) continue;
+    const t = (p.title || '').toLowerCase();
+    if (p.section === 'INTRO' || /introduksyon/.test(t) || p.section === 'KONKLUSYON' || /konklusyon/.test(t)) continue;
+    p.item_no = String(++n);
+  }
+}
 
 // what inputs a program part needs, from its section + title
 function partFlags(p) {

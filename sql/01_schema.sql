@@ -92,6 +92,7 @@ create table if not exists midweek.meetings (
   opening_prayer text,
   closing_prayer text,
   opening_song   text,
+  printed        boolean not null default false,
   sort           int not null default 0,
   created_at     timestamptz not null default now(),
   updated_at     timestamptz not null default now()
