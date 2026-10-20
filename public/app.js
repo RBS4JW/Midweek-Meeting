@@ -692,6 +692,8 @@ let gridPool = 'elder';
 const gridScroll = { left: 0, top: 0 };           // kept across re-renders
 let gridHideBefore = '';
 try { gridHideBefore = localStorage.getItem('mw_hidebefore') || ''; } catch {}
+let gridSelectedDate = null;                       // focused column (date), or null
+function selectColumn(d) { gridSelectedDate = (gridSelectedDate === d) ? null : d; viewAssign(); }
 const fmtFull = iso => { const d = new Date(iso + 'T00:00:00'); return `${MONTHS[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`; };
 
 // nearest same-pool assignment within <28 days of date d (excluding d itself)
@@ -785,7 +787,7 @@ function viewAssign() {
     el('h2', {}, 'Assign Bahin'),
     el('div', { class: 'spacer' }),
     el('div', { class: 'row' }, POOLS.map(p =>
-      el('button', { class: 'tab' + (p.key === gridPool ? ' active' : ''), onclick: () => { gridPool = p.key; viewAssign(); } }, p.label))),
+      el('button', { class: 'tab' + (p.key === gridPool ? ' active' : ''), onclick: () => { gridPool = p.key; gridSelectedDate = null; viewAssign(); } }, p.label))),
   ]));
 
   // columns come from: existing assignments + session-added weeks + every
@@ -807,9 +809,14 @@ function viewAssign() {
     try { gridHideBefore ? localStorage.setItem('mw_hidebefore', gridHideBefore) : localStorage.removeItem('mw_hidebefore'); } catch {}
     viewAssign();
   });
+  const selActive = !!gridSelectedDate && dates.includes(gridSelectedDate);
   const bar = el('div', { class: 'panel row' }, [
-    el('span', { class: 'hint' }, `${members.length} eligible · ${dates.length} weeks${hiddenCount ? ` · ${hiddenCount} tago` : ''} · click a cell to assign`),
+    el('span', { class: 'hint' }, selActive
+      ? `Gipili: ${fmtShort(gridSelectedDate)} · i-klik ra ang mga selda niini nga kolum`
+      : `${members.length} eligible · ${dates.length} weeks${hiddenCount ? ` · ${hiddenCount} tago` : ''} · i-klik ang ulohan sa petsa aron pilion ang kolum`),
     el('div', { class: 'spacer' }),
+    selActive ? el('button', { class: 'btn sm', onclick: () => editColumnDate(gridSelectedDate) }, 'Usba petsa') : null,
+    selActive ? el('button', { class: 'btn sm', onclick: () => { gridSelectedDate = null; viewAssign(); } }, '✕ Tangtanga pili') : null,
     el('span', { class: 'hint' }, 'Itago una sa:'), hideInp,
     gridHideBefore ? el('button', { class: 'btn sm', onclick: () => { gridHideBefore = ''; try { localStorage.removeItem('mw_hidebefore'); } catch {} viewAssign(); } }, 'Ipakita tanan') : null,
     el('button', { class: 'btn sm', onclick: addWeek }, '+ Add week'),
@@ -823,26 +830,40 @@ function viewAssign() {
   let lastMonth = null;
   for (const d of dates) {
     const mo = fmtMonth(d);
-    const th = el('th', { class: 'datehdr', title: 'I-klik aron usbon ang petsa', onclick: () => editColumnDate(d) }, fmtShort(d));
-    if (mo !== lastMonth) { th.classList.add('month-sep'); th.title = mo + ' · i-klik aron usbon'; lastMonth = mo; }
+    const th = el('th', { class: 'datehdr' + (d === gridSelectedDate ? ' sel-col' : ''), title: 'I-klik aron pilion kini nga kolum' }, fmtShort(d));
+    th.addEventListener('click', () => selectColumn(d));
+    if (mo !== lastMonth) { th.classList.add('month-sep'); lastMonth = mo; }
     thr.append(th);
   }
   tbl.append(el('thead', {}, thr));
   // body
   const tb = el('tbody');
   const refIso = isoDate(new Date());
+  const selIdx = selActive ? dates.indexOf(gridSelectedDate) : -1;
+  // task dates per member (any pool) for the "4 columns before selected" check
+  const taskDates = {};
+  for (const a of state.assigns) if (a.code) (taskDates[a.member_id] ||= new Set()).add(a.meeting_date);
+  const overdueBeforeSel = mid => {
+    if (selIdx < 0) return false;
+    const s = taskDates[mid] || new Set(); let last = -1;
+    for (let j = 0; j < selIdx; j++) if (s.has(dates[j])) last = j;
+    return (selIdx - last) >= 4;
+  };
   for (const mb of members) {
     const total = state.assigns.filter(a => a.member_id === mb.id && a.pool === gridPool).length;
-    const overdue = weeksSinceLastTask(mb.id, refIso) > 4;
-    const nameTd = el('td', { class: 'name' + (overdue ? ' overdue' : ''), title: overdue ? 'Walay bahin sulod sa 4+ ka semana' : (mb.note || '') }, [mb.name, mb.note ? el('span', { class: 'sub' }, mb.note) : null]);
+    const overdue = selActive ? overdueBeforeSel(mb.id) : (weeksSinceLastTask(mb.id, refIso) > 4);
+    const nameTd = el('td', { class: 'name' + (overdue ? ' overdue' : ''), title: overdue ? (selActive ? 'Walay bahin sulod sa 4+ ka kolum una sa gipili' : 'Walay bahin sulod sa 4+ ka semana') : (mb.note || '') }, [mb.name, mb.note ? el('span', { class: 'sub' }, mb.note) : null]);
     const tr = el('tr', {}, [nameTd, el('td', { class: 'cnt' }, String(total))]);
     for (const d of dates) {
+      const isSel = d === gridSelectedDate;
+      const offSel = selActive && !isSel;
       const c = cell(mb.id, d);
       const busy = (gridPool === 'female' && !c) ? busyElsewhere(mb.id, d) : null;
-      const td = el('td', { class: 'cell' + (busy ? ' blocked' : '') });
+      const td = el('td', { class: 'cell' + (busy ? ' blocked' : '') + (isSel ? ' sel-col' : '') + (offSel ? ' off-col' : '') });
       if (c && c.code) td.append(codePill(c.code));
       else if (busy) { td.append(el('span', { class: 'lock' }, '🔒')); td.title = `May bahin na sa ${POOL_LABEL[busy.pool]} (${busy.code})`; }
       td.addEventListener('click', () => {
+        if (offSel) return toast(`Gipili ang kolum nga ${fmtShort(gridSelectedDate)} — kana ra ang pwede assign-an`);
         if (busy) return toast(`Si ${mb.name} may bahin na sa ${POOL_LABEL[busy.pool]} (${busy.code}) niini nga semana`);
         pickCode(mb, d, c);
       });
