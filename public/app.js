@@ -106,6 +106,11 @@ function codePill(code) {
   return p;
 }
 
+// codes that are the SAME meeting slot across pools (one per meeting).
+// Same-string shared codes (OP, BR) are covered by the cross-pool check itself.
+const CODE_EQUIV = [['COP', 'PP1']];  // Treasures 10-min talk: elder=COP, MS=PP1
+const equivCodes = code => CODE_EQUIV.find(g => g.includes(code)) || [code];
+
 // one colour per month, for the Eskedyul cards
 const MONTH_COLORS = ['#2b5ba7', '#1f8a5b', '#b3541e', '#8957e5', '#0e7490', '#be123c',
   '#a16207', '#4d7c0f', '#9d174d', '#0f766e', '#7c3aed', '#b45309'];
@@ -821,11 +826,15 @@ function viewAssign() {
     bg.addEventListener('click', e => { if (e.target === bg) close(); });
     const counts = Object.fromEntries(codes.map(c =>
       [c.code, state.assigns.filter(a => a.member_id === mb.id && a.pool === gridPool && a.code === c.code).length]));
-    // a code already used by someone else in this column can't be re-picked
+    // a code already used by someone else in this column — in ANY pool, or an
+    // equivalent code (e.g. COP/PP1) — can't be re-picked
+    const onDate = state.assigns.filter(a => a.meeting_date === d && a.member_id !== mb.id && a.code);
     const taken = {};
-    for (const a of state.assigns)
-      if (a.pool === gridPool && a.meeting_date === d && a.member_id !== mb.id && a.code)
-        taken[a.code] = memberById(a.member_id)?.name || '';
+    for (const c of codes) {
+      const group = equivCodes(c.code);
+      const hit = onDate.find(a => group.includes(a.code));
+      if (hit) taken[c.code] = memberById(hit.member_id)?.name || '';
+    }
     const choose = async (code) => {
       if (taken[code]) return;
       const warns = assignWarnings(mb, d, code);
