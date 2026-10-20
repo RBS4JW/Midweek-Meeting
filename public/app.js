@@ -487,6 +487,8 @@ function pdfMeeting(mt, parts) {
    ========================================================================= */
 let gridPool = 'elder';
 const gridScroll = { left: 0, top: 0 };           // kept across re-renders
+let gridHideBefore = '';
+try { gridHideBefore = localStorage.getItem('mw_hidebefore') || ''; } catch {}
 const fmtFull = iso => { const d = new Date(iso + 'T00:00:00'); return `${MONTHS[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`; };
 
 // nearest same-pool assignment within <28 days of date d (excluding d itself)
@@ -560,16 +562,30 @@ function viewAssign() {
       el('button', { class: 'tab' + (p.key === gridPool ? ' active' : ''), onclick: () => { gridPool = p.key; viewAssign(); } }, p.label))),
   ]));
 
-  const dates = [...new Set([
+  // columns come from: existing assignments + session-added weeks + every
+  // (non-special) Eskedyul week's Thursday, so a New Week shows up here too.
+  const allDates = new Set([
     ...state.assigns.filter(a => a.pool === gridPool).map(a => a.meeting_date),
     ...extraDates[gridPool],
-  ])].sort();
+    ...state.meetings.filter(m => !m.is_special).map(m => meetingThursday(m)).filter(Boolean),
+  ]);
+  let dates = [...allDates].sort();
+  const hiddenCount = gridHideBefore ? dates.filter(d => d < gridHideBefore).length : 0;
+  if (gridHideBefore) dates = dates.filter(d => d >= gridHideBefore);
   const members = membersInPool(gridPool);
   const cell = (mid, d) => state.assigns.find(a => a.member_id === mid && a.pool === gridPool && a.meeting_date === d);
 
+  const hideInp = el('input', { type: 'date', value: gridHideBefore, title: 'Itago ang mga semana una niini nga petsa', style: 'padding:.3em .4em;font-size:.85em' });
+  hideInp.addEventListener('change', () => {
+    gridHideBefore = hideInp.value;
+    try { gridHideBefore ? localStorage.setItem('mw_hidebefore', gridHideBefore) : localStorage.removeItem('mw_hidebefore'); } catch {}
+    viewAssign();
+  });
   const bar = el('div', { class: 'panel row' }, [
-    el('span', { class: 'hint' }, `${members.length} eligible · ${dates.length} weeks · click a cell to assign`),
+    el('span', { class: 'hint' }, `${members.length} eligible · ${dates.length} weeks${hiddenCount ? ` · ${hiddenCount} tago` : ''} · click a cell to assign`),
     el('div', { class: 'spacer' }),
+    el('span', { class: 'hint' }, 'Itago una sa:'), hideInp,
+    gridHideBefore ? el('button', { class: 'btn sm', onclick: () => { gridHideBefore = ''; try { localStorage.removeItem('mw_hidebefore'); } catch {} viewAssign(); } }, 'Ipakita tanan') : null,
     el('button', { class: 'btn sm', onclick: addWeek }, '+ Add week'),
     el('button', { class: 'btn sm', onclick: addToPool }, '+ Add member'),
   ]);
