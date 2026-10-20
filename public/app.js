@@ -398,7 +398,13 @@ function editMeeting(id) {
     const l1 = el('div', { class: 'ln' });
     // (number is auto-assigned and shown in the left badge)
     // title
-    if (f.fixedTitle) {
+    if (p.is_song) {
+      // constant "Awit" label + manual number
+      const numv = (/(\d+)/.exec(p.title || '') || [])[1] || '';
+      const numInp = el('input', { class: 'title', style: 'max-width:110px', value: numv, placeholder: 'numero', inputmode: 'numeric' });
+      numInp.addEventListener('input', () => p.title = ('Awit ' + numInp.value.trim()).trim());
+      l1.append(el('span', { class: 'hint', style: 'font-weight:700;white-space:nowrap' }, 'Awit'), numInp);
+    } else if (f.fixedTitle) {
       p.title = f.gems ? 'Espirituwal nga Bahandi (10 min.)' : 'Pagbasa sa Bibliya (4 min.)';
       l1.append(el('div', { class: 'title', style: 'flex:1;padding:.4em .5em;font-weight:600' }, p.title));
     } else if (f.constMin) {
@@ -408,16 +414,32 @@ function editMeeting(id) {
       p.title = withTime(topic, f.constMin);
       l1.append(tInp, el('span', { class: 'hint', style: 'white-space:nowrap' }, `(${f.constMin} min.)`));
     } else if (f.hasTime) {
-      const { topic, min } = splitTime(p.title);
-      const tInp = el('input', { class: 'title', value: topic, placeholder: 'Ulohan sa bahin' });
-      const sel = el('select', {}, PART_TIMES.map(n => el('option', { value: n, ...(n === min ? { selected: '' } : {}) }, n + ' min.')));
-      const apply = () => p.title = withTime(tInp.value, +sel.value);
-      tInp.addEventListener('input', apply);
-      sel.addEventListener('change', apply);
-      if (min == null) { sel.value = '3'; apply(); }
-      l1.append(tInp, sel);
+      const parsed = splitTime(p.title);
+      let topicVal = parsed.topic;
+      const timeSel = el('select', {}, PART_TIMES.map(n => el('option', { value: n, ...(n === parsed.min ? { selected: '' } : {}) }, n + ' min.')));
+      const apply = () => p.title = withTime(topicVal, +timeSel.value);
+      // topic dropdown (6 standard + custom, alphabetical)
+      let topics = magmaTopics();
+      if (topicVal && !topics.includes(topicVal)) topics.push(topicVal);
+      topics = topics.sort((a, b) => a.localeCompare(b));
+      const topicSel = el('select', { class: 'title' });
+      topicSel.append(el('option', { value: '', ...(topicVal ? {} : { selected: '' }) }, '— pilia ang bahin —'));
+      for (const t of topics) topicSel.append(el('option', { value: t, ...(t === topicVal ? { selected: '' } : {}) }, t));
+      topicSel.append(el('option', { value: '__new__' }, '➕ Bag-ong bahin…'));
+      topicSel.addEventListener('change', () => {
+        if (topicSel.value === '__new__') {
+          const v = (prompt('Bag-ong bahin:') || '').trim();
+          if (v) { addMagmaTopic(v); topicVal = v; apply(); }
+          redraw(); return;
+        }
+        topicVal = topicSel.value; apply();
+      });
+      if (parsed.min == null) timeSel.value = '3';
+      apply();
+      timeSel.addEventListener('change', apply);
+      l1.append(topicSel, timeSel);
     } else {
-      const titleInp = el('input', { class: 'title', value: p.title ?? '', placeholder: p.is_song ? 'Awit __' : 'Ulohan sa bahin' });
+      const titleInp = el('input', { class: 'title', value: p.title ?? '', placeholder: 'Ulohan sa bahin' });
       titleInp.addEventListener('input', () => p.title = titleInp.value);
       l1.append(titleInp);
     }
@@ -494,10 +516,17 @@ const PART_TIMES = [1, 2, 3, 4, 5];
 const BASE_SETTINGS = ['N/A', 'PAGPAMALAYBALAY', 'IMPORMAL NGA PAGSANGYAW', 'PASUNDAYAG', 'PUBLIKONG PAGSANGYAW'];
 function customSettings() { try { return JSON.parse(localStorage.getItem('mw_settings') || '[]'); } catch { return []; } }
 function addCustomSetting(v) { const c = customSettings(); if (!c.includes(v)) { c.push(v); try { localStorage.setItem('mw_settings', JSON.stringify(c)); } catch {} } }
+// Magmaepektibo part-title dropdown (fixed list + custom, alphabetical)
+const MAGMA_TOPICS = ['Dihang Magsugod ug Panag-estorya', 'Dihang Makig-estorya Pag-usab', 'Dihang Maghimog Tinun-an', 'Unsay Imong Isulti?', 'Pagpatin-aw sa Imong Tinuohan', 'Pakigpulong'];
+function customMagmaTopics() { try { return JSON.parse(localStorage.getItem('mw_magma_topics') || '[]'); } catch { return []; } }
+function addMagmaTopic(v) { const c = customMagmaTopics(); if (!c.includes(v)) { c.push(v); try { localStorage.setItem('mw_magma_topics', JSON.stringify(c)); } catch {} } }
+function magmaTopics() { return [...new Set([...MAGMA_TOPICS, ...customMagmaTopics()])]; }
+
 function settingSelect(p) {
   const cur = p.setting || 'N/A';
-  const list = [...BASE_SETTINGS, ...customSettings()];
+  let list = [...new Set([...BASE_SETTINGS, ...customSettings()])];
   if (p.setting && !list.includes(p.setting)) list.push(p.setting);
+  list = ['N/A', ...list.filter(x => x !== 'N/A').sort((a, b) => a.localeCompare(b))];
   const sel = el('select', { class: 'setting', style: 'flex:1;min-width:160px' });
   for (const opt of list) sel.append(el('option', { value: opt, ...(opt === cur ? { selected: '' } : {}) }, opt));
   sel.append(el('option', { value: '__new__' }, '➕ Bag-ong setting…'));
@@ -738,6 +767,18 @@ function confirmModal(title, lines, yesLabel = 'Padayon', noLabel = 'Kanselahon'
   });
 }
 
+// a member already has an Elders/MS part that same week → can't take a Publishers part
+function busyElsewhere(memberId, d) {
+  return state.assigns.find(a => a.member_id === memberId && a.meeting_date === d && (a.pool === 'elder' || a.pool === 'ms'));
+}
+// weeks since the member's last task (ANY pool) up to the reference date; Infinity if none
+function weeksSinceLastTask(memberId, refIso) {
+  const past = state.assigns
+    .filter(a => a.member_id === memberId && a.code && a.meeting_date <= refIso)
+    .map(a => a.meeting_date).sort();
+  if (!past.length) return Infinity;
+  return (new Date(refIso + 'T00:00:00') - new Date(past[past.length - 1] + 'T00:00:00')) / (7 * 86400000);
+}
 function viewAssign() {
   const root = $('#view'); root.innerHTML = '';
   root.append(el('div', { class: 'page-head' }, [
@@ -789,17 +830,22 @@ function viewAssign() {
   tbl.append(el('thead', {}, thr));
   // body
   const tb = el('tbody');
+  const refIso = isoDate(new Date());
   for (const mb of members) {
     const total = state.assigns.filter(a => a.member_id === mb.id && a.pool === gridPool).length;
-    const tr = el('tr', {}, [
-      el('td', { class: 'name', title: mb.note || '' }, [mb.name, mb.note ? el('span', { class: 'sub' }, mb.note) : null]),
-      el('td', { class: 'cnt' }, String(total)),
-    ]);
+    const overdue = weeksSinceLastTask(mb.id, refIso) > 4;
+    const nameTd = el('td', { class: 'name' + (overdue ? ' overdue' : ''), title: overdue ? 'Walay bahin sulod sa 4+ ka semana' : (mb.note || '') }, [mb.name, mb.note ? el('span', { class: 'sub' }, mb.note) : null]);
+    const tr = el('tr', {}, [nameTd, el('td', { class: 'cnt' }, String(total))]);
     for (const d of dates) {
       const c = cell(mb.id, d);
-      const td = el('td', { class: 'cell' });
+      const busy = (gridPool === 'female' && !c) ? busyElsewhere(mb.id, d) : null;
+      const td = el('td', { class: 'cell' + (busy ? ' blocked' : '') });
       if (c && c.code) td.append(codePill(c.code));
-      td.addEventListener('click', () => pickCode(mb, d, c));
+      else if (busy) { td.append(el('span', { class: 'lock' }, '🔒')); td.title = `May bahin na sa ${POOL_LABEL[busy.pool]} (${busy.code})`; }
+      td.addEventListener('click', () => {
+        if (busy) return toast(`Si ${mb.name} may bahin na sa ${POOL_LABEL[busy.pool]} (${busy.code}) niini nga semana`);
+        pickCode(mb, d, c);
+      });
       tr.append(td);
     }
     tb.append(tr);

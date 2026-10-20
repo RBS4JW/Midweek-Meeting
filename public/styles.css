@@ -90,6 +90,11 @@ table.grid td.cnt,table.grid th.cnt{position:sticky;left:var(--namew);background
 table.grid thead th.name,table.grid thead th.cnt{z-index:3}
 table.grid td.cell{cursor:pointer;min-width:42px;background:var(--cell)}
 table.grid td.cell:hover{background:var(--cell-hl)}
+table.grid td.cell.blocked{cursor:not-allowed;background-image:repeating-linear-gradient(45deg,rgba(128,128,128,.22) 0 5px,transparent 5px 10px)}
+table.grid td.cell.blocked:hover{background-color:var(--cell)}
+.lock{opacity:.45;font-size:.9em}
+table.grid td.name.overdue{background:rgba(179,84,30,.16)}
+table.grid td.name.overdue::after{content:'•';color:var(--warn);margin-left:4px;font-weight:700}
 table.grid td.cnt{color:var(--muted);font-variant-numeric:tabular-nums}
 .code-pill{display:inline-block;background:var(--chip);color:var(--chip-ink);border-radius:6px;padding:1px 6px;font-weight:700;font-size:.9em}
 .month-sep{background:var(--bg)!important;color:var(--muted);font-weight:700}
