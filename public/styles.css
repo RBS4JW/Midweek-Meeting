@@ -71,6 +71,9 @@ body{font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background
 
 /* ---- grid (Assign Bahin) ---- */
 .gridwrap{overflow:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+.gridscroll-top{overflow-x:auto;overflow-y:hidden;height:14px;margin-bottom:4px}
+.gridscroll-inner{height:1px}
+.warnline{margin:.4em 0;padding:.5em .7em;background:var(--chip);border-left:3px solid var(--warn);border-radius:6px;font-size:.92em}
 table.grid{border-collapse:separate;border-spacing:0;font-size:.82em;min-width:100%}
 table.grid th,table.grid td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:4px 6px;text-align:center;white-space:nowrap}
 table.grid thead th{position:sticky;top:0;background:var(--panel);z-index:2;font-weight:600}
@@ -127,30 +130,31 @@ table.list th{color:var(--muted);font-size:.82em;text-transform:uppercase;letter
 }
 /* printable program sheet — matches the posted A4 layout */
 .sheet{background:#fff;color:#000;width:100%;max-width:190mm;margin:0 auto;
-       font-family:"Times New Roman",Georgia,serif;font-size:12pt;line-height:1.3;
+       font-family:"Times New Roman",Georgia,serif;font-size:11.5pt;line-height:1.38;
        -webkit-print-color-adjust:exact;print-color-adjust:exact}
-.sheet .hdr{border-top:2px solid #000;border-bottom:3px solid #000;text-align:center;padding:5px 0;margin-bottom:10px}
-.sheet .cong{font-weight:700;font-size:16pt;letter-spacing:.02em}
-.sheet .ttl{font-weight:700;font-size:15pt}
-.sheet .meta{display:flex;justify-content:space-between;gap:22px;align-items:flex-start;margin:4px 0 8px}
-.sheet .meta .wk{font-size:12.5pt}
-.sheet .meta .rd{font-size:14pt;font-weight:700;margin-top:2px}
+.sheet .hdr{border-top:2px solid #000;border-bottom:3px solid #000;text-align:center;padding:6px 0;margin-bottom:10px}
+.sheet .cong{font-weight:700;font-size:17pt;letter-spacing:.02em}
+.sheet .ttl{font-weight:700;font-size:15.5pt}
+.sheet .meta{display:flex;justify-content:space-between;gap:22px;align-items:flex-start;margin:6px 0 10px}
+.sheet .meta .wk{font-size:13pt}
+.sheet .meta .rd{font-size:15pt;font-weight:700;margin-top:3px}
 .sheet .meta .right{min-width:46%}
-.sheet .fld{display:flex;gap:8px;align-items:flex-end;margin-bottom:5px}
+.sheet .fld{display:flex;gap:8px;align-items:flex-end;margin-bottom:8px}
 .sheet .fld .lbl{white-space:nowrap}
-.sheet .fld .nm{flex:1;border-bottom:1px solid #000;min-height:1.2em;padding:0 6px;font-weight:600}
+.sheet .fld .nm{flex:1;border-bottom:1px solid #000;min-height:1.3em;padding:0 6px;font-weight:600}
 .sheet table.prog{width:100%;border-collapse:collapse}
-.sheet table.prog td{vertical-align:bottom;padding:4px 2px}
+.sheet table.prog td{vertical-align:bottom;padding:3px 3px}
+.sheet table.prog tr.itm td{padding-top:9px}
 .sheet td.num{width:16px;text-align:left;vertical-align:top}
 .sheet td.ttl2{vertical-align:top}
-.sheet td.role{width:92px;text-align:right;white-space:nowrap;color:#111}
-.sheet td.nm2{width:210px;border-bottom:1px solid #000;font-weight:600}
-.sheet .pre{padding-left:6mm!important}
-.sheet .setting{font-style:italic;font-size:11pt}
+.sheet td.role{width:76px;text-align:right;white-space:nowrap;color:#111}
+.sheet td.nm2{width:172px;border-bottom:1px solid #000;font-weight:600;min-height:1.3em}
+.sheet .pre{padding-left:8mm!important}
+.sheet .setting{font-style:italic;font-size:11.5pt}
 .sheet .song{font-weight:700}
-.sheet .secbar{color:#fff;font-weight:700;font-size:12.5pt;letter-spacing:.02em;padding:4px 10px;margin:8px 0 2px;
+.sheet .secbar{color:#fff;font-weight:700;font-size:13pt;letter-spacing:.02em;padding:5px 10px;margin:14px 0 6px;
   -webkit-print-color-adjust:exact;print-color-adjust:exact}
-.sheet .special{text-align:center;font-weight:700;margin:26px 0;font-size:14pt;line-height:1.8}
+.sheet .special{text-align:center;font-weight:700;margin:30px 0;font-size:15pt;line-height:1.9}
 @media (max-width:640px){
   .tabs{order:3;width:100%}
 }

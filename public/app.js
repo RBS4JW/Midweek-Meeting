@@ -412,9 +412,9 @@ const SEC_COLOR = { BAHANDI: '#2b5ba7', MAGMAEPEKTIBO: '#c0601f', 'KRISTOHANONG 
 const BARRED = new Set(['BAHANDI', 'MAGMAEPEKTIBO', 'KRISTOHANONG PAGKINABUHI']);
 function meetingSheetHTML(mt, parts) {
   const h = [];
-  const preRow = (text, bold) => `<tr><td class="num"></td><td colspan="3" class="pre${bold ? ' song' : ''}">${esc(text)}</td></tr>`;
-  const nmRow = (num, title, titleCls, role, name) =>
-    `<tr><td class="num">${esc(num || '')}</td><td class="ttl2 ${titleCls || ''}">${esc(title || '')}</td>` +
+  const preRow = (text, bold, trCls) => `<tr class="${trCls || ''}"><td class="num"></td><td colspan="3" class="pre${bold ? ' song' : ''}">${esc(text)}</td></tr>`;
+  const nmRow = (num, title, titleCls, role, name, trCls) =>
+    `<tr class="${trCls || ''}"><td class="num">${esc(num || '')}</td><td class="ttl2 ${titleCls || ''}">${esc(title || '')}</td>` +
     `<td class="role">${esc(role || '')}</td><td class="nm2">${esc(name || '')}</td></tr>`;
 
   h.push('<div class="sheet">');
@@ -452,11 +452,13 @@ function meetingSheetHTML(mt, parts) {
       else h.push(preRow(p.title || 'Awit', true));
       continue;
     }
-    if (!p.item_no) { h.push(preRow(p.title || '', false)); continue; }
+    if (!p.item_no) { h.push(preRow(p.title || '', false, p.section === 'KONKLUSYON' ? 'itm' : '')); continue; }
 
-    h.push(nmRow(p.item_no, p.title, '', p.assignee_role ? p.assignee_role + ':' : '', p.assignee));
-    if (p.setting || p.assistant)
-      h.push(nmRow('', p.setting || '', 'setting', p.assistant ? (p.assistant_role || 'Assistant') + ':' : '', p.assistant || ''));
+    h.push(nmRow(p.item_no, p.title, '', p.assignee_role ? p.assignee_role + ':' : '', p.assignee, 'itm'));
+    if (p.setting || p.assistant || p.assistant_role) {
+      const arole = p.assistant_role ? p.assistant_role + ':' : (p.assistant ? 'Assistant:' : '');
+      h.push(nmRow('', p.setting || '', 'setting', arole, p.assistant || ''));
+    }
   }
   h.push('</table></div>');
   return h.join('');
@@ -484,6 +486,71 @@ function pdfMeeting(mt, parts) {
    VIEW: ASSIGN BAHIN (scheduler grid)
    ========================================================================= */
 let gridPool = 'elder';
+const gridScroll = { left: 0, top: 0 };           // kept across re-renders
+const fmtFull = iso => { const d = new Date(iso + 'T00:00:00'); return `${MONTHS[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`; };
+
+// nearest same-pool assignment within <28 days of date d (excluding d itself)
+function recencyWarning(memberId, pool, d) {
+  const target = new Date(d + 'T00:00:00'); let best = null;
+  for (const a of state.assigns) {
+    if (a.member_id === memberId && a.pool === pool && a.meeting_date !== d) {
+      const diff = Math.abs(new Date(a.meeting_date + 'T00:00:00') - target) / 86400000;
+      if (diff < 28 && (!best || diff < best.diff)) best = { date: a.meeting_date, diff, code: a.code };
+    }
+  }
+  return best;
+}
+// prior dates where two members were an Estudyante/Assistant pair (same #, female pool)
+function priorGroupings(m1, m2) {
+  const byDate = {};
+  for (const a of state.assigns) {
+    if (a.pool !== 'female') continue;
+    const m = /^(\d)([EA])$/.exec(a.code); if (!m) continue;
+    ((byDate[a.meeting_date] ||= {})[m[1]] ||= {})[m[2]] = a.member_id;
+  }
+  const dates = [];
+  for (const [date, nums] of Object.entries(byDate))
+    for (const g of Object.values(nums))
+      if (g.E && g.A && ((g.E === m1 && g.A === m2) || (g.E === m2 && g.A === m1))) dates.push(date);
+  return [...new Set(dates)].sort();
+}
+// warnings for assigning `code` to `mb` on date `d` (Publishers pool only)
+function assignWarnings(mb, d, code) {
+  const out = [];
+  if (gridPool !== 'female') return out;
+  const r = recencyWarning(mb.id, 'female', d);
+  if (r) out.push(`⏱ Si ${mb.name} may bahin (${r.code}) niadtong ${fmtFull(r.date)} — ${Math.round(r.diff)} ka adlaw ra ang kalainan, ubos sa 4  ka semana.`);
+  const mm = /^(\d)([EA])$/.exec(code);
+  if (mm) {
+    const partner = mm[1] + (mm[2] === 'E' ? 'A' : 'E');
+    const pa = state.assigns.find(a => a.pool === 'female' && a.meeting_date === d && a.code === partner);
+    if (pa && pa.member_id !== mb.id) {
+      const P = memberById(pa.member_id);
+      const g = priorGroupings(mb.id, pa.member_id).filter(x => x !== d);
+      if (g.length) out.push(`👥 Si ${mb.name} ug ${P ? P.name : '?'} nag-grupo na niadtong ${g.map(fmtFull).join(', ')}.`);
+    }
+  }
+  return out;
+}
+// styled yes/no modal, resolves true/false
+function confirmModal(title, lines, yesLabel = 'Padayon', noLabel = 'Kanselahon') {
+  return new Promise(resolve => {
+    const bg = el('div', { class: 'modal-bg' });
+    const done = v => { bg.remove(); resolve(v); };
+    bg.addEventListener('click', e => { if (e.target === bg) done(false); });
+    bg.append(el('div', { class: 'modal' }, [
+      el('h3', {}, title),
+      ...lines.map(l => el('p', { class: 'warnline' }, l)),
+      el('div', { class: 'row', style: 'margin-top:14px' }, [
+        el('div', { class: 'spacer' }),
+        el('button', { class: 'btn', onclick: () => done(false) }, noLabel),
+        el('button', { class: 'btn primary', onclick: () => done(true) }, yesLabel),
+      ]),
+    ]));
+    document.body.append(bg);
+  });
+}
+
 function viewAssign() {
   const root = $('#view'); root.innerHTML = '';
   root.append(el('div', { class: 'page-head' }, [
@@ -537,7 +604,19 @@ function viewAssign() {
     tb.append(tr);
   }
   tbl.append(tb);
-  root.append(el('div', { class: 'gridwrap' }, tbl));
+  // top horizontal scrollbar (mirrors the grid) + keep scroll position on re-render
+  const topScroll = el('div', { class: 'gridscroll-top' }, el('div', { class: 'gridscroll-inner' }));
+  const gridwrap = el('div', { class: 'gridwrap' }, tbl);
+  root.append(topScroll, gridwrap);
+  gridwrap.addEventListener('scroll', () => {
+    topScroll.scrollLeft = gridwrap.scrollLeft;
+    gridScroll.left = gridwrap.scrollLeft; gridScroll.top = gridwrap.scrollTop;
+  });
+  topScroll.addEventListener('scroll', () => { gridwrap.scrollLeft = topScroll.scrollLeft; });
+  // reading scrollWidth forces layout, so this works without waiting for a frame
+  topScroll.firstChild.style.width = gridwrap.scrollWidth + 'px';
+  gridwrap.scrollLeft = gridScroll.left; gridwrap.scrollTop = gridScroll.top;
+  topScroll.scrollLeft = gridScroll.left;
 
   function pickCode(mb, d, existing) {
     const codes = codesForPool(gridPool);
@@ -546,8 +625,13 @@ function viewAssign() {
     bg.addEventListener('click', e => { if (e.target === bg) close(); });
     const counts = Object.fromEntries(codes.map(c =>
       [c.code, state.assigns.filter(a => a.member_id === mb.id && a.pool === gridPool && a.code === c.code).length]));
+    const choose = async (code) => {
+      const warns = assignWarnings(mb, d, code);
+      if (warns.length) { const ok = await confirmModal('Pahimangno', warns); if (!ok) return; }
+      await setCell(mb.id, d, code); close();
+    };
     const btns = el('div', { class: 'codebtns' }, codes.map(c =>
-      el('button', { onclick: async () => { await setCell(mb.id, d, c.code); close(); } },
+      el('button', { onclick: () => choose(c.code) },
         [codePill(c.code), ' ', el('span', { class: 'fairness' }, `(${counts[c.code]})`)])));
     const m = el('div', { class: 'modal' }, [
       el('h3', {}, `${mb.name} — ${fmtShort(d)}`),
