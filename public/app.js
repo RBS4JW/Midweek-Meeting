@@ -106,6 +106,11 @@ function codePill(code) {
   return p;
 }
 
+// one colour per month, for the Eskedyul cards
+const MONTH_COLORS = ['#2b5ba7', '#1f8a5b', '#b3541e', '#8957e5', '#0e7490', '#be123c',
+  '#a16207', '#4d7c0f', '#9d174d', '#0f766e', '#7c3aed', '#b45309'];
+const monthColor = idx => MONTH_COLORS[((idx % 12) + 12) % 12];
+
 // ---- Assign Bahin: empty columns added this session + Thursday helper ----
 const extraDates = { elder: new Set(), ms: new Set(), bible_reading: new Set(), female: new Set() };
 const isoDate = d => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
@@ -219,14 +224,20 @@ function viewEskedyul() {
   if (!meetings.length) { root.append(el('p', { class: 'muted' }, 'No weeks yet — click “New week”.')); return; }
   const cards = el('div', { class: 'cards' });
   for (const mt of meetings) {
-    cards.append(el('div', { class: 'card', onclick: () => editMeeting(mt.id) }, [
-      el('h3', {}, mt.week_label || '(untitled)'),
+    const st = parseLabelStart(mt.week_label, yr);
+    const col = st ? monthColor(st.getMonth()) : 'var(--muted)';
+    const h = el('h3', {}, mt.week_label || '(untitled)');
+    h.style.color = col;
+    const card = el('div', { class: 'card', onclick: () => editMeeting(mt.id) }, [
+      h,
       el('div', { class: 'rd' }, mt.reading || ''),
       el('div', { class: 'meta' }, [
         mt.is_special ? el('span', { class: 'chip warn' }, 'Walay tigom')
                       : el('span', { class: 'chip' }, 'Tsirman: ' + (mt.chairman || '—')),
       ]),
-    ]));
+    ]);
+    card.style.borderLeft = `5px solid ${col}`;
+    cards.append(card);
   }
   root.append(cards);
 }
@@ -545,7 +556,7 @@ function assignWarnings(mb, d, code) {
   const out = [];
   if (gridPool !== 'female') return out;
   const r = recencyWarning(mb.id, 'female', d);
-  if (r) out.push(`⏱ Si ${mb.name} may bahin (${r.code}) niadtong ${fmtFull(r.date)} — ${Math.round(r.diff)} ka adlaw ra ang kalainan, ubos sa 4  ka semana.`);
+  if (r) out.push(`⏱ Si ${mb.name} may bahin (${r.code}) niadtong ${fmtFull(r.date)} — ${Math.round(r.diff)} ka adlaw ra ang kalainan, ubos sa 4 ka semana.`);
   const mm = /^(\d)([EA])$/.exec(code);
   if (mm) {
     const partner = mm[1] + (mm[2] === 'E' ? 'A' : 'E');
@@ -554,6 +565,14 @@ function assignWarnings(mb, d, code) {
       const P = memberById(pa.member_id);
       const g = priorGroupings(mb.id, pa.member_id).filter(x => x !== d);
       if (g.length) out.push(`👥 Si ${mb.name} ug ${P ? P.name : '?'} nag-grupo na niadtong ${g.map(fmtFull).join(', ')}.`);
+    }
+    // Estudyante again, right after being Estudyante (no Assistant in between)
+    if (mm[2] === 'E') {
+      const prior = state.assigns
+        .filter(a => a.member_id === mb.id && a.pool === 'female' && a.meeting_date < d)
+        .sort((a, b) => b.meeting_date.localeCompare(a.meeting_date))[0];
+      if (prior && /^\dE$/.test(prior.code))
+        out.push(`📘 Si ${mb.name} kay Estudyante (${prior.code}) na niadtong ${fmtFull(prior.meeting_date)} — kini Estudyante (${code}) na usab, wala pa Assistant (A).`);
     }
   }
   return out;
