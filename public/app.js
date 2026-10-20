@@ -79,6 +79,25 @@ function nextWeekLabel() {
   return fmtWeekLabel(start, end);
 }
 
+// ---- per-code colour scheme (consistent everywhere a code is shown) ----
+const CODE_COLORS = {
+  CH: '#6e40c9', COP: '#8957e5', KP1: '#1f6feb', KP2: '#2f81f7', CBS: '#1a7f37', CLP: '#bf8700', OP: '#9a6700',
+  PP1: '#0969da', ENB: '#cf222e', PP2: '#bc4c00', CBSR: '#117964', BR: '#8250df',
+  '4E': '#1a7f37', '4A': '#2da44e', '5E': '#0969da', '5A': '#3a86e0',
+  '6E': '#bc4c00', '6A': '#e16f24', '7E': '#8250df', '7A': '#8b63e0',
+};
+function codeColor(code) {
+  let bg = CODE_COLORS[code];
+  if (!bg) { let h = 0; for (const ch of String(code)) h = (h * 31 + ch.charCodeAt(0)) >>> 0; bg = `hsl(${h % 360} 60% 42%)`; }
+  return { bg, fg: '#fff' };
+}
+function codePill(code) {
+  const { bg, fg } = codeColor(code);
+  const p = el('span', { class: 'code-pill' }, code);
+  p.style.background = bg; p.style.color = fg;
+  return p;
+}
+
 /* ----------------------------- data ----------------------------------- */
 async function loadAll() {
   const grab = (t, order) => sb.from(t).select('*').order(order);
@@ -301,40 +320,58 @@ function editMeeting(id) {
   }
 }
 
-/* ---- printable sheet ---- */
+/* ---- printable sheet (A4, matches the posted layout) ---- */
+const SEC_COLOR = { BAHANDI: '#2b5ba7', MAGMAEPEKTIBO: '#c0601f', 'KRISTOHANONG PAGKINABUHI': '#c21f24' };
+const BARRED = new Set(['BAHANDI', 'MAGMAEPEKTIBO', 'KRISTOHANONG PAGKINABUHI']);
 function meetingSheetHTML(mt, parts) {
   const h = [];
-  h.push(`<div class="sheet">`);
-  h.push(`<div class="cong">PROPER STA. FE CONGREGATION</div>`);
-  h.push(`<div class="title">ESKEDYUL SA MIDWEEK NGA TIGOM</div>`);
-  h.push(`<div class="wk">${esc(mt.week_label)}</div>`);
-  if (mt.reading) h.push(`<div class="rd">${esc(mt.reading)}</div>`);
-  if (mt.is_special) {
-    h.push(`<div class="special">${esc(mt.special_text || 'WALAY MIDWEEK NGA TIGOM').replace(/\n/g, '<br>')}</div>`);
-    h.push(`</div>`); return h.join('');
-  }
-  // header line: chairman + opening prayer
-  h.push(`<table><tr><td class="rl">Tsirman:</td><td class="nm">${esc(mt.chairman || '')}</td>
-          <td class="rl">Pag-ampo:</td><td class="nm">${esc(mt.opening_prayer || '')}</td></tr></table>`);
-  if (mt.opening_song) h.push(`<div class="song">${esc(mt.opening_song)}</div>`);
+  const preRow = (text, bold) => `<tr><td class="num"></td><td colspan="3" class="pre${bold ? ' song' : ''}">${esc(text)}</td></tr>`;
+  const nmRow = (num, title, titleCls, role, name) =>
+    `<tr><td class="num">${esc(num || '')}</td><td class="ttl2 ${titleCls || ''}">${esc(title || '')}</td>` +
+    `<td class="role">${esc(role || '')}</td><td class="nm2">${esc(name || '')}</td></tr>`;
 
-  let lastSec = null;
-  h.push('<table>');
-  for (const p of parts) {
-    if (p.section !== lastSec) {
-      lastSec = p.section;
-      if (SECTION_TITLE[p.section]) h.push(`<tr><td colspan="4"><div class="sec">${esc(SECTION_TITLE[p.section])}</div></td></tr>`);
-    }
-    if (p.is_song) { h.push(`<tr><td class="n"></td><td colspan="3"><span class="song">${esc(p.title || 'Awit')}</span></td></tr>`); continue; }
-    const name = p.assignee ? `<td class="rl">${esc(p.assignee_role ? p.assignee_role + ':' : '')}</td><td class="nm">${esc(p.assignee)}</td>`
-                            : `<td></td><td></td>`;
-    h.push(`<tr><td class="n">${esc(p.item_no || '')}</td><td>${esc(p.title || '')}</td>${name}</tr>`);
-    if (p.setting) h.push(`<tr><td></td><td class="setting">${esc(p.setting)}</td>${p.assistant ? `<td class="rl">${esc(p.assistant_role || 'Assistant')}:</td><td class="nm">${esc(p.assistant)}</td>` : '<td></td><td></td>'}</tr>`);
-    else if (p.assistant) h.push(`<tr><td></td><td></td><td class="rl">${esc(p.assistant_role || 'Assistant')}:</td><td class="nm">${esc(p.assistant)}</td></tr>`);
-  }
-  h.push('</table>');
-  if (mt.closing_prayer) h.push(`<table><tr><td class="rl">Pag-ampo panapos:</td><td class="nm">${esc(mt.closing_prayer)}</td></tr></table>`);
+  h.push('<div class="sheet">');
+  h.push('<div class="hdr"><div class="cong">PROPER STA. FE CONGREGATION</div><div class="ttl">ESKEDYUL SA MIDWEEK NGA TIGOM</div></div>');
+
+  h.push('<div class="meta"><div class="left">');
+  h.push(`<div class="wk">${esc(mt.week_label || '')}</div>`);
+  if (mt.reading) h.push(`<div class="rd">${esc(mt.reading)}</div>`);
   h.push('</div>');
+  if (!mt.is_special) {
+    h.push('<div class="right">');
+    h.push(`<div class="fld"><span class="lbl">Tsirman:</span><span class="nm">${esc(mt.chairman || '')}</span></div>`);
+    h.push(`<div class="fld"><span class="lbl">Pag-ampo:</span><span class="nm">${esc(mt.opening_prayer || '')}</span></div>`);
+    h.push('</div>');
+  }
+  h.push('</div>');
+
+  if (mt.is_special) {
+    h.push(`<div class="special">${esc(mt.special_text || 'WALAY MIDWEEK NGA TIGOM').replace(/\n/g, '<br>')}</div></div>`);
+    return h.join('');
+  }
+
+  h.push('<table class="prog">');
+  if (mt.opening_song) h.push(preRow(mt.opening_song, true));
+  let lastSec = null;
+  for (const p of parts) {
+    if (BARRED.has(p.section) && p.section !== lastSec) {
+      h.push(`<tr><td colspan="4"><div class="secbar" style="background:${SEC_COLOR[p.section]}">${esc(SECTION_TITLE[p.section])}</div></td></tr>`);
+    }
+    lastSec = p.section;
+
+    if (p.is_song) {
+      if (p.section === 'KONKLUSYON' && mt.closing_prayer)
+        h.push(nmRow('', p.title || 'Awit', 'song', 'Pag-ampo:', mt.closing_prayer));
+      else h.push(preRow(p.title || 'Awit', true));
+      continue;
+    }
+    if (!p.item_no) { h.push(preRow(p.title || '', false)); continue; }
+
+    h.push(nmRow(p.item_no, p.title, '', p.assignee_role ? p.assignee_role + ':' : '', p.assignee));
+    if (p.setting || p.assistant)
+      h.push(nmRow('', p.setting || '', 'setting', p.assistant ? (p.assistant_role || 'Assistant') + ':' : '', p.assistant || ''));
+  }
+  h.push('</table></div>');
   return h.join('');
 }
 function printMeeting(mt, parts) {
@@ -388,7 +425,8 @@ function viewAssign() {
     ]);
     for (const d of dates) {
       const c = cell(mb.id, d);
-      const td = el('td', { class: 'cell', html: c ? `<span class="code-pill">${esc(c.code)}</span>` : '' });
+      const td = el('td', { class: 'cell' });
+      if (c && c.code) td.append(codePill(c.code));
       td.addEventListener('click', () => pickCode(mb, d, c));
       tr.append(td);
     }
@@ -406,7 +444,7 @@ function viewAssign() {
       [c.code, state.assigns.filter(a => a.member_id === mb.id && a.pool === gridPool && a.code === c.code).length]));
     const btns = el('div', { class: 'codebtns' }, codes.map(c =>
       el('button', { onclick: async () => { await setCell(mb.id, d, c.code); close(); } },
-        [el('strong', {}, c.code), ' ', el('span', { class: 'fairness' }, `(${counts[c.code]})`)])));
+        [codePill(c.code), ' ', el('span', { class: 'fairness' }, `(${counts[c.code]})`)])));
     const m = el('div', { class: 'modal' }, [
       el('h3', {}, `${mb.name} — ${fmtShort(d)}`),
       el('div', { class: 'hint' }, POOL_LABEL[gridPool] + ' · number in () = times already given this code'),
@@ -526,7 +564,7 @@ function viewLegend() {
       const inp = el('input', { value: c.label, style: 'width:100%' });
       inp.addEventListener('change', async () => { await sb.from('part_codes').update({ label: inp.value, needs_review: false }).eq('id', c.id); c.label = inp.value; toast('Saved ✓'); });
       tb.append(el('tr', {}, [
-        el('td', {}, [el('span', { class: 'code-pill' }, c.code), c.needs_review ? el('span', { class: 'chip warn', style: 'margin-left:4px' }, '?') : null]),
+        el('td', {}, [codePill(c.code), c.needs_review ? el('span', { class: 'chip warn', style: 'margin-left:4px' }, '?') : null]),
         el('td', {}, inp),
         el('td', {}, el('button', { class: 'btn sm danger', onclick: async () => { if (confirm('Delete code ' + c.code + '?')) { await sb.from('part_codes').delete().eq('id', c.id); await loadAll(); viewLegend(); } } }, '✕')),
       ]));

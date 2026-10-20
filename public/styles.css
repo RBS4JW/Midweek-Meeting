@@ -121,23 +121,32 @@ table.list th{color:var(--muted);font-size:.82em;text-transform:uppercase;letter
   #app{display:none!important}
   .print-only{display:block}
   @page{size:A4;margin:12mm}
+  .sheet{max-width:none!important}
 }
-/* printable program sheet (also shown in on-screen preview inside .sheet) */
-.sheet{background:#fff;color:#000;width:190mm;margin:0 auto;padding:6mm 8mm;font-family:"Times New Roman",Georgia,serif}
-.sheet .cong{text-align:center;font-weight:700;font-size:13pt;letter-spacing:.04em}
-.sheet .title{text-align:center;font-weight:700;font-size:12pt;border-bottom:2px solid #000;padding-bottom:3px;margin-bottom:6px}
-.sheet .wk{text-align:center;font-weight:700;font-size:12pt;margin-top:4px}
-.sheet .rd{text-align:center;font-style:italic;margin-bottom:6px}
-.sheet table{width:100%;border-collapse:collapse}
-.sheet td{vertical-align:top;padding:1.5px 3px;font-size:10.5pt}
-.sheet td.n{width:16px;text-align:right;color:#333}
-.sheet td.nm{width:38%;text-align:right;white-space:nowrap}
-.sheet td.rl{text-align:right;color:#333;white-space:nowrap;width:70px}
-.sheet .sec{font-weight:700;background:#000;color:#fff;padding:2px 6px;margin:5px 0 2px}
+/* printable program sheet — matches the posted A4 layout */
+.sheet{background:#fff;color:#000;width:100%;max-width:190mm;margin:0 auto;
+       font-family:"Times New Roman",Georgia,serif;font-size:12pt;line-height:1.3}
+.sheet .hdr{border-top:2px solid #000;border-bottom:3px solid #000;text-align:center;padding:5px 0;margin-bottom:10px}
+.sheet .cong{font-weight:700;font-size:16pt;letter-spacing:.02em}
+.sheet .ttl{font-weight:700;font-size:15pt}
+.sheet .meta{display:flex;justify-content:space-between;gap:22px;align-items:flex-start;margin:4px 0 8px}
+.sheet .meta .wk{font-size:12.5pt}
+.sheet .meta .rd{font-size:14pt;font-weight:700;margin-top:2px}
+.sheet .meta .right{min-width:46%}
+.sheet .fld{display:flex;gap:8px;align-items:flex-end;margin-bottom:5px}
+.sheet .fld .lbl{white-space:nowrap}
+.sheet .fld .nm{flex:1;border-bottom:1px solid #000;min-height:1.2em;padding:0 6px;font-weight:600}
+.sheet table.prog{width:100%;border-collapse:collapse}
+.sheet table.prog td{vertical-align:bottom;padding:4px 2px}
+.sheet td.num{width:16px;text-align:left;vertical-align:top}
+.sheet td.ttl2{vertical-align:top}
+.sheet td.role{width:92px;text-align:right;white-space:nowrap;color:#111}
+.sheet td.nm2{width:210px;border-bottom:1px solid #000;font-weight:600}
+.sheet .pre{padding-left:6mm!important}
+.sheet .setting{font-style:italic;font-size:11pt}
 .sheet .song{font-weight:700}
-.sheet .setting{font-size:9.5pt;font-style:italic;color:#222}
-.sheet .special{text-align:center;font-weight:700;margin:16px 0;font-size:13pt;line-height:1.7}
+.sheet .secbar{color:#fff;font-weight:700;font-size:12.5pt;letter-spacing:.02em;padding:4px 10px;margin:8px 0 2px}
+.sheet .special{text-align:center;font-weight:700;margin:26px 0;font-size:14pt;line-height:1.8}
 @media (max-width:640px){
-  .sheet{width:100%}
   .tabs{order:3;width:100%}
 }
