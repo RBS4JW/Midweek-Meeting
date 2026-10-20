@@ -693,7 +693,8 @@ const gridScroll = { left: 0, top: 0 };           // kept across re-renders
 let gridHideBefore = '';
 try { gridHideBefore = localStorage.getItem('mw_hidebefore') || ''; } catch {}
 let gridSelectedDate = null;                       // focused column (date), or null
-function selectColumn(d) { gridSelectedDate = (gridSelectedDate === d) ? null : d; viewAssign(); }
+let gridScrollToSel = false;
+function selectColumn(d) { const on = gridSelectedDate !== d; gridSelectedDate = on ? d : null; gridScrollToSel = on; viewAssign(); }
 const fmtFull = iso => { const d = new Date(iso + 'T00:00:00'); return `${MONTHS[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`; };
 
 // nearest same-pool assignment within <28 days of date d (excluding d itself)
@@ -861,12 +862,17 @@ function viewAssign() {
       const offSel = selActive && !isSel;
       const c = cell(mb.id, d);
       const busy = (gridPool === 'female' && !c) ? busyElsewhere(mb.id, d) : null;
-      const assignableSel = isSel && !c && !busy;   // only ring cells that can take a task
-      const td = el('td', { class: 'cell' + (busy ? ' blocked' : '') + (assignableSel ? ' sel-col' : '') + (offSel ? ' off-col' : '') });
+      // in the selected column, only "due" members (no bahin in the 4 columns
+      // before) may be assigned; recently-used names are locked
+      const assignableSel = isSel && !c && !busy && overdue;
+      const recentLock = isSel && !c && !busy && !overdue;
+      const td = el('td', { class: 'cell' + (busy ? ' blocked' : '') + (assignableSel ? ' sel-col' : '') + (recentLock ? ' recent-lock' : '') + (offSel ? ' off-col' : '') });
       if (c && c.code) td.append(codePill(c.code));
       else if (busy) { td.append(el('span', { class: 'lock' }, '🔒')); td.title = `May bahin na sa ${POOL_LABEL[busy.pool]} (${busy.code})`; }
+      else if (recentLock) { td.append(el('span', { class: 'lock' }, '·')); td.title = 'May bahin sulod sa 4 ka kolum una niini'; }
       td.addEventListener('click', () => {
         if (offSel) return toast(`Gipili ang kolum nga ${fmtShort(gridSelectedDate)} — kana ra ang pwede assign-an`);
+        if (recentLock) return toast(`Si ${mb.name} may bahin sulod sa 4 ka kolum — dili pa pwede`);
         if (busy) return toast(`Si ${mb.name} may bahin na sa ${POOL_LABEL[busy.pool]} (${busy.code}) niini nga semana`);
         pickCode(mb, d, c);
       });
@@ -889,6 +895,17 @@ function viewAssign() {
   topScroll.firstChild.style.width = gridwrap.scrollWidth + 'px';
   gridwrap.scrollLeft = gridScroll.left; gridwrap.scrollTop = gridScroll.top;
   topScroll.scrollLeft = gridScroll.left;
+  // when a column was just selected, bring it into view so its date is visible
+  if (gridScrollToSel && selActive) {
+    const selTh = tbl.querySelector('thead th.datehdr.sel-col');
+    if (selTh) {
+      const nameW = tbl.querySelector('thead th.name')?.offsetWidth || 170;
+      const want = selTh.offsetLeft - nameW - 80;
+      gridwrap.scrollLeft = Math.max(0, Math.min(want, gridwrap.scrollWidth - gridwrap.clientWidth));
+      topScroll.scrollLeft = gridwrap.scrollLeft; gridScroll.left = gridwrap.scrollLeft;
+    }
+    gridScrollToSel = false;
+  }
 
   function pickCode(mb, d, existing) {
     const codes = codesForPool(gridPool);
