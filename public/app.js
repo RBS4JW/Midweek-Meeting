@@ -58,6 +58,14 @@ function parseLabelEnd(label, year) {
   if (m) { const mm = CEBU_MONTHS.indexOf(m[1]); if (mm < 0) return null; return new Date(year, mm, +m[3]); }
   return null;
 }
+function parseLabelStart(label, year) {
+  if (!label) return null;
+  const s = label.trim().toUpperCase().replace(/[–—]/g, '-');
+  const m = s.match(/^([A-ZÑ]+)\s+(\d+)/);
+  if (!m) return null;
+  const mm = CEBU_MONTHS.indexOf(m[1]); if (mm < 0) return null;
+  return new Date(year, mm, +m[2]);
+}
 function fmtWeekLabel(start, end) {
   const sM = CEBU_MONTHS[start.getMonth()], sD = start.getDate(), eM = CEBU_MONTHS[end.getMonth()], eD = end.getDate();
   return start.getMonth() === end.getMonth() ? `${sM} ${sD}-${eD}` : `${sM} ${sD} - ${eM} ${eD}`;
@@ -111,6 +119,59 @@ function nextMeetingDate(dts) {
   return isoDate(d);
 }
 
+// ---- link a weekly program to the Assign Bahin grid by date ----
+// the meeting's Thursday = (week start, a Monday) + 3 days.
+function meetingThursday(mt) {
+  const st = parseLabelStart(mt.week_label, baseYear());
+  if (!st) return null;
+  const d = new Date(st); d.setDate(d.getDate() + 3);
+  return isoDate(d);
+}
+// map of code -> member name for everyone assigned on a given date
+function codeNameMap(dateIso) {
+  const map = {};
+  for (const a of state.assigns) {
+    if (a.meeting_date === dateIso && a.code) {
+      const m = memberById(a.member_id);
+      if (m && !map[a.code]) map[a.code] = m.name;
+    }
+  }
+  return map;
+}
+// which code(s) a program part draws from; kpIdx = running index of KP talks
+function partCodes(p, kpIdx) {
+  if (p.is_song) return {};
+  const t = (p.title || '').toLowerCase();
+  if (/pagbasa sa bibliya/.test(t)) return { a: ['BR'] };
+  if (/espirituwal nga bahandi/.test(t)) return { a: ['ENB'] };
+  if (/pagtuon sa kongregasyon/.test(t)) return { a: ['CBS'], b: ['CBSR'] };
+  if (p.section === 'MAGMAEPEKTIBO' && /^\d+$/.test(p.item_no || '')) return { a: [p.item_no + 'E', 'PP2'], b: [p.item_no + 'A'] };
+  if (p.section === 'BAHANDI' && p.item_no) return { a: ['PP1', 'COP'] };
+  if (p.section === 'KRISTOHANONG PAGKINABUHI' && !p.is_song) return { a: [kpIdx === 0 ? 'KP1' : 'KP2'] };
+  return {};
+}
+// fill mt + parts from the grid; returns how many fields were set. Only fills
+// where the grid has someone (never clears existing names).
+function autofillFromGrid(mt, parts) {
+  const date = meetingThursday(mt);
+  if (!date) return 0;
+  const map = codeNameMap(date);
+  const pick = codes => { for (const c of codes) if (map[c]) return map[c]; return null; };
+  let n = 0;
+  const set = (obj, key, val) => { if (val) { obj[key] = val; n++; } };
+  set(mt, 'chairman', map['CH']);
+  set(mt, 'opening_prayer', map['OP']);
+  set(mt, 'closing_prayer', map['CLP']);
+  let kpIdx = 0;
+  for (const p of parts) {
+    const cc = partCodes(p, kpIdx);
+    if (p.section === 'KRISTOHANONG PAGKINABUHI' && !p.is_song && !/pagtuon/.test((p.title || '').toLowerCase())) kpIdx++;
+    if (cc.a) set(p, 'assignee', pick(cc.a));
+    if (cc.b) set(p, 'assistant', pick(cc.b));
+  }
+  return n;
+}
+
 /* ----------------------------- data ----------------------------------- */
 async function loadAll() {
   const grab = (t, order) => sb.from(t).select('*').order(order);
@@ -152,7 +213,9 @@ function viewEskedyul() {
     el('div', { class: 'spacer' }),
     el('button', { class: 'btn primary', onclick: () => newMeeting() }, '+ New week'),
   ]));
-  const meetings = [...state.meetings].sort((a, b) => (a.sort - b.sort) || (a.week_label || '').localeCompare(b.week_label || ''));
+  const yr = baseYear();
+  const wkStart = m => parseLabelStart(m.week_label, yr) || new Date(0);
+  const meetings = [...state.meetings].sort((a, b) => wkStart(b) - wkStart(a) || (b.sort - a.sort)); // latest first
   if (!meetings.length) { root.append(el('p', { class: 'muted' }, 'No weeks yet — click “New week”.')); return; }
   const cards = el('div', { class: 'cards' });
   for (const mt of meetings) {
@@ -213,10 +276,15 @@ function editMeeting(id) {
     el('button', { class: 'btn ghost', onclick: () => viewEskedyul() }, '← Back'),
     el('h2', {}, mt.week_label || 'Week'),
     el('div', { class: 'spacer' }),
+    el('button', { class: 'btn', title: 'Kuhaa ang pangalan gikan sa Assign Bahin', onclick: syncNames }, '↻ Pangalan'),
     el('button', { class: 'btn', onclick: () => printMeeting(mt, parts) }, '🖨 Print'),
+    el('button', { class: 'btn', onclick: () => pdfMeeting(mt, parts) }, '⬇ PDF'),
     el('button', { class: 'btn primary', onclick: save }, 'Save'),
     el('button', { class: 'btn danger', onclick: del }, 'Delete'),
   ]));
+  // auto-fill names from the grid when the program has none yet
+  if (!mt.is_special && !mt.chairman && !mt.opening_prayer && !parts.some(p => p.assignee || p.assistant))
+    autofillFromGrid(mt, parts);
 
   // ---- header fields ----
   const hdr = el('div', { class: 'panel' });
@@ -309,22 +377,28 @@ function editMeeting(id) {
     return el('div', { class: 'assignline' }, [el('span', { class: 'role' }, roleTxt + ':'), inp, hint]);
   }
 
-  async function save() {
+  async function persistAll() {
     const { error: e1 } = await sb.from('meetings').update({
       week_label: mt.week_label, reading: mt.reading, meeting_date: mt.meeting_date || null,
       is_special: !!mt.is_special, special_text: mt.special_text || null,
       chairman: mt.chairman, opening_prayer: mt.opening_prayer, closing_prayer: mt.closing_prayer,
       opening_song: mt.opening_song,
     }).eq('id', id);
-    if (e1) return toast('Error: ' + e1.message);
+    if (e1) { toast('Error: ' + e1.message); return false; }
     await sb.from('meeting_parts').delete().eq('meeting_id', id);
     const rows = parts.map((p, i) => ({
       meeting_id: id, pos: i, section: p.section, item_no: p.item_no || null, title: p.title || null,
       setting: p.setting || null, assignee: p.assignee || null, assignee_role: p.assignee_role || null,
       assistant: p.assistant || null, assistant_role: p.assistant_role || null, is_song: !!p.is_song,
     }));
-    if (rows.length) { const { error: e2 } = await sb.from('meeting_parts').insert(rows); if (e2) return toast('Error: ' + e2.message); }
-    await loadAll(); toast('Saved ✓'); viewEskedyul();
+    if (rows.length) { const { error: e2 } = await sb.from('meeting_parts').insert(rows); if (e2) { toast('Error: ' + e2.message); return false; } }
+    return true;
+  }
+  async function save() { if (await persistAll()) { await loadAll(); toast('Saved ✓'); viewEskedyul(); } }
+  async function syncNames() {
+    const n = autofillFromGrid(mt, parts);
+    if (!n) return toast('Walay assignment sa grid para niini nga semana');
+    if (await persistAll()) { await loadAll(); toast(n + ' ka pangalan na-sync ✓'); editMeeting(id); }
   }
   async function del() {
     if (!confirm('Delete this week’s program?')) return;
@@ -365,12 +439,12 @@ function meetingSheetHTML(mt, parts) {
 
   h.push('<table class="prog">');
   if (mt.opening_song) h.push(preRow(mt.opening_song, true));
-  let lastSec = null;
+  const barred = new Set();
   for (const p of parts) {
-    if (BARRED.has(p.section) && p.section !== lastSec) {
+    if (BARRED.has(p.section) && !barred.has(p.section)) {
+      barred.add(p.section);
       h.push(`<tr><td colspan="4"><div class="secbar" style="background:${SEC_COLOR[p.section]}">${esc(SECTION_TITLE[p.section])}</div></td></tr>`);
     }
-    lastSec = p.section;
 
     if (p.is_song) {
       if (p.section === 'KONKLUSYON' && mt.closing_prayer)
@@ -390,6 +464,20 @@ function meetingSheetHTML(mt, parts) {
 function printMeeting(mt, parts) {
   $('#print-root').innerHTML = meetingSheetHTML(mt, [...parts].sort((a, b) => (a.pos ?? 0) - (b.pos ?? 0)));
   window.print();
+}
+function pdfMeeting(mt, parts) {
+  if (!window.html2pdf) { toast('PDF library wala pa ma-load — sulayi usab'); return; }
+  const sorted = [...parts].sort((a, b) => (a.pos ?? 0) - (b.pos ?? 0));
+  const holder = el('div');
+  holder.style.cssText = 'position:fixed;left:-10000px;top:0;width:190mm;background:#fff';
+  holder.innerHTML = meetingSheetHTML(mt, sorted);
+  document.body.appendChild(holder);
+  const fn = `Eskedyul ${mt.week_label || 'tigom'}.pdf`.replace(/[\\/:*?"<>|]/g, '-');
+  window.html2pdf().set({
+    margin: [10, 8, 12, 8], filename: fn, image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+  }).from(holder.firstElementChild).save().finally(() => holder.remove());
+  toast('Gi-download ang PDF…');
 }
 
 /* =========================================================================
