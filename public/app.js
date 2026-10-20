@@ -754,14 +754,26 @@ function viewAssign() {
     bg.addEventListener('click', e => { if (e.target === bg) close(); });
     const counts = Object.fromEntries(codes.map(c =>
       [c.code, state.assigns.filter(a => a.member_id === mb.id && a.pool === gridPool && a.code === c.code).length]));
+    // a code already used by someone else in this column can't be re-picked
+    const taken = {};
+    for (const a of state.assigns)
+      if (a.pool === gridPool && a.meeting_date === d && a.member_id !== mb.id && a.code)
+        taken[a.code] = memberById(a.member_id)?.name || '';
     const choose = async (code) => {
+      if (taken[code]) return;
       const warns = assignWarnings(mb, d, code);
       if (warns.length) { const ok = await confirmModal('Pahimangno', warns); if (!ok) return; }
       await setCell(mb.id, d, code); close();
     };
-    const btns = el('div', { class: 'codebtns' }, codes.map(c =>
-      el('button', { onclick: () => choose(c.code) },
-        [codePill(c.code), ' ', el('span', { class: 'fairness' }, `(${counts[c.code]})`)])));
+    const btns = el('div', { class: 'codebtns' }, codes.map(c => {
+      const used = taken[c.code];
+      const btn = el('button', {
+        onclick: () => choose(c.code),
+        ...(used ? { disabled: '', title: 'Gihatag na kang ' + used } : {}),
+      }, [codePill(c.code), ' ', el('span', { class: 'fairness' }, used ? '✓ ' + used : `(${counts[c.code]})`)]);
+      if (used) btn.style.opacity = '.45';
+      return btn;
+    }));
     const m = el('div', { class: 'modal' }, [
       el('h3', {}, `${mb.name} — ${fmtShort(d)}`),
       el('div', { class: 'hint' }, POOL_LABEL[gridPool] + ' · number in () = times already given this code'),
