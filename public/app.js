@@ -636,7 +636,7 @@ function viewAssign() {
 
   const tbl = el('table', { class: 'grid' });
   // header
-  const thr = el('tr', {}, [el('th', { class: 'name' }, 'ELIGIBLES'), el('th', {}, 'Σ')]);
+  const thr = el('tr', {}, [el('th', { class: 'name' }, 'ELIGIBLES'), el('th', { class: 'cnt' }, 'Σ')]);
   let lastMonth = null;
   for (const d of dates) {
     const mo = fmtMonth(d);
