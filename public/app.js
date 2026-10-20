@@ -810,6 +810,8 @@ function viewAssign() {
     viewAssign();
   });
   const selActive = !!gridSelectedDate && dates.includes(gridSelectedDate);
+  const selIdx = selActive ? dates.indexOf(gridSelectedDate) : -1;
+  const lastIsSel = selActive && selIdx === dates.length - 1;
   const bar = el('div', { class: 'panel row' }, [
     el('span', { class: 'hint' }, selActive
       ? `Gipili: ${fmtShort(gridSelectedDate)} · i-klik ra ang mga selda niini nga kolum`
@@ -835,11 +837,11 @@ function viewAssign() {
     if (mo !== lastMonth) { th.classList.add('month-sep'); lastMonth = mo; }
     thr.append(th);
   }
+  if (lastIsSel) thr.append(el('th', { class: 'spacer-col' }));
   tbl.append(el('thead', {}, thr));
   // body
   const tb = el('tbody');
   const refIso = isoDate(new Date());
-  const selIdx = selActive ? dates.indexOf(gridSelectedDate) : -1;
   // task dates per member (any pool) for the "4 columns before selected" check
   const taskDates = {};
   for (const a of state.assigns) if (a.code) (taskDates[a.member_id] ||= new Set()).add(a.meeting_date);
@@ -853,13 +855,14 @@ function viewAssign() {
     const total = state.assigns.filter(a => a.member_id === mb.id && a.pool === gridPool).length;
     const overdue = selActive ? overdueBeforeSel(mb.id) : (weeksSinceLastTask(mb.id, refIso) > 4);
     const nameTd = el('td', { class: 'name' + (overdue ? ' overdue' : ''), title: overdue ? (selActive ? 'Walay bahin sulod sa 4+ ka kolum una sa gipili' : 'Walay bahin sulod sa 4+ ka semana') : (mb.note || '') }, [mb.name, mb.note ? el('span', { class: 'sub' }, mb.note) : null]);
-    const tr = el('tr', {}, [nameTd, el('td', { class: 'cnt' }, String(total))]);
+    const tr = el('tr', { class: overdue ? 'overdue-row' : '' }, [nameTd, el('td', { class: 'cnt' }, String(total))]);
     for (const d of dates) {
       const isSel = d === gridSelectedDate;
       const offSel = selActive && !isSel;
       const c = cell(mb.id, d);
       const busy = (gridPool === 'female' && !c) ? busyElsewhere(mb.id, d) : null;
-      const td = el('td', { class: 'cell' + (busy ? ' blocked' : '') + (isSel ? ' sel-col' : '') + (offSel ? ' off-col' : '') });
+      const assignableSel = isSel && !c && !busy;   // only ring cells that can take a task
+      const td = el('td', { class: 'cell' + (busy ? ' blocked' : '') + (assignableSel ? ' sel-col' : '') + (offSel ? ' off-col' : '') });
       if (c && c.code) td.append(codePill(c.code));
       else if (busy) { td.append(el('span', { class: 'lock' }, '🔒')); td.title = `May bahin na sa ${POOL_LABEL[busy.pool]} (${busy.code})`; }
       td.addEventListener('click', () => {
@@ -869,6 +872,7 @@ function viewAssign() {
       });
       tr.append(td);
     }
+    if (lastIsSel) tr.append(el('td', { class: 'spacer-col' }));
     tb.append(tr);
   }
   tbl.append(tb);
