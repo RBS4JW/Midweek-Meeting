@@ -333,12 +333,20 @@ function editMeeting(id) {
     inp.addEventListener('input', () => { mt[key] = inp.value; });
     return el('label', { class: 'field' }, [el('span', {}, label), inp]);
   };
+  // "Awit" is constant; only the number is typed
+  const songField = (label, key) => {
+    const num = (/(\d+)/.exec(mt[key] || '') || [])[1] || '';
+    const inp = el('input', { value: num, placeholder: 'numero', inputmode: 'numeric', style: 'flex:1' });
+    inp.addEventListener('input', () => { mt[key] = ('Awit ' + inp.value.trim()).trim(); });
+    return el('label', { class: 'field' }, [el('span', {}, label),
+      el('div', { class: 'row', style: 'gap:6px;align-items:center' }, [el('span', { style: 'font-weight:700;white-space:nowrap' }, 'Awit'), inp])]);
+  };
   const grid2 = el('div', { class: 'row' });
   [['Semana (week label)', 'week_label'], ['Pagbasa sa Bibliya', 'reading'],
-   ['Petsa (optional)', 'meeting_date', 'date'], ['Awit pangbukas', 'opening_song'],
+   ['Petsa (optional)', 'meeting_date', 'date'], ['Awit pangbukas', 'opening_song', 'song'],
    ['Tsirman', 'chairman'], ['Pag-ampo pangbukas', 'opening_prayer'],
    ['Pag-ampo panapos', 'closing_prayer']].forEach(f => {
-    const w = el('div', { style: 'flex:1;min-width:200px' }, field(...f));
+    const w = el('div', { style: 'flex:1;min-width:200px' }, f[2] === 'song' ? songField(f[0], f[1]) : field(...f));
     grid2.append(w);
   });
   hdr.append(grid2);
