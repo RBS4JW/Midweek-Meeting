@@ -840,7 +840,7 @@ function viewAssign() {
     const mo = fmtMonth(d);
     const th = el('th', { class: 'datehdr' + (d === gridSelectedDate ? ' sel-col' : ''), title: 'I-klik aron pilion kini nga kolum' }, fmtShort(d));
     th.addEventListener('click', () => selectColumn(d));
-    if (mo !== lastMonth) { th.classList.add('month-sep'); lastMonth = mo; }
+    if (mo !== lastMonth) { if (d !== gridSelectedDate) th.classList.add('month-sep'); lastMonth = mo; }
     thr.append(th);
   }
   if (lastIsSel) thr.append(el('th', { class: 'spacer-col' }));
@@ -855,12 +855,12 @@ function viewAssign() {
     if (selIdx < 0) return false;
     const s = taskDates[mid] || new Set(); let last = -1;
     for (let j = 0; j < selIdx; j++) if (s.has(dates[j])) last = j;
-    return (selIdx - last) >= 4;
+    return (selIdx - last) >= 5;   // due if no bahin in the 5 columns before
   };
   for (const mb of members) {
     const total = state.assigns.filter(a => a.member_id === mb.id && a.pool === gridPool).length;
     const overdue = selActive ? overdueBeforeSel(mb.id) : (weeksSinceLastTask(mb.id, refIso) > 4);
-    const nameTd = el('td', { class: 'name' + (overdue ? ' overdue' : ''), title: overdue ? (selActive ? 'Walay bahin sulod sa 4+ ka kolum una sa gipili' : 'Walay bahin sulod sa 4+ ka semana') : (mb.note || '') }, [mb.name, mb.note ? el('span', { class: 'sub' }, mb.note) : null]);
+    const nameTd = el('td', { class: 'name' + (overdue ? ' overdue' : ''), title: overdue ? (selActive ? 'Walay bahin sulod sa 5 ka semana una sa gipili' : 'Walay bahin sulod sa 4+ ka semana') : (mb.note || '') }, [mb.name, mb.note ? el('span', { class: 'sub' }, mb.note) : null]);
     const tr = el('tr', { class: overdue ? 'overdue-row' : '' }, [nameTd, el('td', { class: 'cnt' }, String(total))]);
     for (const d of dates) {
       const isSel = d === gridSelectedDate;
@@ -877,10 +877,10 @@ function viewAssign() {
       const td = el('td', { class: 'cell' + (busy ? ' blocked' : '') + (assignableSel ? ' sel-col' : '') + (recentLock ? ' recent-lock' : '') + (offSel ? ' off-col' : '') });
       if (c && c.code) td.append(codePill(c.code));
       else if (busy) { td.append(el('span', { class: 'lock' }, '🔒')); td.title = `May bahin na sa ${POOL_LABEL[busy.pool]} (${busy.code})`; }
-      else if (recentLock) { td.append(el('span', { class: 'lock' }, '·')); td.title = 'May bahin sulod sa 4 ka kolum una niini'; }
+      else if (recentLock) { td.append(el('span', { class: 'lock' }, '·')); td.title = 'May bahin sulod sa 5 ka semana una niini'; }
       td.addEventListener('click', () => {
         if (offSel) return toast(`Gipili ang kolum nga ${fmtShort(gridSelectedDate)} — kana ra ang pwede assign-an`);
-        if (recentLock) return toast(`Si ${mb.name} may bahin sulod sa 4 ka kolum — dili pa pwede`);
+        if (recentLock) return toast(`Si ${mb.name} may bahin sulod sa 5 ka semana — dili pa pwede`);
         if (busy) return toast(`Si ${mb.name} may bahin na sa ${POOL_LABEL[busy.pool]} (${busy.code}) niini nga semana`);
         pickCode(mb, d, c);
       });
