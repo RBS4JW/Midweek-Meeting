@@ -774,6 +774,11 @@ function confirmModal(title, lines, yesLabel = 'Padayon', noLabel = 'Kanselahon'
 function busyElsewhere(memberId, d) {
   return state.assigns.find(a => a.member_id === memberId && a.meeting_date === d && (a.pool === 'elder' || a.pool === 'ms'));
 }
+// a member who also serves in Elders/MS (the male publishers) is exempt from the
+// Publishers 4-column recency lock — only the same-week Elders/MS conflict blocks them
+function inElderOrMs(memberId) {
+  return state.pools.some(p => p.member_id === memberId && (p.pool === 'elder' || p.pool === 'ms'));
+}
 // weeks since the member's last task (ANY pool) up to the reference date; Infinity if none
 function weeksSinceLastTask(memberId, refIso) {
   const past = state.assigns
@@ -863,9 +868,12 @@ function viewAssign() {
       const c = cell(mb.id, d);
       const busy = (gridPool === 'female' && !c) ? busyElsewhere(mb.id, d) : null;
       // in the selected column, only "due" members (no bahin in the 4 columns
-      // before) may be assigned; recently-used names are locked
-      const assignableSel = isSel && !c && !busy && overdue;
-      const recentLock = isSel && !c && !busy && !overdue;
+      // before) may be assigned; recently-used names are locked. Members who
+      // also serve in Elders/MS are exempt from the 4-column rule (only the
+      // same-week Elders/MS conflict blocks them).
+      const crossPool = gridPool === 'female' && inElderOrMs(mb.id);
+      const assignableSel = isSel && !c && !busy && (overdue || crossPool);
+      const recentLock = isSel && !c && !busy && !overdue && !crossPool;
       const td = el('td', { class: 'cell' + (busy ? ' blocked' : '') + (assignableSel ? ' sel-col' : '') + (recentLock ? ' recent-lock' : '') + (offSel ? ' off-col' : '') });
       if (c && c.code) td.append(codePill(c.code));
       else if (busy) { td.append(el('span', { class: 'lock' }, '🔒')); td.title = `May bahin na sa ${POOL_LABEL[busy.pool]} (${busy.code})`; }
