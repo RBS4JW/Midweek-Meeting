@@ -1,6 +1,6 @@
 name: backup
 on:
-  schedule: [{ cron: '17 3 */4 * *' }]   # every 4 days, keeps Supabase awake
+  schedule: [{ cron: '17 3 */6 * *' }]   # every 6 days, keeps Supabase awake (<7-day pause)
   workflow_dispatch:
 jobs:
   backup:
