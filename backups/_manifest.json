@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-10-25T08:26:36.404Z",
+  "source": "https://jxjkphmxykeucpxmncla.supabase.co",
+  "schema": "midweek",
+  "tables": {
+    "part_codes": 23,
+    "members": 57,
+    "member_pools": 73,
+    "assignments": 613,
+    "meetings": 13,
+    "meeting_parts": 148
+  }
+}

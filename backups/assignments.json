@@ -1,0 +1,4906 @@
+[
+ {
+  "id": 1,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-01-15",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 2,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-01-29",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 3,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-02-05",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 4,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-02-12",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 5,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-02-19",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 6,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-03-05",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 7,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-03-12",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 8,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-03-19",
+  "code": "KP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 9,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-03-26",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 10,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-04-09",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 11,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-04-16",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 12,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-04-23",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 13,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-04-30",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 14,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-05-07",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 15,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-05-14",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 16,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-05-21",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 17,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-06-04",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 18,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-06-11",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 19,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-06-18",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 20,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-06-25",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 21,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-07-02",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 22,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-07-09",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 23,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-07-23",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 24,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-08-06",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 25,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-08-13",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 26,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-08-20",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 27,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-09-03",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 28,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-09-10",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 29,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-09-17",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 30,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-09-24",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 31,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-10-01",
+  "code": "CH",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 32,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-10-08",
+  "code": "CH",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 33,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-10-22",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 34,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-10-29",
+  "code": "OP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 35,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-01-08",
+  "code": "KP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 36,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-01-15",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 37,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-01-22",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 38,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-01-29",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 39,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-02-05",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 40,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-02-19",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 41,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-02-26",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 42,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-03-05",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 43,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-03-12",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 44,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-03-19",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 45,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-03-26",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 46,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-04-09",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 47,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-04-16",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 48,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-04-30",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 49,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-05-07",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 50,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-05-14",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 51,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-05-21",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 52,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-05-28",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 53,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-06-04",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 54,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-06-11",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 55,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-06-18",
+  "code": "KP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 56,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-06-25",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 57,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-07-02",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 58,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-07-09",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 59,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-07-30",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 60,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-08-06",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 61,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-08-13",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 62,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-08-25",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 63,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-09-03",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 64,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-09-10",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 65,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-09-17",
+  "code": "KP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 66,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-09-24",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 67,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-10-01",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 68,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-10-08",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 69,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-10-22",
+  "code": "CH",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 70,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-10-29",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 71,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-01-08",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 72,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-01-15",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 73,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-01-22",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 74,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-02-05",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 75,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-02-12",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 76,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-02-26",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 77,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-03-05",
+  "code": "KP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 78,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-03-12",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 79,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-03-19",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 80,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-03-26",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 81,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-04-09",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 82,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-04-23",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 83,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-04-30",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 84,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-05-07",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 85,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-05-21",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 86,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-05-28",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 87,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-06-04",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 88,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-06-11",
+  "code": "KP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 89,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-06-18",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 90,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-06-25",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 91,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-07-02",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 92,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-07-09",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 93,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-07-23",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 94,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-07-30",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 95,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-08-06",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 96,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-08-13",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 97,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-08-20",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 98,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-08-25",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 99,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-09-03",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 100,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-09-10",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 101,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-09-17",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 102,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-09-24",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 103,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-10-01",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 104,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-10-08",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 105,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-10-22",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 106,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-10-29",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 107,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-01-08",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 108,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-01-22",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 109,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-01-29",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 110,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-02-12",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 111,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-02-26",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 112,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-03-05",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 113,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-03-12",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 114,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-03-19",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 115,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-03-26",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 116,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-04-09",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 117,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-04-16",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 118,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-04-23",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 119,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-04-30",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 120,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-05-07",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 121,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-05-14",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 122,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-05-21",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 123,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-05-28",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 124,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-06-04",
+  "code": "KP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 125,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-06-11",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 126,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-06-18",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 127,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-06-25",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 128,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-07-09",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 129,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-07-23",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 130,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-07-30",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 131,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-08-06",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 132,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-08-13",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 133,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-08-20",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 134,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-08-25",
+  "code": "KP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 135,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-09-03",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 136,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-09-10",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 137,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-09-17",
+  "code": "COP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 138,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-09-24",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 139,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-10-08",
+  "code": "KP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 140,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-10-22",
+  "code": "CBS",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 141,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-10-29",
+  "code": "CH",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 142,
+  "member_id": 5,
+  "pool": "elder",
+  "meeting_date": "2026-02-05",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 143,
+  "member_id": 5,
+  "pool": "elder",
+  "meeting_date": "2026-04-16",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 144,
+  "member_id": 5,
+  "pool": "elder",
+  "meeting_date": "2026-05-14",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 145,
+  "member_id": 5,
+  "pool": "elder",
+  "meeting_date": "2026-06-04",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 146,
+  "member_id": 5,
+  "pool": "elder",
+  "meeting_date": "2026-06-18",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 147,
+  "member_id": 5,
+  "pool": "elder",
+  "meeting_date": "2026-07-23",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 148,
+  "member_id": 5,
+  "pool": "elder",
+  "meeting_date": "2026-08-13",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 149,
+  "member_id": 5,
+  "pool": "elder",
+  "meeting_date": "2026-09-03",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 150,
+  "member_id": 5,
+  "pool": "elder",
+  "meeting_date": "2026-10-01",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 151,
+  "member_id": 6,
+  "pool": "elder",
+  "meeting_date": "2026-01-08",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 152,
+  "member_id": 6,
+  "pool": "elder",
+  "meeting_date": "2026-02-19",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 153,
+  "member_id": 6,
+  "pool": "elder",
+  "meeting_date": "2026-03-05",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 154,
+  "member_id": 6,
+  "pool": "elder",
+  "meeting_date": "2026-04-23",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 155,
+  "member_id": 6,
+  "pool": "elder",
+  "meeting_date": "2026-05-28",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 156,
+  "member_id": 6,
+  "pool": "elder",
+  "meeting_date": "2026-06-11",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 157,
+  "member_id": 6,
+  "pool": "elder",
+  "meeting_date": "2026-07-02",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 158,
+  "member_id": 6,
+  "pool": "elder",
+  "meeting_date": "2026-07-30",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 159,
+  "member_id": 6,
+  "pool": "elder",
+  "meeting_date": "2026-08-20",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 160,
+  "member_id": 6,
+  "pool": "elder",
+  "meeting_date": "2026-09-17",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 161,
+  "member_id": 6,
+  "pool": "elder",
+  "meeting_date": "2026-10-08",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 162,
+  "member_id": 6,
+  "pool": "elder",
+  "meeting_date": "2026-10-29",
+  "code": "CLP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 163,
+  "member_id": 7,
+  "pool": "ms",
+  "meeting_date": "2026-01-22",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 164,
+  "member_id": 7,
+  "pool": "ms",
+  "meeting_date": "2026-01-29",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 165,
+  "member_id": 7,
+  "pool": "ms",
+  "meeting_date": "2026-03-12",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 166,
+  "member_id": 7,
+  "pool": "ms",
+  "meeting_date": "2026-04-09",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 167,
+  "member_id": 7,
+  "pool": "ms",
+  "meeting_date": "2026-04-23",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 168,
+  "member_id": 7,
+  "pool": "ms",
+  "meeting_date": "2026-04-30",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 169,
+  "member_id": 7,
+  "pool": "ms",
+  "meeting_date": "2026-05-07",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 170,
+  "member_id": 7,
+  "pool": "ms",
+  "meeting_date": "2026-05-21",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 171,
+  "member_id": 7,
+  "pool": "ms",
+  "meeting_date": "2026-06-04",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 172,
+  "member_id": 7,
+  "pool": "ms",
+  "meeting_date": "2026-06-18",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 173,
+  "member_id": 7,
+  "pool": "ms",
+  "meeting_date": "2026-07-02",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 174,
+  "member_id": 7,
+  "pool": "ms",
+  "meeting_date": "2026-07-09",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 175,
+  "member_id": 7,
+  "pool": "ms",
+  "meeting_date": "2026-07-23",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 176,
+  "member_id": 8,
+  "pool": "ms",
+  "meeting_date": "2026-01-15",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 177,
+  "member_id": 8,
+  "pool": "ms",
+  "meeting_date": "2026-02-05",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 178,
+  "member_id": 8,
+  "pool": "ms",
+  "meeting_date": "2026-02-12",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 179,
+  "member_id": 8,
+  "pool": "ms",
+  "meeting_date": "2026-03-05",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 180,
+  "member_id": 8,
+  "pool": "ms",
+  "meeting_date": "2026-03-26",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 181,
+  "member_id": 8,
+  "pool": "ms",
+  "meeting_date": "2026-05-07",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 182,
+  "member_id": 8,
+  "pool": "ms",
+  "meeting_date": "2026-06-11",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 183,
+  "member_id": 8,
+  "pool": "ms",
+  "meeting_date": "2026-07-09",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 184,
+  "member_id": 8,
+  "pool": "ms",
+  "meeting_date": "2026-08-06",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 185,
+  "member_id": 8,
+  "pool": "ms",
+  "meeting_date": "2026-08-27",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 186,
+  "member_id": 8,
+  "pool": "ms",
+  "meeting_date": "2026-09-24",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 187,
+  "member_id": 8,
+  "pool": "ms",
+  "meeting_date": "2026-10-29",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 188,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-01-15",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 189,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-02-05",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 190,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-02-26",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 191,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-03-05",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 192,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-03-12",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 193,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-03-19",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 194,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-04-16",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 195,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-04-23",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 196,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-05-14",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 197,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-05-21",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 198,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-05-28",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 199,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-06-18",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 200,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-06-25",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 201,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-07-02",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 202,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-07-23",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 203,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-08-06",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 204,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-08-13",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 205,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-08-20",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 206,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-09-10",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 207,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-09-17",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 208,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-09-24",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 209,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-10-01",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 210,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-10-08",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 211,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-10-22",
+  "code": "OP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 212,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-01-22",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 213,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-02-19",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 214,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-02-26",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 215,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-03-19",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 216,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-04-09",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 217,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-04-30",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 218,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-05-14",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 219,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-05-21",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 220,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-05-28",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 221,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-06-18",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 222,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-06-25",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 223,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-07-30",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 224,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-08-06",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 225,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-08-13",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 226,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-08-20",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 227,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-09-03",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 228,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-09-10",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 229,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-09-17",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 230,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-10-01",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 231,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-10-08",
+  "code": "OP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 232,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-10-22",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 233,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-10-29",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 234,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-01-08",
+  "code": "PP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 235,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-01-15",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 236,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-02-12",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 237,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-02-19",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 238,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-03-12",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 239,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-03-26",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 240,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-04-09",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 241,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-04-16",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 242,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-04-30",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 243,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-05-14",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 244,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-05-28",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 245,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-06-04",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 246,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-06-11",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 247,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-07-02",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 248,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-07-23",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 249,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-07-30",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 250,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-08-20",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 251,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-08-27",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 252,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-09-03",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 253,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-09-17",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 254,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-09-24",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 255,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-10-01",
+  "code": "OP",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 256,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-10-22",
+  "code": "ENB",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 257,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-10-29",
+  "code": "PP1",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 258,
+  "member_id": 12,
+  "pool": "ms",
+  "meeting_date": "2026-01-08",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 259,
+  "member_id": 12,
+  "pool": "ms",
+  "meeting_date": "2026-02-12",
+  "code": "PP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 260,
+  "member_id": 12,
+  "pool": "ms",
+  "meeting_date": "2026-03-05",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 261,
+  "member_id": 12,
+  "pool": "ms",
+  "meeting_date": "2026-04-16",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 262,
+  "member_id": 12,
+  "pool": "ms",
+  "meeting_date": "2026-04-30",
+  "code": "PP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 263,
+  "member_id": 12,
+  "pool": "ms",
+  "meeting_date": "2026-06-04",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 264,
+  "member_id": 12,
+  "pool": "ms",
+  "meeting_date": "2026-07-09",
+  "code": "PP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 265,
+  "member_id": 12,
+  "pool": "ms",
+  "meeting_date": "2026-07-30",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 266,
+  "member_id": 12,
+  "pool": "ms",
+  "meeting_date": "2026-08-27",
+  "code": "PP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 267,
+  "member_id": 12,
+  "pool": "ms",
+  "meeting_date": "2026-09-10",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 268,
+  "member_id": 13,
+  "pool": "ms",
+  "meeting_date": "2026-03-26",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 269,
+  "member_id": 13,
+  "pool": "ms",
+  "meeting_date": "2026-04-23",
+  "code": "PP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 270,
+  "member_id": 13,
+  "pool": "ms",
+  "meeting_date": "2026-05-07",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 271,
+  "member_id": 13,
+  "pool": "ms",
+  "meeting_date": "2026-06-25",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 272,
+  "member_id": 13,
+  "pool": "ms",
+  "meeting_date": "2026-07-02",
+  "code": "PP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 273,
+  "member_id": 13,
+  "pool": "ms",
+  "meeting_date": "2026-08-06",
+  "code": "PP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 274,
+  "member_id": 13,
+  "pool": "ms",
+  "meeting_date": "2026-08-27",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 275,
+  "member_id": 13,
+  "pool": "ms",
+  "meeting_date": "2026-10-08",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 276,
+  "member_id": 14,
+  "pool": "ms",
+  "meeting_date": "2026-09-03",
+  "code": "PP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 277,
+  "member_id": 14,
+  "pool": "ms",
+  "meeting_date": "2026-10-22",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 278,
+  "member_id": 15,
+  "pool": "ms",
+  "meeting_date": "2026-01-15",
+  "code": "PP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 279,
+  "member_id": 15,
+  "pool": "ms",
+  "meeting_date": "2026-01-29",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 280,
+  "member_id": 15,
+  "pool": "ms",
+  "meeting_date": "2026-03-05",
+  "code": "PP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 281,
+  "member_id": 15,
+  "pool": "ms",
+  "meeting_date": "2026-03-19",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 282,
+  "member_id": 15,
+  "pool": "ms",
+  "meeting_date": "2026-04-23",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 283,
+  "member_id": 15,
+  "pool": "ms",
+  "meeting_date": "2026-05-07",
+  "code": "PP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 284,
+  "member_id": 15,
+  "pool": "ms",
+  "meeting_date": "2026-06-11",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 285,
+  "member_id": 15,
+  "pool": "ms",
+  "meeting_date": "2026-07-23",
+  "code": "PP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 286,
+  "member_id": 15,
+  "pool": "ms",
+  "meeting_date": "2026-09-10",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 287,
+  "member_id": 15,
+  "pool": "ms",
+  "meeting_date": "2026-10-01",
+  "code": "CBSR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 288,
+  "member_id": 15,
+  "pool": "ms",
+  "meeting_date": "2026-10-22",
+  "code": "PP2",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 289,
+  "member_id": 12,
+  "pool": "bible_reading",
+  "meeting_date": "2026-02-05",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 290,
+  "member_id": 12,
+  "pool": "bible_reading",
+  "meeting_date": "2026-04-23",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 291,
+  "member_id": 15,
+  "pool": "bible_reading",
+  "meeting_date": "2026-02-12",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 292,
+  "member_id": 15,
+  "pool": "bible_reading",
+  "meeting_date": "2026-05-14",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 293,
+  "member_id": 16,
+  "pool": "bible_reading",
+  "meeting_date": "2026-02-19",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 294,
+  "member_id": 16,
+  "pool": "bible_reading",
+  "meeting_date": "2026-03-26",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 295,
+  "member_id": 16,
+  "pool": "bible_reading",
+  "meeting_date": "2026-05-07",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 296,
+  "member_id": 16,
+  "pool": "bible_reading",
+  "meeting_date": "2026-06-11",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 297,
+  "member_id": 16,
+  "pool": "bible_reading",
+  "meeting_date": "2026-07-09",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 298,
+  "member_id": 16,
+  "pool": "bible_reading",
+  "meeting_date": "2026-08-13",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 299,
+  "member_id": 16,
+  "pool": "bible_reading",
+  "meeting_date": "2026-09-17",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 300,
+  "member_id": 16,
+  "pool": "bible_reading",
+  "meeting_date": "2026-10-22",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 301,
+  "member_id": 17,
+  "pool": "bible_reading",
+  "meeting_date": "2026-01-08",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 302,
+  "member_id": 17,
+  "pool": "bible_reading",
+  "meeting_date": "2026-02-26",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 303,
+  "member_id": 17,
+  "pool": "bible_reading",
+  "meeting_date": "2026-04-09",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 304,
+  "member_id": 17,
+  "pool": "bible_reading",
+  "meeting_date": "2026-05-21",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 305,
+  "member_id": 17,
+  "pool": "bible_reading",
+  "meeting_date": "2026-06-18",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 306,
+  "member_id": 17,
+  "pool": "bible_reading",
+  "meeting_date": "2026-07-23",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 307,
+  "member_id": 17,
+  "pool": "bible_reading",
+  "meeting_date": "2026-08-20",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 308,
+  "member_id": 17,
+  "pool": "bible_reading",
+  "meeting_date": "2026-09-24",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 309,
+  "member_id": 17,
+  "pool": "bible_reading",
+  "meeting_date": "2026-10-29",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 310,
+  "member_id": 18,
+  "pool": "bible_reading",
+  "meeting_date": "2026-01-15",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 311,
+  "member_id": 18,
+  "pool": "bible_reading",
+  "meeting_date": "2026-03-12",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 312,
+  "member_id": 18,
+  "pool": "bible_reading",
+  "meeting_date": "2026-04-16",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 313,
+  "member_id": 18,
+  "pool": "bible_reading",
+  "meeting_date": "2026-05-28",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 314,
+  "member_id": 18,
+  "pool": "bible_reading",
+  "meeting_date": "2026-06-25",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 315,
+  "member_id": 18,
+  "pool": "bible_reading",
+  "meeting_date": "2026-07-30",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 316,
+  "member_id": 18,
+  "pool": "bible_reading",
+  "meeting_date": "2026-08-27",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 317,
+  "member_id": 18,
+  "pool": "bible_reading",
+  "meeting_date": "2026-10-01",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 318,
+  "member_id": 13,
+  "pool": "bible_reading",
+  "meeting_date": "2026-01-22",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 319,
+  "member_id": 13,
+  "pool": "bible_reading",
+  "meeting_date": "2026-03-05",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 320,
+  "member_id": 19,
+  "pool": "bible_reading",
+  "meeting_date": "2026-01-29",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 321,
+  "member_id": 19,
+  "pool": "bible_reading",
+  "meeting_date": "2026-03-19",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 322,
+  "member_id": 19,
+  "pool": "bible_reading",
+  "meeting_date": "2026-04-30",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 323,
+  "member_id": 19,
+  "pool": "bible_reading",
+  "meeting_date": "2026-06-04",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 324,
+  "member_id": 19,
+  "pool": "bible_reading",
+  "meeting_date": "2026-07-02",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 325,
+  "member_id": 19,
+  "pool": "bible_reading",
+  "meeting_date": "2026-08-06",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 326,
+  "member_id": 19,
+  "pool": "bible_reading",
+  "meeting_date": "2026-09-03",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 327,
+  "member_id": 19,
+  "pool": "bible_reading",
+  "meeting_date": "2026-10-08",
+  "code": "BR",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 328,
+  "member_id": 20,
+  "pool": "female",
+  "meeting_date": "2026-01-29",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 329,
+  "member_id": 20,
+  "pool": "female",
+  "meeting_date": "2026-02-26",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 330,
+  "member_id": 20,
+  "pool": "female",
+  "meeting_date": "2026-04-16",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 331,
+  "member_id": 20,
+  "pool": "female",
+  "meeting_date": "2026-05-28",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 332,
+  "member_id": 20,
+  "pool": "female",
+  "meeting_date": "2026-06-25",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 333,
+  "member_id": 20,
+  "pool": "female",
+  "meeting_date": "2026-08-13",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 334,
+  "member_id": 20,
+  "pool": "female",
+  "meeting_date": "2026-10-01",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 335,
+  "member_id": 21,
+  "pool": "female",
+  "meeting_date": "2026-02-12",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 336,
+  "member_id": 21,
+  "pool": "female",
+  "meeting_date": "2026-04-09",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 337,
+  "member_id": 21,
+  "pool": "female",
+  "meeting_date": "2026-05-28",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 338,
+  "member_id": 21,
+  "pool": "female",
+  "meeting_date": "2026-07-02",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 339,
+  "member_id": 21,
+  "pool": "female",
+  "meeting_date": "2026-08-20",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 340,
+  "member_id": 21,
+  "pool": "female",
+  "meeting_date": "2026-10-08",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 341,
+  "member_id": 22,
+  "pool": "female",
+  "meeting_date": "2026-03-12",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 342,
+  "member_id": 22,
+  "pool": "female",
+  "meeting_date": "2026-05-07",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 343,
+  "member_id": 22,
+  "pool": "female",
+  "meeting_date": "2026-06-11",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 344,
+  "member_id": 22,
+  "pool": "female",
+  "meeting_date": "2026-07-30",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 345,
+  "member_id": 22,
+  "pool": "female",
+  "meeting_date": "2026-09-17",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 346,
+  "member_id": 23,
+  "pool": "female",
+  "meeting_date": "2026-01-15",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 347,
+  "member_id": 23,
+  "pool": "female",
+  "meeting_date": "2026-02-19",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 348,
+  "member_id": 23,
+  "pool": "female",
+  "meeting_date": "2026-03-12",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 349,
+  "member_id": 23,
+  "pool": "female",
+  "meeting_date": "2026-04-23",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 350,
+  "member_id": 23,
+  "pool": "female",
+  "meeting_date": "2026-06-04",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 351,
+  "member_id": 23,
+  "pool": "female",
+  "meeting_date": "2026-07-09",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 352,
+  "member_id": 23,
+  "pool": "female",
+  "meeting_date": "2026-08-25",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 353,
+  "member_id": 23,
+  "pool": "female",
+  "meeting_date": "2026-10-08",
+  "code": "7E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 354,
+  "member_id": 24,
+  "pool": "female",
+  "meeting_date": "2026-01-22",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 355,
+  "member_id": 24,
+  "pool": "female",
+  "meeting_date": "2026-03-19",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 356,
+  "member_id": 24,
+  "pool": "female",
+  "meeting_date": "2026-04-30",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 357,
+  "member_id": 24,
+  "pool": "female",
+  "meeting_date": "2026-06-04",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 358,
+  "member_id": 24,
+  "pool": "female",
+  "meeting_date": "2026-07-23",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 359,
+  "member_id": 24,
+  "pool": "female",
+  "meeting_date": "2026-09-10",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 360,
+  "member_id": 25,
+  "pool": "female",
+  "meeting_date": "2026-01-15",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 361,
+  "member_id": 25,
+  "pool": "female",
+  "meeting_date": "2026-03-19",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 362,
+  "member_id": 25,
+  "pool": "female",
+  "meeting_date": "2026-05-14",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 363,
+  "member_id": 25,
+  "pool": "female",
+  "meeting_date": "2026-06-18",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 364,
+  "member_id": 25,
+  "pool": "female",
+  "meeting_date": "2026-08-13",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 365,
+  "member_id": 25,
+  "pool": "female",
+  "meeting_date": "2026-10-01",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 366,
+  "member_id": 26,
+  "pool": "female",
+  "meeting_date": "2026-01-29",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 367,
+  "member_id": 26,
+  "pool": "female",
+  "meeting_date": "2026-04-09",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 368,
+  "member_id": 26,
+  "pool": "female",
+  "meeting_date": "2026-05-21",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 369,
+  "member_id": 26,
+  "pool": "female",
+  "meeting_date": "2026-06-25",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 370,
+  "member_id": 26,
+  "pool": "female",
+  "meeting_date": "2026-09-03",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 371,
+  "member_id": 26,
+  "pool": "female",
+  "meeting_date": "2026-10-22",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 372,
+  "member_id": 27,
+  "pool": "female",
+  "meeting_date": "2026-01-08",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 373,
+  "member_id": 27,
+  "pool": "female",
+  "meeting_date": "2026-02-26",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 374,
+  "member_id": 27,
+  "pool": "female",
+  "meeting_date": "2026-03-05",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 375,
+  "member_id": 27,
+  "pool": "female",
+  "meeting_date": "2026-04-16",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 376,
+  "member_id": 27,
+  "pool": "female",
+  "meeting_date": "2026-05-21",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 377,
+  "member_id": 27,
+  "pool": "female",
+  "meeting_date": "2026-06-18",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 378,
+  "member_id": 27,
+  "pool": "female",
+  "meeting_date": "2026-08-06",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 379,
+  "member_id": 27,
+  "pool": "female",
+  "meeting_date": "2026-09-17",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 380,
+  "member_id": 28,
+  "pool": "female",
+  "meeting_date": "2026-02-19",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 381,
+  "member_id": 28,
+  "pool": "female",
+  "meeting_date": "2026-03-26",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 382,
+  "member_id": 28,
+  "pool": "female",
+  "meeting_date": "2026-05-14",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 383,
+  "member_id": 28,
+  "pool": "female",
+  "meeting_date": "2026-06-11",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 384,
+  "member_id": 28,
+  "pool": "female",
+  "meeting_date": "2026-07-30",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 385,
+  "member_id": 28,
+  "pool": "female",
+  "meeting_date": "2026-09-10",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 386,
+  "member_id": 29,
+  "pool": "female",
+  "meeting_date": "2026-02-12",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 387,
+  "member_id": 29,
+  "pool": "female",
+  "meeting_date": "2026-03-05",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 388,
+  "member_id": 29,
+  "pool": "female",
+  "meeting_date": "2026-04-16",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 389,
+  "member_id": 29,
+  "pool": "female",
+  "meeting_date": "2026-05-28",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 390,
+  "member_id": 29,
+  "pool": "female",
+  "meeting_date": "2026-07-23",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 391,
+  "member_id": 29,
+  "pool": "female",
+  "meeting_date": "2026-08-25",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 392,
+  "member_id": 29,
+  "pool": "female",
+  "meeting_date": "2026-10-22",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 393,
+  "member_id": 30,
+  "pool": "female",
+  "meeting_date": "2026-01-22",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 394,
+  "member_id": 30,
+  "pool": "female",
+  "meeting_date": "2026-02-26",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 395,
+  "member_id": 30,
+  "pool": "female",
+  "meeting_date": "2026-04-09",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 396,
+  "member_id": 30,
+  "pool": "female",
+  "meeting_date": "2026-05-28",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 397,
+  "member_id": 30,
+  "pool": "female",
+  "meeting_date": "2026-07-02",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 398,
+  "member_id": 30,
+  "pool": "female",
+  "meeting_date": "2026-08-25",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 399,
+  "member_id": 30,
+  "pool": "female",
+  "meeting_date": "2026-10-22",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 400,
+  "member_id": 31,
+  "pool": "female",
+  "meeting_date": "2026-01-08",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 401,
+  "member_id": 31,
+  "pool": "female",
+  "meeting_date": "2026-02-19",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 402,
+  "member_id": 31,
+  "pool": "female",
+  "meeting_date": "2026-03-05",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 403,
+  "member_id": 31,
+  "pool": "female",
+  "meeting_date": "2026-04-23",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 404,
+  "member_id": 31,
+  "pool": "female",
+  "meeting_date": "2026-06-04",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 405,
+  "member_id": 31,
+  "pool": "female",
+  "meeting_date": "2026-07-09",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 406,
+  "member_id": 31,
+  "pool": "female",
+  "meeting_date": "2026-08-25",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 407,
+  "member_id": 31,
+  "pool": "female",
+  "meeting_date": "2026-10-22",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 408,
+  "member_id": 32,
+  "pool": "female",
+  "meeting_date": "2026-02-05",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 409,
+  "member_id": 32,
+  "pool": "female",
+  "meeting_date": "2026-03-19",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 410,
+  "member_id": 32,
+  "pool": "female",
+  "meeting_date": "2026-05-14",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 411,
+  "member_id": 32,
+  "pool": "female",
+  "meeting_date": "2026-06-18",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 412,
+  "member_id": 32,
+  "pool": "female",
+  "meeting_date": "2026-08-13",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 413,
+  "member_id": 32,
+  "pool": "female",
+  "meeting_date": "2026-09-24",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 414,
+  "member_id": 33,
+  "pool": "female",
+  "meeting_date": "2026-01-29",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 415,
+  "member_id": 33,
+  "pool": "female",
+  "meeting_date": "2026-04-30",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 416,
+  "member_id": 33,
+  "pool": "female",
+  "meeting_date": "2026-06-11",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 417,
+  "member_id": 34,
+  "pool": "female",
+  "meeting_date": "2026-02-05",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 418,
+  "member_id": 34,
+  "pool": "female",
+  "meeting_date": "2026-03-12",
+  "code": "7E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 419,
+  "member_id": 34,
+  "pool": "female",
+  "meeting_date": "2026-04-23",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 420,
+  "member_id": 34,
+  "pool": "female",
+  "meeting_date": "2026-05-28",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 421,
+  "member_id": 34,
+  "pool": "female",
+  "meeting_date": "2026-07-02",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 422,
+  "member_id": 35,
+  "pool": "female",
+  "meeting_date": "2026-02-12",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 423,
+  "member_id": 35,
+  "pool": "female",
+  "meeting_date": "2026-03-19",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 424,
+  "member_id": 35,
+  "pool": "female",
+  "meeting_date": "2026-05-07",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 425,
+  "member_id": 35,
+  "pool": "female",
+  "meeting_date": "2026-06-11",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 426,
+  "member_id": 35,
+  "pool": "female",
+  "meeting_date": "2026-07-30",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 427,
+  "member_id": 35,
+  "pool": "female",
+  "meeting_date": "2026-09-03",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 428,
+  "member_id": 35,
+  "pool": "female",
+  "meeting_date": "2026-10-22",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 429,
+  "member_id": 38,
+  "pool": "female",
+  "meeting_date": "2026-01-29",
+  "code": "7E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 430,
+  "member_id": 38,
+  "pool": "female",
+  "meeting_date": "2026-04-09",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 431,
+  "member_id": 38,
+  "pool": "female",
+  "meeting_date": "2026-05-14",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 432,
+  "member_id": 38,
+  "pool": "female",
+  "meeting_date": "2026-06-18",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 433,
+  "member_id": 38,
+  "pool": "female",
+  "meeting_date": "2026-08-06",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 434,
+  "member_id": 38,
+  "pool": "female",
+  "meeting_date": "2026-09-17",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 435,
+  "member_id": 38,
+  "pool": "female",
+  "meeting_date": "2026-10-29",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 436,
+  "member_id": 39,
+  "pool": "female",
+  "meeting_date": "2026-02-05",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 437,
+  "member_id": 39,
+  "pool": "female",
+  "meeting_date": "2026-03-05",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 438,
+  "member_id": 39,
+  "pool": "female",
+  "meeting_date": "2026-04-16",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 439,
+  "member_id": 39,
+  "pool": "female",
+  "meeting_date": "2026-05-28",
+  "code": "7E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 440,
+  "member_id": 39,
+  "pool": "female",
+  "meeting_date": "2026-07-09",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 441,
+  "member_id": 39,
+  "pool": "female",
+  "meeting_date": "2026-08-20",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 442,
+  "member_id": 39,
+  "pool": "female",
+  "meeting_date": "2026-10-08",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 443,
+  "member_id": 40,
+  "pool": "female",
+  "meeting_date": "2026-01-29",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 444,
+  "member_id": 40,
+  "pool": "female",
+  "meeting_date": "2026-04-16",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 445,
+  "member_id": 40,
+  "pool": "female",
+  "meeting_date": "2026-05-28",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 446,
+  "member_id": 40,
+  "pool": "female",
+  "meeting_date": "2026-07-02",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 447,
+  "member_id": 40,
+  "pool": "female",
+  "meeting_date": "2026-08-20",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 448,
+  "member_id": 40,
+  "pool": "female",
+  "meeting_date": "2026-09-24",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 449,
+  "member_id": 41,
+  "pool": "female",
+  "meeting_date": "2026-02-05",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 450,
+  "member_id": 41,
+  "pool": "female",
+  "meeting_date": "2026-04-09",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 451,
+  "member_id": 41,
+  "pool": "female",
+  "meeting_date": "2026-05-21",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 452,
+  "member_id": 41,
+  "pool": "female",
+  "meeting_date": "2026-06-18",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 453,
+  "member_id": 41,
+  "pool": "female",
+  "meeting_date": "2026-07-30",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 454,
+  "member_id": 41,
+  "pool": "female",
+  "meeting_date": "2026-09-03",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 455,
+  "member_id": 41,
+  "pool": "female",
+  "meeting_date": "2026-10-22",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 456,
+  "member_id": 42,
+  "pool": "female",
+  "meeting_date": "2026-01-22",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 457,
+  "member_id": 42,
+  "pool": "female",
+  "meeting_date": "2026-04-16",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 458,
+  "member_id": 42,
+  "pool": "female",
+  "meeting_date": "2026-05-28",
+  "code": "7A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 459,
+  "member_id": 42,
+  "pool": "female",
+  "meeting_date": "2026-06-25",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 460,
+  "member_id": 42,
+  "pool": "female",
+  "meeting_date": "2026-09-10",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 461,
+  "member_id": 43,
+  "pool": "female",
+  "meeting_date": "2026-02-12",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 462,
+  "member_id": 43,
+  "pool": "female",
+  "meeting_date": "2026-03-12",
+  "code": "7A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 463,
+  "member_id": 43,
+  "pool": "female",
+  "meeting_date": "2026-04-23",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 464,
+  "member_id": 43,
+  "pool": "female",
+  "meeting_date": "2026-06-04",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 465,
+  "member_id": 43,
+  "pool": "female",
+  "meeting_date": "2026-07-09",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 466,
+  "member_id": 43,
+  "pool": "female",
+  "meeting_date": "2026-08-20",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 467,
+  "member_id": 43,
+  "pool": "female",
+  "meeting_date": "2026-09-24",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 468,
+  "member_id": 44,
+  "pool": "female",
+  "meeting_date": "2026-01-22",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 469,
+  "member_id": 44,
+  "pool": "female",
+  "meeting_date": "2026-03-26",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 470,
+  "member_id": 44,
+  "pool": "female",
+  "meeting_date": "2026-05-07",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 471,
+  "member_id": 44,
+  "pool": "female",
+  "meeting_date": "2026-06-11",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 472,
+  "member_id": 44,
+  "pool": "female",
+  "meeting_date": "2026-07-30",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 473,
+  "member_id": 44,
+  "pool": "female",
+  "meeting_date": "2026-09-10",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 474,
+  "member_id": 44,
+  "pool": "female",
+  "meeting_date": "2026-10-29",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 475,
+  "member_id": 45,
+  "pool": "female",
+  "meeting_date": "2026-01-15",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 476,
+  "member_id": 45,
+  "pool": "female",
+  "meeting_date": "2026-02-26",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 477,
+  "member_id": 45,
+  "pool": "female",
+  "meeting_date": "2026-03-12",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 478,
+  "member_id": 45,
+  "pool": "female",
+  "meeting_date": "2026-04-30",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 479,
+  "member_id": 45,
+  "pool": "female",
+  "meeting_date": "2026-06-04",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 480,
+  "member_id": 45,
+  "pool": "female",
+  "meeting_date": "2026-07-23",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 481,
+  "member_id": 45,
+  "pool": "female",
+  "meeting_date": "2026-09-10",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 482,
+  "member_id": 45,
+  "pool": "female",
+  "meeting_date": "2026-10-29",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 483,
+  "member_id": 46,
+  "pool": "female",
+  "meeting_date": "2026-01-29",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 484,
+  "member_id": 46,
+  "pool": "female",
+  "meeting_date": "2026-03-26",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 485,
+  "member_id": 46,
+  "pool": "female",
+  "meeting_date": "2026-05-21",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 486,
+  "member_id": 46,
+  "pool": "female",
+  "meeting_date": "2026-08-13",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 487,
+  "member_id": 46,
+  "pool": "female",
+  "meeting_date": "2026-10-08",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 488,
+  "member_id": 47,
+  "pool": "female",
+  "meeting_date": "2026-01-29",
+  "code": "7A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 489,
+  "member_id": 47,
+  "pool": "female",
+  "meeting_date": "2026-03-26",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 490,
+  "member_id": 47,
+  "pool": "female",
+  "meeting_date": "2026-05-14",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 491,
+  "member_id": 47,
+  "pool": "female",
+  "meeting_date": "2026-06-18",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 492,
+  "member_id": 47,
+  "pool": "female",
+  "meeting_date": "2026-08-13",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 493,
+  "member_id": 47,
+  "pool": "female",
+  "meeting_date": "2026-09-17",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 494,
+  "member_id": 48,
+  "pool": "female",
+  "meeting_date": "2026-01-15",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 495,
+  "member_id": 48,
+  "pool": "female",
+  "meeting_date": "2026-02-19",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 496,
+  "member_id": 48,
+  "pool": "female",
+  "meeting_date": "2026-03-12",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 497,
+  "member_id": 48,
+  "pool": "female",
+  "meeting_date": "2026-04-23",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 498,
+  "member_id": 48,
+  "pool": "female",
+  "meeting_date": "2026-06-11",
+  "code": "7E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 499,
+  "member_id": 48,
+  "pool": "female",
+  "meeting_date": "2026-07-30",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 500,
+  "member_id": 48,
+  "pool": "female",
+  "meeting_date": "2026-09-17",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 501,
+  "member_id": 48,
+  "pool": "female",
+  "meeting_date": "2026-10-29",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 502,
+  "member_id": 49,
+  "pool": "female",
+  "meeting_date": "2026-01-08",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 503,
+  "member_id": 49,
+  "pool": "female",
+  "meeting_date": "2026-02-19",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 504,
+  "member_id": 49,
+  "pool": "female",
+  "meeting_date": "2026-03-19",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 505,
+  "member_id": 49,
+  "pool": "female",
+  "meeting_date": "2026-05-21",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 506,
+  "member_id": 49,
+  "pool": "female",
+  "meeting_date": "2026-06-25",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 507,
+  "member_id": 49,
+  "pool": "female",
+  "meeting_date": "2026-08-20",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 508,
+  "member_id": 49,
+  "pool": "female",
+  "meeting_date": "2026-09-24",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 509,
+  "member_id": 50,
+  "pool": "female",
+  "meeting_date": "2026-01-08",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 510,
+  "member_id": 50,
+  "pool": "female",
+  "meeting_date": "2026-02-26",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 511,
+  "member_id": 50,
+  "pool": "female",
+  "meeting_date": "2026-03-26",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 512,
+  "member_id": 50,
+  "pool": "female",
+  "meeting_date": "2026-04-09",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 513,
+  "member_id": 50,
+  "pool": "female",
+  "meeting_date": "2026-05-21",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 514,
+  "member_id": 50,
+  "pool": "female",
+  "meeting_date": "2026-06-25",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 515,
+  "member_id": 50,
+  "pool": "female",
+  "meeting_date": "2026-08-13",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 516,
+  "member_id": 50,
+  "pool": "female",
+  "meeting_date": "2026-09-17",
+  "code": "7E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 517,
+  "member_id": 51,
+  "pool": "female",
+  "meeting_date": "2026-01-15",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 518,
+  "member_id": 51,
+  "pool": "female",
+  "meeting_date": "2026-02-26",
+  "code": "7E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 519,
+  "member_id": 51,
+  "pool": "female",
+  "meeting_date": "2026-03-12",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 520,
+  "member_id": 51,
+  "pool": "female",
+  "meeting_date": "2026-04-30",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 521,
+  "member_id": 51,
+  "pool": "female",
+  "meeting_date": "2026-06-04",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 522,
+  "member_id": 51,
+  "pool": "female",
+  "meeting_date": "2026-07-23",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 523,
+  "member_id": 51,
+  "pool": "female",
+  "meeting_date": "2026-09-10",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 524,
+  "member_id": 51,
+  "pool": "female",
+  "meeting_date": "2026-10-29",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 525,
+  "member_id": 52,
+  "pool": "female",
+  "meeting_date": "2026-09-17",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 526,
+  "member_id": 53,
+  "pool": "female",
+  "meeting_date": "2026-02-19",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 527,
+  "member_id": 53,
+  "pool": "female",
+  "meeting_date": "2026-03-26",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 528,
+  "member_id": 53,
+  "pool": "female",
+  "meeting_date": "2026-05-14",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 529,
+  "member_id": 53,
+  "pool": "female",
+  "meeting_date": "2026-06-25",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 530,
+  "member_id": 53,
+  "pool": "female",
+  "meeting_date": "2026-08-20",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 531,
+  "member_id": 53,
+  "pool": "female",
+  "meeting_date": "2026-10-08",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 532,
+  "member_id": 54,
+  "pool": "female",
+  "meeting_date": "2026-01-22",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 533,
+  "member_id": 54,
+  "pool": "female",
+  "meeting_date": "2026-02-26",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 534,
+  "member_id": 54,
+  "pool": "female",
+  "meeting_date": "2026-03-19",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 535,
+  "member_id": 54,
+  "pool": "female",
+  "meeting_date": "2026-05-07",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 536,
+  "member_id": 54,
+  "pool": "female",
+  "meeting_date": "2026-06-11",
+  "code": "7A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 537,
+  "member_id": 54,
+  "pool": "female",
+  "meeting_date": "2026-08-06",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 538,
+  "member_id": 54,
+  "pool": "female",
+  "meeting_date": "2026-09-17",
+  "code": "7A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 539,
+  "member_id": 55,
+  "pool": "female",
+  "meeting_date": "2026-02-05",
+  "code": "5A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 540,
+  "member_id": 55,
+  "pool": "female",
+  "meeting_date": "2026-03-12",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 541,
+  "member_id": 55,
+  "pool": "female",
+  "meeting_date": "2026-04-23",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 542,
+  "member_id": 55,
+  "pool": "female",
+  "meeting_date": "2026-06-11",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 543,
+  "member_id": 55,
+  "pool": "female",
+  "meeting_date": "2026-08-06",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 544,
+  "member_id": 55,
+  "pool": "female",
+  "meeting_date": "2026-09-03",
+  "code": "5E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 545,
+  "member_id": 55,
+  "pool": "female",
+  "meeting_date": "2026-10-08",
+  "code": "7A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 546,
+  "member_id": 14,
+  "pool": "female",
+  "meeting_date": "2026-10-01",
+  "code": "4A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 547,
+  "member_id": 15,
+  "pool": "female",
+  "meeting_date": "2026-10-22",
+  "code": "7E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 548,
+  "member_id": 1,
+  "pool": "female",
+  "meeting_date": "2026-10-01",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 549,
+  "member_id": 1,
+  "pool": "female",
+  "meeting_date": "2026-10-29",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 550,
+  "member_id": 12,
+  "pool": "female",
+  "meeting_date": "2026-10-08",
+  "code": "6A",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 551,
+  "member_id": 4,
+  "pool": "female",
+  "meeting_date": "2026-10-01",
+  "code": "4E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 552,
+  "member_id": 11,
+  "pool": "female",
+  "meeting_date": "2026-10-08",
+  "code": "6E",
+  "created_at": "2026-10-20T06:38:20.85304+00:00"
+ },
+ {
+  "id": 554,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-11-05",
+  "code": "ENB",
+  "created_at": "2026-10-20T08:00:21.813144+00:00"
+ },
+ {
+  "id": 555,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-11-05",
+  "code": "PP1",
+  "created_at": "2026-10-20T08:01:59.164039+00:00"
+ },
+ {
+  "id": 556,
+  "member_id": 18,
+  "pool": "bible_reading",
+  "meeting_date": "2026-11-05",
+  "code": "BR",
+  "created_at": "2026-10-20T08:04:33.482346+00:00"
+ },
+ {
+  "id": 561,
+  "member_id": 5,
+  "pool": "elder",
+  "meeting_date": "2026-11-05",
+  "code": "CLP",
+  "created_at": "2026-10-20T11:12:53.817895+00:00"
+ },
+ {
+  "id": 562,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-11-05",
+  "code": "KP1",
+  "created_at": "2026-10-20T11:13:36.954218+00:00"
+ },
+ {
+  "id": 563,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-11-05",
+  "code": "CH",
+  "created_at": "2026-10-20T11:14:27.325868+00:00"
+ },
+ {
+  "id": 564,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-11-05",
+  "code": "CBS",
+  "created_at": "2026-10-20T11:14:29.932341+00:00"
+ },
+ {
+  "id": 565,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-11-12",
+  "code": "CH",
+  "created_at": "2026-10-20T11:14:33.366743+00:00"
+ },
+ {
+  "id": 566,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-11-19",
+  "code": "CH",
+  "created_at": "2026-10-20T11:14:36.796806+00:00"
+ },
+ {
+  "id": 567,
+  "member_id": 12,
+  "pool": "ms",
+  "meeting_date": "2026-11-05",
+  "code": "CBSR",
+  "created_at": "2026-10-20T11:14:54.770206+00:00"
+ },
+ {
+  "id": 568,
+  "member_id": 24,
+  "pool": "female",
+  "meeting_date": "2026-11-05",
+  "code": "4A",
+  "created_at": "2026-10-20T11:39:31.497204+00:00"
+ },
+ {
+  "id": 570,
+  "member_id": 28,
+  "pool": "female",
+  "meeting_date": "2026-11-05",
+  "code": "6E",
+  "created_at": "2026-10-20T11:41:10.51709+00:00"
+ },
+ {
+  "id": 571,
+  "member_id": 47,
+  "pool": "female",
+  "meeting_date": "2026-11-05",
+  "code": "6A",
+  "created_at": "2026-10-20T11:44:21.567459+00:00"
+ },
+ {
+  "id": 569,
+  "member_id": 27,
+  "pool": "female",
+  "meeting_date": "2026-11-05",
+  "code": "5E",
+  "created_at": "2026-10-20T11:39:36.81853+00:00"
+ },
+ {
+  "id": 573,
+  "member_id": 52,
+  "pool": "female",
+  "meeting_date": "2026-11-05",
+  "code": "4E",
+  "created_at": "2026-10-20T11:45:20.847846+00:00"
+ },
+ {
+  "id": 575,
+  "member_id": 43,
+  "pool": "female",
+  "meeting_date": "2026-11-05",
+  "code": "5A",
+  "created_at": "2026-10-20T11:46:29.842324+00:00"
+ },
+ {
+  "id": 576,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-11-26",
+  "code": "CH",
+  "created_at": "2026-10-20T11:48:15.23761+00:00"
+ },
+ {
+  "id": 577,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-11-12",
+  "code": "PP1",
+  "created_at": "2026-10-20T11:49:12.445638+00:00"
+ },
+ {
+  "id": 578,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-11-12",
+  "code": "ENB",
+  "created_at": "2026-10-20T11:49:44.188387+00:00"
+ },
+ {
+  "id": 579,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-11-12",
+  "code": "KP1",
+  "created_at": "2026-10-20T11:50:03.351147+00:00"
+ },
+ {
+  "id": 580,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-11-12",
+  "code": "CBS",
+  "created_at": "2026-10-20T11:50:15.975426+00:00"
+ },
+ {
+  "id": 581,
+  "member_id": 15,
+  "pool": "ms",
+  "meeting_date": "2026-11-12",
+  "code": "CBSR",
+  "created_at": "2026-10-20T11:50:35.671654+00:00"
+ },
+ {
+  "id": 583,
+  "member_id": 8,
+  "pool": "ms",
+  "meeting_date": "2026-11-12",
+  "code": "OP",
+  "created_at": "2026-10-20T11:51:52.345808+00:00"
+ },
+ {
+  "id": 584,
+  "member_id": 6,
+  "pool": "elder",
+  "meeting_date": "2026-11-12",
+  "code": "CLP",
+  "created_at": "2026-10-20T11:52:02.768405+00:00"
+ },
+ {
+  "id": 585,
+  "member_id": 2,
+  "pool": "female",
+  "meeting_date": "2026-11-12",
+  "code": "5E",
+  "created_at": "2026-10-20T11:52:38.324625+00:00"
+ },
+ {
+  "id": 586,
+  "member_id": 10,
+  "pool": "female",
+  "meeting_date": "2026-11-12",
+  "code": "5A",
+  "created_at": "2026-10-20T11:52:44.711611+00:00"
+ },
+ {
+  "id": 588,
+  "member_id": 56,
+  "pool": "bible_reading",
+  "meeting_date": "2026-11-12",
+  "code": "BR",
+  "created_at": "2026-10-20T11:54:26.365689+00:00"
+ },
+ {
+  "id": 589,
+  "member_id": 49,
+  "pool": "female",
+  "meeting_date": "2026-11-12",
+  "code": "4E",
+  "created_at": "2026-10-20T11:55:19.764171+00:00"
+ },
+ {
+  "id": 590,
+  "member_id": 53,
+  "pool": "female",
+  "meeting_date": "2026-11-12",
+  "code": "4A",
+  "created_at": "2026-10-20T11:57:08.351791+00:00"
+ },
+ {
+  "id": 591,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-11-19",
+  "code": "PP1",
+  "created_at": "2026-10-20T11:59:44.555013+00:00"
+ },
+ {
+  "id": 592,
+  "member_id": 9,
+  "pool": "ms",
+  "meeting_date": "2026-11-19",
+  "code": "ENB",
+  "created_at": "2026-10-20T11:59:59.755363+00:00"
+ },
+ {
+  "id": 594,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-11-19",
+  "code": "KP1",
+  "created_at": "2026-10-20T12:00:58.962322+00:00"
+ },
+ {
+  "id": 597,
+  "member_id": 5,
+  "pool": "elder",
+  "meeting_date": "2026-11-19",
+  "code": "CLP",
+  "created_at": "2026-10-20T12:01:24.749588+00:00"
+ },
+ {
+  "id": 599,
+  "member_id": 42,
+  "pool": "female",
+  "meeting_date": "2026-11-19",
+  "code": "4E",
+  "created_at": "2026-10-20T12:02:46.312011+00:00"
+ },
+ {
+  "id": 600,
+  "member_id": 37,
+  "pool": "female",
+  "meeting_date": "2026-11-19",
+  "code": "4A",
+  "created_at": "2026-10-20T12:03:00.605475+00:00"
+ },
+ {
+  "id": 601,
+  "member_id": 40,
+  "pool": "female",
+  "meeting_date": "2026-11-19",
+  "code": "5A",
+  "created_at": "2026-10-20T12:03:10.459595+00:00"
+ },
+ {
+  "id": 598,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-11-19",
+  "code": "OP",
+  "created_at": "2026-10-20T12:01:40.215889+00:00"
+ },
+ {
+  "id": 602,
+  "member_id": 55,
+  "pool": "female",
+  "meeting_date": "2026-11-19",
+  "code": "5E",
+  "created_at": "2026-10-20T12:04:14.751501+00:00"
+ },
+ {
+  "id": 604,
+  "member_id": 13,
+  "pool": "ms",
+  "meeting_date": "2026-11-19",
+  "code": "CBSR",
+  "created_at": "2026-10-20T12:05:21.831881+00:00"
+ },
+ {
+  "id": 605,
+  "member_id": 2,
+  "pool": "elder",
+  "meeting_date": "2026-11-19",
+  "code": "CBS",
+  "created_at": "2026-10-20T12:06:14.923554+00:00"
+ },
+ {
+  "id": 606,
+  "member_id": 4,
+  "pool": "female",
+  "meeting_date": "2026-11-19",
+  "code": "6E",
+  "created_at": "2026-10-20T12:06:27.915072+00:00"
+ },
+ {
+  "id": 607,
+  "member_id": 4,
+  "pool": "elder",
+  "meeting_date": "2026-11-26",
+  "code": "CBS",
+  "created_at": "2026-10-20T12:07:30.8837+00:00"
+ },
+ {
+  "id": 608,
+  "member_id": 8,
+  "pool": "ms",
+  "meeting_date": "2026-11-26",
+  "code": "ENB",
+  "created_at": "2026-10-20T12:07:43.648062+00:00"
+ },
+ {
+  "id": 609,
+  "member_id": 1,
+  "pool": "elder",
+  "meeting_date": "2026-11-26",
+  "code": "KP1",
+  "created_at": "2026-10-20T12:08:42.820982+00:00"
+ },
+ {
+  "id": 614,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-11-26",
+  "code": "PP1",
+  "created_at": "2026-10-20T12:09:57.730191+00:00"
+ },
+ {
+  "id": 616,
+  "member_id": 19,
+  "pool": "bible_reading",
+  "meeting_date": "2026-11-19",
+  "code": "BR",
+  "created_at": "2026-10-20T12:10:35.843064+00:00"
+ },
+ {
+  "id": 617,
+  "member_id": 16,
+  "pool": "bible_reading",
+  "meeting_date": "2026-11-26",
+  "code": "BR",
+  "created_at": "2026-10-20T12:10:39.301053+00:00"
+ },
+ {
+  "id": 618,
+  "member_id": 15,
+  "pool": "female",
+  "meeting_date": "2026-11-26",
+  "code": "5E",
+  "created_at": "2026-10-20T12:11:17.827847+00:00"
+ },
+ {
+  "id": 619,
+  "member_id": 9,
+  "pool": "female",
+  "meeting_date": "2026-11-26",
+  "code": "5A",
+  "created_at": "2026-10-20T12:11:29.679359+00:00"
+ },
+ {
+  "id": 620,
+  "member_id": 25,
+  "pool": "female",
+  "meeting_date": "2026-11-26",
+  "code": "4A",
+  "created_at": "2026-10-20T12:11:49.345754+00:00"
+ },
+ {
+  "id": 622,
+  "member_id": 12,
+  "pool": "female",
+  "meeting_date": "2026-11-12",
+  "code": "6E",
+  "created_at": "2026-10-20T12:13:06.644268+00:00"
+ },
+ {
+  "id": 623,
+  "member_id": 14,
+  "pool": "female",
+  "meeting_date": "2026-11-26",
+  "code": "6E",
+  "created_at": "2026-10-20T12:13:12.613851+00:00"
+ },
+ {
+  "id": 624,
+  "member_id": 12,
+  "pool": "ms",
+  "meeting_date": "2026-11-12",
+  "code": "PP2",
+  "created_at": "2026-10-20T12:13:30.770537+00:00"
+ },
+ {
+  "id": 615,
+  "member_id": 14,
+  "pool": "ms",
+  "meeting_date": "2026-11-26",
+  "code": "PP2",
+  "created_at": "2026-10-20T12:10:09.047872+00:00"
+ },
+ {
+  "id": 628,
+  "member_id": 3,
+  "pool": "elder",
+  "meeting_date": "2026-11-26",
+  "code": "CLP",
+  "created_at": "2026-10-20T12:14:25.617289+00:00"
+ },
+ {
+  "id": 630,
+  "member_id": 11,
+  "pool": "ms",
+  "meeting_date": "2026-11-05",
+  "code": "OP",
+  "created_at": "2026-10-20T12:15:58.839329+00:00"
+ },
+ {
+  "id": 631,
+  "member_id": 57,
+  "pool": "female",
+  "meeting_date": "2026-11-26",
+  "code": "4E",
+  "created_at": "2026-10-20T12:22:22.318396+00:00"
+ },
+ {
+  "id": 626,
+  "member_id": 10,
+  "pool": "ms",
+  "meeting_date": "2026-11-26",
+  "code": "OP",
+  "created_at": "2026-10-20T12:13:42.350582+00:00"
+ },
+ {
+  "id": 634,
+  "member_id": 12,
+  "pool": "ms",
+  "meeting_date": "2026-11-26",
+  "code": "CBSR",
+  "created_at": "2026-10-20T12:32:46.911166+00:00"
+ },
+ {
+  "id": 635,
+  "member_id": 54,
+  "pool": "female",
+  "meeting_date": "2026-12-03",
+  "code": "5E",
+  "created_at": "2026-10-21T00:20:13.36136+00:00"
+ },
+ {
+  "id": 636,
+  "member_id": 41,
+  "pool": "female",
+  "meeting_date": "2026-12-03",
+  "code": "5A",
+  "created_at": "2026-10-21T00:23:26.724923+00:00"
+ }
+]

@@ -1,0 +1,367 @@
+[
+ {
+  "member_id": 1,
+  "pool": "elder",
+  "note": null
+ },
+ {
+  "member_id": 1,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 2,
+  "pool": "elder",
+  "note": null
+ },
+ {
+  "member_id": 2,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 3,
+  "pool": "elder",
+  "note": null
+ },
+ {
+  "member_id": 3,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 4,
+  "pool": "elder",
+  "note": null
+ },
+ {
+  "member_id": 4,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 5,
+  "pool": "elder",
+  "note": null
+ },
+ {
+  "member_id": 5,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 6,
+  "pool": "elder",
+  "note": null
+ },
+ {
+  "member_id": 7,
+  "pool": "ms",
+  "note": null
+ },
+ {
+  "member_id": 9,
+  "pool": "ms",
+  "note": null
+ },
+ {
+  "member_id": 9,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 10,
+  "pool": "ms",
+  "note": null
+ },
+ {
+  "member_id": 10,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 11,
+  "pool": "ms",
+  "note": null
+ },
+ {
+  "member_id": 11,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 12,
+  "pool": "ms",
+  "note": null
+ },
+ {
+  "member_id": 12,
+  "pool": "bible_reading",
+  "note": null
+ },
+ {
+  "member_id": 12,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 13,
+  "pool": "ms",
+  "note": null
+ },
+ {
+  "member_id": 13,
+  "pool": "bible_reading",
+  "note": null
+ },
+ {
+  "member_id": 13,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 14,
+  "pool": "ms",
+  "note": null
+ },
+ {
+  "member_id": 14,
+  "pool": "bible_reading",
+  "note": null
+ },
+ {
+  "member_id": 14,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 15,
+  "pool": "ms",
+  "note": null
+ },
+ {
+  "member_id": 15,
+  "pool": "bible_reading",
+  "note": null
+ },
+ {
+  "member_id": 15,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 16,
+  "pool": "bible_reading",
+  "note": null
+ },
+ {
+  "member_id": 17,
+  "pool": "bible_reading",
+  "note": null
+ },
+ {
+  "member_id": 18,
+  "pool": "bible_reading",
+  "note": null
+ },
+ {
+  "member_id": 19,
+  "pool": "bible_reading",
+  "note": null
+ },
+ {
+  "member_id": 20,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 21,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 22,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 23,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 24,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 25,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 26,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 27,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 28,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 29,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 30,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 31,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 32,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 33,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 34,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 35,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 36,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 37,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 38,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 39,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 40,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 41,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 42,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 43,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 44,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 45,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 46,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 47,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 48,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 49,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 50,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 51,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 52,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 53,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 54,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 55,
+  "pool": "female",
+  "note": null
+ },
+ {
+  "member_id": 56,
+  "pool": "bible_reading",
+  "note": null
+ },
+ {
+  "member_id": 8,
+  "pool": "ms",
+  "note": "ENB only"
+ },
+ {
+  "member_id": 57,
+  "pool": "female",
+  "note": null
+ }
+]
