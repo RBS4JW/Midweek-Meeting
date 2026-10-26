@@ -409,6 +409,9 @@ function editMeeting(id) {
     renumberParts(parts);
     ed.innerHTML = '';
     let lastSec = null;
+    const kpAddBtn = () => el('button', { class: 'btn sm', style: 'margin:2px 0 10px', onclick: addKP }, '+ Dugang # (Kristohanong Pagkinabuhi)');
+    const isCBS = p => p.section === 'KRISTOHANONG PAGKINABUHI' && /pagtuon sa kongregasyon/i.test(p.title || '');
+    const hasCBS = parts.some(isCBS);
     parts.forEach((p, idx) => {
       if (p.section !== lastSec) {
         lastSec = p.section;
@@ -418,12 +421,14 @@ function editMeeting(id) {
           ed.append(bar);
         }
       }
+      // the KP add-button sits just before the Congregation Bible Study, so new
+      // Kristohanong parts land between the local needs and the CBS (which stays last)
+      if (hasCBS && isCBS(p)) ed.append(kpAddBtn());
       ed.append(partRow(p, idx));
       const endOf = sec => p.section === sec && (idx === parts.length - 1 || parts[idx + 1].section !== sec);
       if (endOf('MAGMAEPEKTIBO'))
         ed.append(el('button', { class: 'btn sm', style: 'margin:2px 0 10px', onclick: addMagma }, '+ Dugang # (Magmaepektibo)'));
-      if (endOf('KRISTOHANONG PAGKINABUHI'))
-        ed.append(el('button', { class: 'btn sm', style: 'margin:2px 0 10px', onclick: addKP }, '+ Dugang # (Kristohanong Pagkinabuhi)'));
+      if (!hasCBS && endOf('KRISTOHANONG PAGKINABUHI')) ed.append(kpAddBtn());
     });
     ed.append(el('button', { class: 'btn sm', style: 'margin-top:8px;justify-self:start', onclick: () => {
       parts.push({ section: 'KRISTOHANONG PAGKINABUHI', item_no: '', title: '', is_song: false }); redraw();
