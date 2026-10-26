@@ -43,6 +43,8 @@ body{font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background
 .hdr-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px 16px}
 .hdr-grid > div > .field{margin:.2em 0}
 @media (max-width:640px){.hdr-grid{grid-template-columns:1fr}}
+/* auto-save status in the editor toolbar */
+.save-status{min-width:84px;text-align:right;font-size:.82em;white-space:nowrap}
 /* login "remember me" row */
 .remember{display:flex;align-items:center;gap:8px;margin:.6em 0;cursor:pointer}
 .remember input{width:18px;height:18px;flex:none}
