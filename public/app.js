@@ -1209,7 +1209,7 @@ function renderCongEditor(root) {
     const { error } = await sb.from('congregations').update({ name, address: addr }).eq('id', currentCong.id);
     if (error) return toast('Error: ' + error.message);
     currentCong.name = name; currentCong.address = addr; applyCongTitle();
-    const chip = $('#user-chip'); if (chip && currentUser) chip.textContent = `${currentUser.full_name || currentUser.username} · ${name}`;
+    const chip = $('#user-chip'); if (chip && currentUser) chip.textContent = currentUser.full_name || currentUser.username;
     toast('Saved ✓');
   }
   root.append(el('div', { class: 'panel' }, [
@@ -1381,7 +1381,7 @@ async function enterApp(cg, u) {
   $('#login-screen')?.remove();
   try { await loadAll(); } catch (e) { console.error(e); return showLogin('Dili ma-load ang datos: ' + (e.message || e)); }
   $('#app').classList.remove('hidden');
-  const chip = $('#user-chip'); if (chip) chip.textContent = (u.full_name || u.username) + ' · ' + cg.name;
+  const chip = $('#user-chip'); if (chip) chip.textContent = u.full_name || u.username;
   applyCongTitle(); applyNav();
   const allowed = allowedViews();
   currentView = allowed.includes('eskedyul') ? 'eskedyul' : (allowed[0] || 'eskedyul');
