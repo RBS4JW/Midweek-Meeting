@@ -114,10 +114,11 @@ table.grid td.cnt{color:var(--muted);font-variant-numeric:tabular-nums}
 
 /* ---- eskedyul editor ---- */
 .ed-grid{display:grid;grid-template-columns:1fr;gap:10px}
-.part{display:grid;grid-template-columns:30px 1fr;gap:8px;border:1px solid var(--line);border-radius:10px;padding:10px;background:var(--panel)}
+.part{display:grid;grid-template-columns:30px minmax(0,1fr);gap:8px;border:1px solid var(--line);border-radius:10px;padding:10px;background:var(--panel)}
 .part .no{font-weight:700;color:var(--muted);text-align:center}
-.part .body{display:grid;gap:6px}
-.part .ln{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.part .body{display:grid;gap:6px;min-width:0}
+.part .ln{display:flex;gap:8px;align-items:center;flex-wrap:wrap;min-width:0}
+.part .ln > input,.part .ln > select{max-width:100%}
 .part input,.part select{padding:.4em .5em;border:1px solid var(--line);border-radius:7px;background:var(--panel);color:var(--ink);font:inherit}
 .part input.title{flex:1;min-width:200px;font-weight:600}
 .part input.setting{flex:1;min-width:160px;text-transform:uppercase}
@@ -213,7 +214,11 @@ table.list th{color:var(--muted);font-size:.82em;text-transform:uppercase;letter
   .cards{grid-template-columns:1fr}
 
   /* ---- editor part rows ---- */
-  .part{grid-template-columns:24px 1fr}
+  .part{grid-template-columns:24px minmax(0,1fr)}
+  .part input.title,.part select.title{min-width:0}
+  .part .setting{min-width:0}
+  /* guard against any horizontal overflow on phones */
+  html,body{overflow-x:hidden}
   .part input.title{min-width:120px}
   .assignline .role{min-width:72px}
 
