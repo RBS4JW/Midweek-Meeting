@@ -1376,20 +1376,39 @@ async function boot() {
   if (!url || !key) return showSetup();
   sb = makeClient(url, key);
   try {
-    const sess = JSON.parse(localStorage.getItem('mw_session') || 'null');
+    const { sess, remember } = readSession();
     if (sess?.userId) {
       const { data: u } = await sb.from('app_users').select('*').eq('id', sess.userId).maybeSingle();
       if (u && u.active) {
         const { data: cg } = await sb.from('congregations').select('*').eq('id', u.congregation_id).maybeSingle();
-        if (cg) return enterApp(cg, u);
+        if (cg) return enterApp(cg, u, remember);
       }
     }
   } catch (e) { console.error(e); }
   showLogin();
 }
-async function enterApp(cg, u) {
+// session persistence: localStorage remembers across app restarts; sessionStorage
+// is cleared when the app/tab closes, so an un-remembered login must sign in again
+function saveSession(userId, remember) {
+  try {
+    const data = JSON.stringify({ userId });
+    if (remember) { localStorage.setItem('mw_session', data); sessionStorage.removeItem('mw_session'); }
+    else { sessionStorage.setItem('mw_session', data); localStorage.removeItem('mw_session'); }
+  } catch {}
+}
+function readSession() {
+  try {
+    const l = localStorage.getItem('mw_session');
+    if (l) return { sess: JSON.parse(l), remember: true };
+    const s = sessionStorage.getItem('mw_session');
+    if (s) return { sess: JSON.parse(s), remember: false };
+  } catch {}
+  return { sess: null, remember: true };
+}
+function clearSession() { try { localStorage.removeItem('mw_session'); sessionStorage.removeItem('mw_session'); } catch {} }
+async function enterApp(cg, u, remember = true) {
   currentCong = cg; currentUser = u;
-  localStorage.setItem('mw_session', JSON.stringify({ userId: u.id }));
+  saveSession(u.id, remember);
   $('#login-screen')?.remove();
   try { await loadAll(); } catch (e) { console.error(e); return showLogin('Dili ma-load ang datos: ' + (e.message || e)); }
   $('#app').classList.remove('hidden');
@@ -1399,7 +1418,7 @@ async function enterApp(cg, u) {
   currentView = allowed.includes('eskedyul') ? 'eskedyul' : (allowed[0] || 'eskedyul');
   render();
 }
-function logout() { localStorage.removeItem('mw_session'); location.reload(); }
+function logout() { clearSession(); location.reload(); }
 async function showLogin(msg) {
   $('#app')?.classList.add('hidden');
   $('#login-screen')?.remove();
@@ -1407,6 +1426,7 @@ async function showLogin(msg) {
   const congSel = el('select', {});
   const userInp = el('input', { placeholder: 'Username', autocomplete: 'username' });
   const pinInp = el('input', { type: 'password', placeholder: 'PIN', inputmode: 'numeric' });
+  const rememberChk = el('input', { type: 'checkbox' }); rememberChk.checked = true;
   const msgP = el('p', { class: 'msg' }, msg || '');
   let congs = [];
   try { const { data } = await sb.from('congregations').select('*').order('name'); congs = data || []; } catch (e) { msgP.textContent = 'Dili makuha ang kongregasyon: ' + (e.message || e); }
@@ -1420,7 +1440,7 @@ async function showLogin(msg) {
     const u = (users || [])[0];
     if (!u || !u.active) { msgP.textContent = 'Sayop nga username.'; return; }
     if (String(u.pin) !== pinInp.value.trim()) { msgP.textContent = 'Sayop nga PIN.'; return; }
-    enterApp(cg, u);
+    enterApp(cg, u, rememberChk.checked);
   }
   pinInp.addEventListener('keydown', e => { if (e.key === 'Enter') login(); });
   scr.append(el('div', { class: 'auth-card' }, [
@@ -1429,6 +1449,7 @@ async function showLogin(msg) {
     el('label', { class: 'field' }, [el('span', {}, 'Kongregasyon'), congSel]),
     el('label', { class: 'field' }, [el('span', {}, 'Username'), userInp]),
     el('label', { class: 'field' }, [el('span', {}, 'PIN'), pinInp]),
+    el('label', { class: 'remember' }, [rememberChk, el('span', {}, 'Hinumdumi ko (direkta na pag-abli sunod)')]),
     el('button', { class: 'btn primary block', onclick: login }, 'Log in'),
     msgP,
   ]));
