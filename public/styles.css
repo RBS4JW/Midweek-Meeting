@@ -185,5 +185,47 @@ table.list th{color:var(--muted);font-size:.82em;text-transform:uppercase;letter
   -webkit-print-color-adjust:exact;print-color-adjust:exact}
 .sheet .special{text-align:center;font-weight:700;margin:30px 0;font-size:15pt;line-height:1.9}
 @media (max-width:640px){
-  .tabs{order:3;width:100%}
+  /* ---- top bar: brand + theme on one row, tabs as a full-width scroll row ---- */
+  .topbar{gap:8px;padding:8px 10px}
+  .topbar .brand small, .topbar .brand .sub{display:none}
+  .topbar .brand strong{font-size:.92rem}
+  .brand.small .brand-mark{font-size:22px}
+  .topbar-right{margin-left:auto;order:1}
+  .tabs{order:3;width:100%;margin-left:0;flex-wrap:nowrap;overflow-x:auto;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:0 0 auto;white-space:nowrap;padding:.55em .75em}
+
+  /* ---- content spacing ---- */
+  .view{padding:12px 10px}
+  .panel{padding:12px}
+  .page-head{gap:8px}
+  .page-head h2{font-size:1.1rem;min-width:0;overflow-wrap:anywhere}
+  .page-head .spacer{display:none}
+  .page-head > .btn{flex:0 0 auto}
+
+  /* ---- forms stack, 16px inputs to stop iOS zoom ---- */
+  .row > div[style*="flex:1"]{min-width:100%}
+  .field input,.field select,.field textarea,.part input,.part select{font-size:16px}
+
+  /* ---- cards: one column ---- */
+  .cards{grid-template-columns:1fr}
+
+  /* ---- editor part rows ---- */
+  .part{grid-template-columns:24px 1fr}
+  .part input.title{min-width:120px}
+  .assignline .role{min-width:72px}
+
+  /* ---- assign grid: shorter, slimmer frozen name column ---- */
+  table.grid{--namew:116px}
+  .gridwrap{max-height:68vh}
+  .panel.row{gap:8px}
+
+  /* ---- modals / dropdown full-ish width ---- */
+  .modal{width:100%}
+  .modal-bg{padding:10px}
+  .dl-menu{right:auto;left:0}
+
+  /* ---- member/legend tables scroll sideways instead of squishing ---- */
+  .panel table.list{display:block;overflow-x:auto;white-space:nowrap}
 }
