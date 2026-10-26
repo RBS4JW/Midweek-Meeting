@@ -229,4 +229,9 @@ table.list th{color:var(--muted);font-size:.82em;text-transform:uppercase;letter
 
   /* ---- member/legend tables scroll sideways instead of squishing ---- */
   .panel table.list{display:block;overflow-x:auto;white-space:nowrap}
+
+  /* ---- login card: center the title ---- */
+  #login-screen .brand{flex-direction:column;text-align:center;gap:8px}
+  #login-screen .brand h1{font-size:1.2rem}
+  #login-screen .field span{text-align:left}
 }
