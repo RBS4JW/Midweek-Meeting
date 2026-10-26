@@ -39,6 +39,10 @@ body{font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background
 .field{display:block;margin:.8em 0}
 .field span{display:block;font-size:.85em;color:var(--muted);margin-bottom:.25em}
 .field input,.field select,.field textarea{width:100%;padding:.55em .6em;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--ink);font:inherit}
+/* meeting-editor header fields: even grid so no field stretches full-width */
+.hdr-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px 16px}
+.hdr-grid > div > .field{margin:.2em 0}
+@media (max-width:640px){.hdr-grid{grid-template-columns:1fr}}
 
 /* ---- topbar ---- */
 .topbar{display:flex;align-items:center;gap:16px;padding:10px 16px;background:var(--panel);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;flex-wrap:wrap}

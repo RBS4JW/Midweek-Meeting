@@ -370,12 +370,12 @@ function editMeeting(id) {
     return el('label', { class: 'field' }, [el('span', {}, label),
       el('div', { class: 'row', style: 'gap:6px;align-items:center' }, [el('span', { style: 'font-weight:700;white-space:nowrap' }, 'Awit'), inp])]);
   };
-  const grid2 = el('div', { class: 'row' });
+  const grid2 = el('div', { class: 'hdr-grid' });
   [['Semana (week label)', 'week_label'], ['Teksto nga Tun-an sa Semana', 'reading'],
-   ['Awit pangbukas', 'opening_song', 'song'],
-   ['Tsirman', 'chairman'], ['Pag-ampo pangbukas', 'opening_prayer'],
+   ['Tsirman', 'chairman'],
+   ['Awit pangbukas', 'opening_song', 'song'], ['Pag-ampo pangbukas', 'opening_prayer'],
    ['Pag-ampo panapos', 'closing_prayer']].forEach(f => {
-    const w = el('div', { style: 'flex:1;min-width:200px' }, f[2] === 'song' ? songField(f[0], f[1]) : field(...f));
+    const w = el('div', {}, f[2] === 'song' ? songField(f[0], f[1]) : field(...f));
     grid2.append(w);
   });
   hdr.append(grid2);
