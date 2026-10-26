@@ -21,11 +21,24 @@ const SECTION_TITLE = {
 
 let sb = null;                                   // supabase client (schema: midweek)
 const state = { members: [], pools: [], codes: [], assigns: [], meetings: [], parts: [], appset: {} };
-const getSetting = (k, d = '') => (state.appset[k] ?? d);
-const congName = () => getSetting('cong_name', 'PROPER STA. FE');
-const congAddress = () => getSetting('cong_address', '');
+let currentCong = null, currentUser = null;
+const congName = () => currentCong?.name || 'PROPER STA. FE';
+const congAddress = () => currentCong?.address || '';
 const congForPrint = () => { const n = congName(); return /congregation/i.test(n) ? n : n + ' CONGREGATION'; };
 function applyCongTitle() { const t = $('#cong-title'); if (t) t.textContent = congName(); }
+// the standard part-code catalog, used to seed a newly-registered congregation
+const DEFAULT_CODES = [
+  ['elder', 'CH', 'Chairman (Tsirman)'], ['elder', 'COP', 'Bahandi — Pakigpulong (10 min.)'],
+  ['elder', 'KP1', 'Kristohanong Pagkinabuhi 1'], ['elder', 'KP2', 'Kristohanong Pagkinabuhi 2 (optional)'],
+  ['elder', 'CBS', 'Tigdumala — Pagtuon sa Kongregasyon sa Bibliya'], ['elder', 'CLP', 'Closing Prayer'], ['elder', 'OP', 'Opening Prayer'],
+  ['ms', 'PP1', 'Bahandi — Pakigpulong (10 min.)'], ['ms', 'ENB', 'Espirituwal nga Bahandi (10 min.)'],
+  ['ms', 'PP2', 'Magmaepektibo — Pakigpulong (5 min.)'], ['ms', 'CBSR', 'Tig-basa sa Pagtuon sa Kongregasyon'],
+  ['ms', 'OP', 'Opening Prayer'], ['ms', 'BR', 'Pagbasa sa Bibliya'], ['bible_reading', 'BR', 'Pagbasa sa Bibliya'],
+  ['female', '4E', 'Magmaepektibo — #4 Estudyante'], ['female', '4A', 'Magmaepektibo — #4 Assistant'],
+  ['female', '5E', 'Magmaepektibo — #5 Estudyante'], ['female', '5A', 'Magmaepektibo — #5 Assistant'],
+  ['female', '6E', 'Magmaepektibo — #6 Estudyante'], ['female', '6A', 'Magmaepektibo — #6 Assistant'],
+  ['female', '7E', 'Magmaepektibo — #7 Estudyante'], ['female', '7A', 'Magmaepektibo — #7 Assistant'],
+];
 let currentView = 'eskedyul';
 
 /* ----------------------------- helpers -------------------------------- */
@@ -202,16 +215,18 @@ function autofillFromGrid(mt, parts) {
 
 /* ----------------------------- data ----------------------------------- */
 async function loadAll() {
-  const grab = (t, order) => sb.from(t).select('*').order(order);
-  const [m, mp, c, a, mt, pt, s] = await Promise.all([
-    grab('members', 'sort'), grab('member_pools', 'member_id'),
-    grab('part_codes', 'sort'), grab('assignments', 'meeting_date'),
-    grab('meetings', 'sort'), grab('meeting_parts', 'pos'), sb.from('app_settings').select('*'),
+  const cid = currentCong.id;
+  const g = (t, order) => sb.from(t).select('*').eq('congregation_id', cid).order(order);
+  const [m, c, a, mt, pt, mp] = await Promise.all([
+    g('members', 'sort'), g('part_codes', 'sort'), g('assignments', 'meeting_date'),
+    g('meetings', 'sort'), g('meeting_parts', 'pos'),
+    sb.from('member_pools').select('*').order('member_id'),
   ]);
-  for (const r of [m, mp, c, a, mt, pt]) if (r.error) throw r.error;
-  state.members = m.data; state.pools = mp.data; state.codes = c.data;
-  state.assigns = a.data; state.meetings = mt.data; state.parts = pt.data;
-  state.appset = Object.fromEntries((s.data || []).map(r => [r.key, r.value]));
+  for (const r of [m, c, a, mt, pt, mp]) if (r.error) throw r.error;
+  state.members = m.data; state.codes = c.data; state.assigns = a.data;
+  state.meetings = mt.data; state.parts = pt.data;
+  const ids = new Set(state.members.map(x => x.id));
+  state.pools = mp.data.filter(p => ids.has(p.member_id));
   applyCongTitle();
 }
 const memberById = id => state.members.find(x => x.id === id);
@@ -270,7 +285,7 @@ function viewEskedyul() {
 
 async function newMeeting() {
   const { data, error } = await sb.from('meetings')
-    .insert({ week_label: nextWeekLabel(), sort: (state.meetings.length + 1) * 10 }).select().single();
+    .insert({ week_label: nextWeekLabel(), sort: (state.meetings.length + 1) * 10, congregation_id: currentCong.id }).select().single();
   if (error) return toast('Error: ' + error.message);
   // standard skeleton
   const skel = [
@@ -289,7 +304,7 @@ async function newMeeting() {
   ];
   const rows = skel.map((s, i) => ({
     meeting_id: data.id, pos: i, section: s[0], item_no: s[1], title: s[2],
-    setting: s[3], assignee_role: s[4], assistant_role: s[5], is_song: !!s[6],
+    setting: s[3], assignee_role: s[4], assistant_role: s[5], is_song: !!s[6], congregation_id: currentCong.id,
   }));
   await sb.from('meeting_parts').insert(rows);
   await loadAll();
@@ -505,7 +520,7 @@ function editMeeting(id) {
     const rows = parts.map((p, i) => ({
       meeting_id: id, pos: i, section: p.section, item_no: p.item_no || null, title: p.title || null,
       setting: p.setting || null, assignee: p.assignee || null, assignee_role: p.assignee_role || null,
-      assistant: p.assistant || null, assistant_role: p.assistant_role || null, is_song: !!p.is_song,
+      assistant: p.assistant || null, assistant_role: p.assistant_role || null, is_song: !!p.is_song, congregation_id: currentCong.id,
     }));
     if (rows.length) { const { error: e2 } = await sb.from('meeting_parts').insert(rows); if (e2) { toast('Error: ' + e2.message); return false; } }
     return true;
@@ -1026,7 +1041,7 @@ function viewAssign() {
   }
   async function setCell(mid, d, code) {
     const { error } = await sb.from('assignments')
-      .upsert({ member_id: mid, pool: gridPool, meeting_date: d, code }, { onConflict: 'member_id,pool,meeting_date' });
+      .upsert({ member_id: mid, pool: gridPool, meeting_date: d, code, congregation_id: currentCong.id }, { onConflict: 'member_id,pool,meeting_date' });
     if (error) return toast('Error: ' + error.message);
     await loadAll(); viewAssign();
   }
@@ -1059,7 +1074,7 @@ function viewAssign() {
   async function addToPool() {
     const name = prompt('Member name (existing or new):'); if (!name) return;
     let mb = memberByName(name.trim());
-    if (!mb) { const { data } = await sb.from('members').insert({ name: name.trim(), sort: state.members.length }).select().single(); mb = data; }
+    if (!mb) { const { data } = await sb.from('members').insert({ name: name.trim(), sort: state.members.length, congregation_id: currentCong.id }).select().single(); mb = data; }
     await sb.from('member_pools').upsert({ member_id: mb.id, pool: gridPool }, { onConflict: 'member_id,pool' });
     await loadAll(); viewAssign();
   }
@@ -1117,7 +1132,7 @@ function editMember(id) {
     const name = nameInp.value.trim(); if (!name) return toast('Name required');
     let mid = id;
     if (id) await sb.from('members').update({ name, active: actChk.checked }).eq('id', id);
-    else { const { data, error } = await sb.from('members').insert({ name, active: actChk.checked, sort: state.members.length }).select().single(); if (error) return toast('Error: ' + error.message); mid = data.id; }
+    else { const { data, error } = await sb.from('members').insert({ name, active: actChk.checked, sort: state.members.length, congregation_id: currentCong.id }).select().single(); if (error) return toast('Error: ' + error.message); mid = data.id; }
     for (const r of poolRows) {
       if (r.chk.checked) await sb.from('member_pools').upsert({ member_id: mid, pool: r.p.key, note: r.note.value.trim() || null }, { onConflict: 'member_id,pool' });
       else await sb.from('member_pools').delete().match({ member_id: mid, pool: r.p.key });
@@ -1154,7 +1169,7 @@ function viewLegend() {
     const pool = prompt('Pool (elder / ms / bible_reading / female):'); if (!POOL_LABEL[pool]) return toast('Unknown pool');
     const code = prompt('Code (e.g. KP1):'); if (!code) return;
     const label = prompt('Label:') || code;
-    await sb.from('part_codes').insert({ pool, code: code.trim(), label, sort: state.codes.length }); await loadAll(); viewLegend();
+    await sb.from('part_codes').insert({ pool, code: code.trim(), label, sort: state.codes.length, congregation_id: currentCong.id }); await loadAll(); viewLegend();
   }
 }
 
@@ -1164,22 +1179,85 @@ function viewLegend() {
    ========================================================================= */
 function viewSettings() {
   const root = $('#view'); root.innerHTML = '';
-  root.append(el('div', { class: 'page-head' }, [el('h2', {}, 'Settings')]));
+  const isAdmin = currentUser?.role === 'admin';
+  root.append(el('div', { class: 'page-head' }, [el('h2', {}, 'Settings'), el('div', { class: 'spacer' }),
+    el('span', { class: 'hint' }, currentUser ? `${currentUser.full_name || currentUser.username} · ${currentUser.role}` : '')]));
+
+  // ---- current congregation name/address ----
   const nameInp = el('input', { value: congName() });
   const addrInp = el('input', { value: congAddress() });
-  async function save() {
-    const name = nameInp.value.trim() || 'PROPER STA. FE', addr = addrInp.value.trim();
-    const { error } = await sb.from('app_settings').upsert([{ key: 'cong_name', value: name }, { key: 'cong_address', value: addr }], { onConflict: 'key' });
+  async function saveCong() {
+    const name = nameInp.value.trim() || currentCong.name, addr = addrInp.value.trim() || null;
+    const { error } = await sb.from('congregations').update({ name, address: addr }).eq('id', currentCong.id);
     if (error) return toast('Error: ' + error.message);
-    state.appset.cong_name = name; state.appset.cong_address = addr;
-    applyCongTitle(); toast('Saved ✓');
+    currentCong.name = name; currentCong.address = addr; applyCongTitle();
+    const chip = $('#user-chip'); if (chip && currentUser) chip.textContent = `${currentUser.full_name || currentUser.username} · ${name}`;
+    toast('Saved ✓');
   }
   root.append(el('div', { class: 'panel' }, [
+    el('h3', { style: 'margin:.1em 0 .6em' }, 'Kini nga Kongregasyon'),
     el('label', { class: 'field' }, [el('span', {}, 'Congregation Name'), nameInp]),
     el('label', { class: 'field' }, [el('span', {}, 'Address'), addrInp]),
-    el('div', { class: 'row', style: 'margin-top:12px' }, [el('button', { class: 'btn primary', onclick: save }, 'Save')]),
-    el('p', { class: 'hint', style: 'margin-top:10px' }, 'Ang ngalan mogawas sa title sa taas ug sa ulohan sa giprint nga eskedyul; ang address mogawas sa print kon naa.'),
+    el('div', { class: 'row', style: 'margin-top:12px' }, [el('button', { class: 'btn primary', onclick: saveCong }, 'Save')]),
+    el('p', { class: 'hint', style: 'margin-top:8px' }, 'Ang ngalan mogawas sa title ug sa giprint/download nga eskedyul.'),
   ]));
+  if (!isAdmin) return;
+
+  // ---- register a new congregation ----
+  const rName = el('input', { placeholder: 'Ngalan sa kongregasyon' });
+  const rAddr = el('input', { placeholder: 'Address (optional)' });
+  async function registerCong() {
+    const name = rName.value.trim(); if (!name) return toast('Butangi ug ngalan');
+    const { data, error } = await sb.from('congregations').insert({ name, address: rAddr.value.trim() || null }).select().single();
+    if (error) return toast('Error: ' + error.message);
+    const codes = DEFAULT_CODES.map((c, i) => ({ congregation_id: data.id, pool: c[0], code: c[1], label: c[2], sort: i }));
+    await sb.from('part_codes').insert(codes);
+    rName.value = ''; rAddr.value = ''; toast('Narehistro ✓ — pagdugang ug user niini sa ubos'); viewSettings();
+  }
+  root.append(el('div', { class: 'panel' }, [
+    el('h3', { style: 'margin:.1em 0 .6em' }, 'I-rehistro ang Bag-ong Kongregasyon'),
+    el('div', { class: 'row' }, [
+      el('div', { style: 'flex:1;min-width:200px' }, el('label', { class: 'field' }, [el('span', {}, 'Name'), rName])),
+      el('div', { style: 'flex:1;min-width:200px' }, el('label', { class: 'field' }, [el('span', {}, 'Address'), rAddr])),
+    ]),
+    el('div', { class: 'row', style: 'margin-top:10px' }, [el('button', { class: 'btn', onclick: registerCong }, '+ Register Congregation')]),
+  ]));
+
+  // ---- users (admin can see PINs) ----
+  const usersPanel = el('div', { class: 'panel' }, [el('h3', { style: 'margin:.1em 0 .6em' }, 'Users (Username + PIN)')]);
+  root.append(usersPanel);
+  loadUsers(usersPanel);
+}
+async function loadUsers(panel) {
+  const [{ data: congs }, { data: users }] = await Promise.all([
+    sb.from('congregations').select('*').order('name'),
+    sb.from('app_users').select('*').order('congregation_id'),
+  ]);
+  const cName = id => (congs || []).find(c => c.id === id)?.name || '';
+  const tbl = el('table', { class: 'list' });
+  tbl.append(el('thead', {}, el('tr', {}, ['Full Name', 'Username', 'PIN', 'Role', 'Congregation', ''].map(h => el('th', {}, h)))));
+  const tb = el('tbody');
+  for (const u of (users || [])) tb.append(el('tr', {}, [
+    el('td', {}, u.full_name || ''), el('td', {}, u.username),
+    el('td', {}, el('code', {}, u.pin)), el('td', {}, u.role), el('td', {}, cName(u.congregation_id)),
+    el('td', {}, el('button', { class: 'btn sm danger', onclick: async () => { if (confirm('Delete user ' + u.username + '?')) { await sb.from('app_users').delete().eq('id', u.id); loadUsers(panel); } } }, '✕')),
+  ]));
+  tbl.append(tb);
+  const fName = el('input', { placeholder: 'Full Name', style: 'min-width:140px' });
+  const fUser = el('input', { placeholder: 'Username', style: 'min-width:120px' });
+  const fPin = el('input', { placeholder: 'PIN', style: 'min-width:80px' });
+  const fRole = el('select', {}, [el('option', { value: 'admin' }, 'admin'), el('option', { value: 'user' }, 'user')]);
+  const fCong = el('select', {}, (congs || []).map(c => el('option', { value: c.id, ...(c.id === currentCong.id ? { selected: '' } : {}) }, c.name)));
+  async function addUser() {
+    const un = fUser.value.trim(), pin = fPin.value.trim();
+    if (!un || !pin) return toast('Username ug PIN gikinahanglan');
+    const { error } = await sb.from('app_users').insert({ congregation_id: +fCong.value, username: un, pin, full_name: fName.value.trim(), role: fRole.value });
+    if (error) return toast('Error: ' + error.message);
+    fName.value = fUser.value = fPin.value = ''; toast('User added ✓'); loadUsers(panel);
+  }
+  while (panel.children.length > 1) panel.lastChild.remove();
+  panel.append(el('div', { style: 'overflow-x:auto' }, tbl),
+    el('div', { class: 'row', style: 'margin-top:12px;gap:8px;flex-wrap:wrap' }, [fName, fUser, fPin, fRole, fCong, el('button', { class: 'btn', onclick: addUser }, '+ Add User')]));
 }
 
 function render() {
@@ -1201,19 +1279,68 @@ async function boot() {
   });
   $$('.tab[data-view]').forEach(t => t.addEventListener('click', () => { currentView = t.dataset.view; render(); }));
 
+  $('#logout-btn')?.addEventListener('click', logout);
+
   const cfg = window.MW_CONFIG || {};
   const url = cfg.url || localStorage.getItem('mw_url');
   const key = cfg.key || localStorage.getItem('mw_key');
   if (!url || !key) return showSetup();
+  sb = makeClient(url, key);
   try {
-    sb = makeClient(url, key);
-    await loadAll();
-    $('#app').classList.remove('hidden');
-    render();
-  } catch (e) {
-    console.error(e);
-    showSetup('Could not connect / load: ' + (e.message || e) + '  — check the SQL ran and the midweek schema is exposed.');
+    const sess = JSON.parse(localStorage.getItem('mw_session') || 'null');
+    if (sess?.userId) {
+      const { data: u } = await sb.from('app_users').select('*').eq('id', sess.userId).maybeSingle();
+      if (u && u.active) {
+        const { data: cg } = await sb.from('congregations').select('*').eq('id', u.congregation_id).maybeSingle();
+        if (cg) return enterApp(cg, u);
+      }
+    }
+  } catch (e) { console.error(e); }
+  showLogin();
+}
+async function enterApp(cg, u) {
+  currentCong = cg; currentUser = u;
+  localStorage.setItem('mw_session', JSON.stringify({ userId: u.id }));
+  $('#login-screen')?.remove();
+  try { await loadAll(); } catch (e) { console.error(e); return showLogin('Dili ma-load ang datos: ' + (e.message || e)); }
+  $('#app').classList.remove('hidden');
+  const chip = $('#user-chip'); if (chip) chip.textContent = (u.full_name || u.username) + ' · ' + cg.name;
+  applyCongTitle(); currentView = 'eskedyul'; render();
+}
+function logout() { localStorage.removeItem('mw_session'); location.reload(); }
+async function showLogin(msg) {
+  $('#app')?.classList.add('hidden');
+  $('#login-screen')?.remove();
+  const scr = el('section', { id: 'login-screen', class: 'fullscreen' });
+  const congSel = el('select', {});
+  const userInp = el('input', { placeholder: 'Username', autocomplete: 'username' });
+  const pinInp = el('input', { type: 'password', placeholder: 'PIN', inputmode: 'numeric' });
+  const msgP = el('p', { class: 'msg' }, msg || '');
+  let congs = [];
+  try { const { data } = await sb.from('congregations').select('*').order('name'); congs = data || []; } catch (e) { msgP.textContent = 'Dili makuha ang kongregasyon: ' + (e.message || e); }
+  for (const c of congs) congSel.append(el('option', { value: c.id }, c.name));
+  if (!congs.length) msgP.textContent = msgP.textContent || 'Walay narehistro nga kongregasyon.';
+  async function login() {
+    const cid = +congSel.value; const cg = congs.find(c => c.id === cid);
+    if (!cg) { msgP.textContent = 'Pilia ang kongregasyon.'; return; }
+    const { data: users, error } = await sb.from('app_users').select('*').eq('congregation_id', cid).eq('username', userInp.value.trim());
+    if (error) { msgP.textContent = 'Error: ' + error.message; return; }
+    const u = (users || [])[0];
+    if (!u || !u.active) { msgP.textContent = 'Sayop nga username.'; return; }
+    if (String(u.pin) !== pinInp.value.trim()) { msgP.textContent = 'Sayop nga PIN.'; return; }
+    enterApp(cg, u);
   }
+  pinInp.addEventListener('keydown', e => { if (e.key === 'Enter') login(); });
+  scr.append(el('div', { class: 'auth-card' }, [
+    el('div', { class: 'brand' }, [el('div', { class: 'brand-mark' }, '🗓️'),
+      el('div', {}, [el('h1', {}, 'Eskedyul sa Midweek nga Tigom'), el('p', { class: 'sub' }, 'Pag-login')])]),
+    el('label', { class: 'field' }, [el('span', {}, 'Kongregasyon'), congSel]),
+    el('label', { class: 'field' }, [el('span', {}, 'Username'), userInp]),
+    el('label', { class: 'field' }, [el('span', {}, 'PIN'), pinInp]),
+    el('button', { class: 'btn primary block', onclick: login }, 'Log in'),
+    msgP,
+  ]));
+  document.body.append(scr);
 }
 function showSetup(msg) {
   $('#setup-screen').classList.remove('hidden');
