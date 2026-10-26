@@ -303,7 +303,7 @@ async function newMeeting() {
     ['MAGMAEPEKTIBO', '5', 'Dihang Makig-estorya Pag-usab (4 min.)', 'IMPORMAL NGA PAGSANGYAW', 'Estudyante', 'Assistant'],
     ['MAGMAEPEKTIBO', '6', 'Dihang Maghimog Tinun-an (5 min.)', 'PAGPAMALAYBALAY', 'Estudyante', 'Assistant'],
     ['KRISTOHANONG PAGKINABUHI', null, 'Awit', null, null, null, true],
-    ['KRISTOHANONG PAGKINABUHI', '7', '[Lokal nga mga Panginahanglan] (15 min.)', null, null, null],
+    ['KRISTOHANONG PAGKINABUHI', '7', '[Ibutang ang Ulohan]', null, null, null],
     ['KRISTOHANONG PAGKINABUHI', '8', 'Pagtuon sa Kongregasyon sa Bibliya (30 min.)', null, 'Tigdumala', 'Tagabasa'],
     ['KONKLUSYON', null, 'Konklusyon (3 min.)', null, null, null],
     ['KONKLUSYON', null, 'Awit', null, null, null, true],
@@ -446,9 +446,11 @@ function editMeeting(id) {
       l1.append(el('div', { class: 'title', style: 'flex:1;padding:.4em .5em;font-weight:600' }, p.title));
     } else if (f.constMin) {
       const { topic } = splitTime(p.title);
-      const tInp = el('input', { class: 'title', value: topic, placeholder: 'Ulohan sa pakigpulong' });
+      // a bracketed [placeholder] shows as a greyed prompt, not a value you must delete
+      const ph = /^\[(.+)\]$/.exec((topic || '').trim());
+      const tInp = el('input', { class: 'title', value: ph ? '' : topic, placeholder: ph ? ph[1] : 'Ulohan sa pakigpulong' });
       tInp.addEventListener('input', () => p.title = withTime(tInp.value, f.constMin));
-      p.title = withTime(topic, f.constMin);
+      if (!ph) p.title = withTime(topic, f.constMin);
       l1.append(tInp, el('span', { class: 'hint', style: 'white-space:nowrap' }, `(${f.constMin} min.)`));
     } else if (f.hasTime) {
       const parsed = splitTime(p.title);
@@ -476,7 +478,9 @@ function editMeeting(id) {
       timeSel.addEventListener('change', apply);
       l1.append(topicSel, timeSel);
     } else {
-      const titleInp = el('input', { class: 'title', value: p.title ?? '', placeholder: 'Ulohan sa bahin' });
+      // a bracketed [placeholder] shows as a greyed prompt, not a value you must delete
+      const ph = /^\[(.+)\]$/.exec((p.title || '').trim());
+      const titleInp = el('input', { class: 'title', value: ph ? '' : (p.title ?? ''), placeholder: ph ? ph[1] : 'Ulohan sa bahin' });
       titleInp.addEventListener('input', () => p.title = titleInp.value);
       l1.append(titleInp);
     }
