@@ -747,19 +747,24 @@ function previewMeeting(mt, parts) {
   const html = meetingSheetHTML(mt, [...parts].sort((a, b) => (a.pos ?? 0) - (b.pos ?? 0)));
   const bg = el('div', { class: 'modal-bg' });
   bg.addEventListener('click', e => { if (e.target === bg) bg.remove(); });
-  const page = el('div', { style: 'width:210mm;max-width:100%;background:#fff;padding:12mm;box-shadow:0 0 14px rgba(0,0,0,.4)' });
+  const page = el('div', { class: 'preview-page' });
   page.innerHTML = html;
   page.querySelector('.sheet').style.setProperty('--extra', computeExtra(html).toFixed(1) + 'px');
-  const wrap = el('div', { style: 'max-height:92vh;overflow:auto;background:#999;padding:14px;border-radius:10px' }, [
+  const scaler = el('div', { class: 'preview-scaler' }, page);
+  const wrap = el('div', { class: 'preview-wrap' }, [
     el('div', { class: 'row', style: 'margin-bottom:10px' }, [
       el('span', { style: 'color:#fff;font-weight:700' }, 'Preview — ' + (mt.week_label || '')),
       el('div', { class: 'spacer' }),
       el('button', { class: 'btn', onclick: () => { bg.remove(); printMeeting(mt, parts); } }, '🖨 Print'),
       el('button', { class: 'btn', onclick: () => bg.remove() }, 'Sirado'),
     ]),
-    page,
+    scaler,
   ]);
   bg.append(wrap); document.body.append(bg);
+  // scale the A4 page down to fit the screen width (reading offsetWidth forces layout)
+  const avail = scaler.clientWidth, pw = page.offsetWidth;
+  const s = Math.min(1, avail / pw);
+  if (s < 1) { page.style.transform = `scale(${s})`; scaler.style.height = (page.offsetHeight * s) + 'px'; }
 }
 // Download ▾ dropdown (PDF / Image)
 function downloadMenu(mt, parts) {

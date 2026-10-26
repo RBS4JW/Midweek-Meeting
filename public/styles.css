@@ -138,6 +138,10 @@ table.list th{color:var(--muted);font-size:.82em;text-transform:uppercase;letter
 .dl-wrap{position:relative;display:inline-block}
 .dl-menu{position:absolute;top:100%;right:0;margin-top:4px;background:var(--panel);border:1px solid var(--line);border-radius:9px;box-shadow:var(--shadow);padding:4px;z-index:30;min-width:150px}
 .dl-menu .btn.block{display:block;width:100%;text-align:left;margin:2px 0}
+/* A4 preview, scaled to fit the screen */
+.preview-wrap{max-height:92vh;max-width:96vw;overflow:auto;background:#999;padding:12px;border-radius:10px}
+.preview-scaler{overflow:hidden}
+.preview-page{width:210mm;background:#fff;padding:12mm;box-shadow:0 0 14px rgba(0,0,0,.4);transform-origin:top left}
 
 /* ---- modal ---- */
 .modal-bg{position:fixed;inset:0;background:rgba(10,15,20,.45);display:grid;place-items:center;z-index:40;padding:16px}
