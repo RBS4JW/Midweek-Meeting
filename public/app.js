@@ -22,6 +22,12 @@ const SECTION_TITLE = {
 let sb = null;                                   // supabase client (schema: midweek)
 const state = { members: [], pools: [], codes: [], assigns: [], meetings: [], parts: [], appset: {} };
 let currentCong = null, currentUser = null;
+const ALL_VIEWS = [
+  { key: 'eskedyul', label: 'Eskedyul' }, { key: 'assign', label: 'Assign Bahin' },
+  { key: 'members', label: 'Members' }, { key: 'legend', label: 'Legend' }, { key: 'settings', label: 'Settings' },
+];
+const allowedViews = () => currentUser?.role === 'admin' ? ALL_VIEWS.map(v => v.key) : (Array.isArray(currentUser?.perms) ? currentUser.perms : []);
+function applyNav() { const a = new Set(allowedViews()); $$('.tab[data-view]').forEach(t => t.classList.toggle('hidden', !a.has(t.dataset.view))); }
 const congName = () => currentCong?.name || 'PROPER STA. FE';
 const congAddress = () => currentCong?.address || '';
 const congForPrint = () => { const n = congName(); return /congregation/i.test(n) ? n : n + ' CONGREGATION'; };
@@ -1228,6 +1234,12 @@ function viewSettings() {
   root.append(usersPanel);
   loadUsers(usersPanel);
 }
+function permCheckboxes(current) {
+  const boxes = ALL_VIEWS.map(v => { const chk = el('input', { type: 'checkbox' }); chk.checked = (current || []).includes(v.key); return { v, chk }; });
+  const row = el('div', { class: 'row', style: 'gap:10px;flex-wrap:wrap' }, boxes.map(b => el('label', { class: 'row', style: 'gap:4px' }, [b.chk, el('span', {}, b.v.label)])));
+  return { row, get: () => boxes.filter(b => b.chk.checked).map(b => b.v.key) };
+}
+const permLabel = u => u.role === 'admin' ? 'Tanan' : ((u.perms || []).map(k => ALL_VIEWS.find(v => v.key === k)?.label || k).join(', ') || '—');
 async function loadUsers(panel) {
   const [{ data: congs }, { data: users }] = await Promise.all([
     sb.from('congregations').select('*').order('name'),
@@ -1235,32 +1247,66 @@ async function loadUsers(panel) {
   ]);
   const cName = id => (congs || []).find(c => c.id === id)?.name || '';
   const tbl = el('table', { class: 'list' });
-  tbl.append(el('thead', {}, el('tr', {}, ['Full Name', 'Username', 'PIN', 'Role', 'Congregation', ''].map(h => el('th', {}, h)))));
+  tbl.append(el('thead', {}, el('tr', {}, ['Full Name', 'Username', 'PIN', 'Role', 'Access', 'Congregation', ''].map(h => el('th', {}, h)))));
   const tb = el('tbody');
   for (const u of (users || [])) tb.append(el('tr', {}, [
     el('td', {}, u.full_name || ''), el('td', {}, u.username),
-    el('td', {}, el('code', {}, u.pin)), el('td', {}, u.role), el('td', {}, cName(u.congregation_id)),
-    el('td', {}, el('button', { class: 'btn sm danger', onclick: async () => { if (confirm('Delete user ' + u.username + '?')) { await sb.from('app_users').delete().eq('id', u.id); loadUsers(panel); } } }, '✕')),
+    el('td', {}, el('code', {}, u.pin)), el('td', {}, u.role),
+    el('td', { style: 'white-space:normal;max-width:220px' }, permLabel(u)), el('td', {}, cName(u.congregation_id)),
+    el('td', {}, el('div', { class: 'row', style: 'gap:4px' }, [
+      el('button', { class: 'btn sm', onclick: () => editUser(u, panel) }, 'Edit'),
+      el('button', { class: 'btn sm danger', onclick: async () => { if (confirm('Delete user ' + u.username + '?')) { await sb.from('app_users').delete().eq('id', u.id); loadUsers(panel); } } }, '✕'),
+    ])),
   ]));
   tbl.append(tb);
-  const fName = el('input', { placeholder: 'Full Name', style: 'min-width:140px' });
-  const fUser = el('input', { placeholder: 'Username', style: 'min-width:120px' });
-  const fPin = el('input', { placeholder: 'PIN', style: 'min-width:80px' });
-  const fRole = el('select', {}, [el('option', { value: 'admin' }, 'admin'), el('option', { value: 'user' }, 'user')]);
+  const fName = el('input', { placeholder: 'Full Name', style: 'min-width:130px' });
+  const fUser = el('input', { placeholder: 'Username', style: 'min-width:110px' });
+  const fPin = el('input', { placeholder: 'PIN', style: 'min-width:70px' });
+  const fRole = el('select', {}, [el('option', { value: 'user' }, 'user'), el('option', { value: 'admin' }, 'admin')]);
   const fCong = el('select', {}, (congs || []).map(c => el('option', { value: c.id, ...(c.id === currentCong.id ? { selected: '' } : {}) }, c.name)));
+  const pk = permCheckboxes(['eskedyul']);
   async function addUser() {
     const un = fUser.value.trim(), pin = fPin.value.trim();
     if (!un || !pin) return toast('Username ug PIN gikinahanglan');
-    const { error } = await sb.from('app_users').insert({ congregation_id: +fCong.value, username: un, pin, full_name: fName.value.trim(), role: fRole.value });
+    const perms = fRole.value === 'admin' ? ALL_VIEWS.map(v => v.key) : pk.get();
+    const { error } = await sb.from('app_users').insert({ congregation_id: +fCong.value, username: un, pin, full_name: fName.value.trim(), role: fRole.value, perms });
     if (error) return toast('Error: ' + error.message);
     fName.value = fUser.value = fPin.value = ''; toast('User added ✓'); loadUsers(panel);
   }
   while (panel.children.length > 1) panel.lastChild.remove();
   panel.append(el('div', { style: 'overflow-x:auto' }, tbl),
-    el('div', { class: 'row', style: 'margin-top:12px;gap:8px;flex-wrap:wrap' }, [fName, fUser, fPin, fRole, fCong, el('button', { class: 'btn', onclick: addUser }, '+ Add User')]));
+    el('div', { class: 'row', style: 'margin-top:12px;gap:8px;flex-wrap:wrap;align-items:flex-start' }, [fName, fUser, fPin, fRole, fCong, el('button', { class: 'btn', onclick: addUser }, '+ Add User')]),
+    el('div', { style: 'margin-top:8px' }, [el('span', { class: 'hint' }, 'Access (unsa makita sa user):'), pk.row]));
+}
+function editUser(u, panel) {
+  const bg = el('div', { class: 'modal-bg' }); const close = () => bg.remove();
+  bg.addEventListener('click', e => { if (e.target === bg) close(); });
+  const fn = el('input', { value: u.full_name || '' });
+  const pin = el('input', { value: u.pin });
+  const role = el('select', {}, [el('option', { value: 'user', ...(u.role === 'user' ? { selected: '' } : {}) }, 'user'), el('option', { value: 'admin', ...(u.role === 'admin' ? { selected: '' } : {}) }, 'admin')]);
+  const pk = permCheckboxes(u.perms || []);
+  async function save() {
+    const perms = role.value === 'admin' ? ALL_VIEWS.map(v => v.key) : pk.get();
+    const { error } = await sb.from('app_users').update({ full_name: fn.value.trim(), pin: pin.value.trim(), role: role.value, perms }).eq('id', u.id);
+    if (error) return toast('Error: ' + error.message);
+    if (currentUser && currentUser.id === u.id) { currentUser.role = role.value; currentUser.perms = perms; applyNav(); }
+    close(); toast('Saved ✓'); loadUsers(panel);
+  }
+  bg.append(el('div', { class: 'modal' }, [
+    el('h3', {}, 'Edit: ' + u.username),
+    el('label', { class: 'field' }, [el('span', {}, 'Full Name'), fn]),
+    el('label', { class: 'field' }, [el('span', {}, 'PIN'), pin]),
+    el('label', { class: 'field' }, [el('span', {}, 'Role'), role]),
+    el('div', { style: 'margin:.5em 0' }, [el('span', { class: 'hint' }, 'Access:'), pk.row]),
+    el('div', { class: 'row', style: 'margin-top:12px' }, [el('div', { class: 'spacer' }), el('button', { class: 'btn', onclick: close }, 'Cancel'), el('button', { class: 'btn primary', onclick: save }, 'Save')]),
+  ]));
+  document.body.append(bg);
 }
 
 function render() {
+  const allowed = allowedViews();
+  if (allowed.length && !allowed.includes(currentView)) currentView = allowed[0];
+  applyNav();
   $$('.tab[data-view]').forEach(t => t.classList.toggle('active', t.dataset.view === currentView));
   ({ eskedyul: viewEskedyul, assign: viewAssign, members: viewMembers, legend: viewLegend, settings: viewSettings }[currentView] || viewEskedyul)();
 }
@@ -1305,7 +1351,10 @@ async function enterApp(cg, u) {
   try { await loadAll(); } catch (e) { console.error(e); return showLogin('Dili ma-load ang datos: ' + (e.message || e)); }
   $('#app').classList.remove('hidden');
   const chip = $('#user-chip'); if (chip) chip.textContent = (u.full_name || u.username) + ' · ' + cg.name;
-  applyCongTitle(); currentView = 'eskedyul'; render();
+  applyCongTitle(); applyNav();
+  const allowed = allowedViews();
+  currentView = allowed.includes('eskedyul') ? 'eskedyul' : (allowed[0] || 'eskedyul');
+  render();
 }
 function logout() { localStorage.removeItem('mw_session'); location.reload(); }
 async function showLogin(msg) {
