@@ -133,6 +133,9 @@ table.list th{color:var(--muted);font-size:.82em;text-transform:uppercase;letter
 
 /* ---- toast ---- */
 .toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:.6em 1.1em;border-radius:24px;z-index:50;box-shadow:var(--shadow)}
+.dl-wrap{position:relative;display:inline-block}
+.dl-menu{position:absolute;top:100%;right:0;margin-top:4px;background:var(--panel);border:1px solid var(--line);border-radius:9px;box-shadow:var(--shadow);padding:4px;z-index:30;min-width:150px}
+.dl-menu .btn.block{display:block;width:100%;text-align:left;margin:2px 0}
 
 /* ---- modal ---- */
 .modal-bg{position:fixed;inset:0;background:rgba(10,15,20,.45);display:grid;place-items:center;z-index:40;padding:16px}
@@ -158,6 +161,7 @@ table.list th{color:var(--muted);font-size:.82em;text-transform:uppercase;letter
        -webkit-print-color-adjust:exact;print-color-adjust:exact}
 .sheet .hdr{border-top:2px solid #000;border-bottom:3px solid #000;text-align:center;padding:6px 0;margin-bottom:10px}
 .sheet .cong{font-weight:700;font-size:17pt;letter-spacing:.02em}
+.sheet .addr{font-size:10.5pt;margin-top:1px}
 .sheet .ttl{font-weight:700;font-size:15.5pt}
 .sheet .meta{display:flex;justify-content:space-between;gap:22px;align-items:flex-start;margin:6px 0 10px}
 .sheet .meta .wk{font-size:13pt}

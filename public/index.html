@@ -29,12 +29,13 @@
 <div id="app" class="hidden">
   <header class="topbar no-print">
     <div class="brand small"><div class="brand-mark">🗓️</div>
-      <div><strong>PROPER STA. FE</strong><span class="sub">Eskedyul sa Midweek nga Tigom</span></div></div>
+      <div><strong id="cong-title">PROPER STA. FE</strong><span class="sub">Eskedyul sa Midweek nga Tigom</span></div></div>
     <nav class="tabs">
       <button class="tab" data-view="eskedyul">Eskedyul</button>
       <button class="tab" data-view="assign">Assign Bahin</button>
       <button class="tab" data-view="members">Members</button>
       <button class="tab" data-view="legend">Legend</button>
+      <button class="tab" data-view="settings">Settings</button>
     </nav>
     <div class="topbar-right">
       <button id="theme-btn" class="btn ghost" title="Toggle dark mode">🌙</button>
@@ -51,6 +52,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="config.js"></script>
 <script src="app.js"></script>
 </body>

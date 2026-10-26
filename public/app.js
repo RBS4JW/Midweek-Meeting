@@ -20,7 +20,12 @@ const SECTION_TITLE = {
 };
 
 let sb = null;                                   // supabase client (schema: midweek)
-const state = { members: [], pools: [], codes: [], assigns: [], meetings: [], parts: [] };
+const state = { members: [], pools: [], codes: [], assigns: [], meetings: [], parts: [], appset: {} };
+const getSetting = (k, d = '') => (state.appset[k] ?? d);
+const congName = () => getSetting('cong_name', 'PROPER STA. FE');
+const congAddress = () => getSetting('cong_address', '');
+const congForPrint = () => { const n = congName(); return /congregation/i.test(n) ? n : n + ' CONGREGATION'; };
+function applyCongTitle() { const t = $('#cong-title'); if (t) t.textContent = congName(); }
 let currentView = 'eskedyul';
 
 /* ----------------------------- helpers -------------------------------- */
@@ -198,14 +203,16 @@ function autofillFromGrid(mt, parts) {
 /* ----------------------------- data ----------------------------------- */
 async function loadAll() {
   const grab = (t, order) => sb.from(t).select('*').order(order);
-  const [m, mp, c, a, mt, pt] = await Promise.all([
+  const [m, mp, c, a, mt, pt, s] = await Promise.all([
     grab('members', 'sort'), grab('member_pools', 'member_id'),
     grab('part_codes', 'sort'), grab('assignments', 'meeting_date'),
-    grab('meetings', 'sort'), grab('meeting_parts', 'pos'),
+    grab('meetings', 'sort'), grab('meeting_parts', 'pos'), sb.from('app_settings').select('*'),
   ]);
   for (const r of [m, mp, c, a, mt, pt]) if (r.error) throw r.error;
   state.members = m.data; state.pools = mp.data; state.codes = c.data;
   state.assigns = a.data; state.meetings = mt.data; state.parts = pt.data;
+  state.appset = Object.fromEntries((s.data || []).map(r => [r.key, r.value]));
+  applyCongTitle();
 }
 const memberById = id => state.members.find(x => x.id === id);
 const memberByName = nm => state.members.find(x => x.name === nm);
@@ -308,8 +315,9 @@ function editMeeting(id) {
     el('h2', {}, mt.week_label || 'Week'),
     el('div', { class: 'spacer' }),
     el('button', { class: 'btn', title: 'Kuhaa ang pangalan gikan sa Assign Bahin', onclick: syncNames }, '↻ Pangalan'),
+    el('button', { class: 'btn', onclick: () => previewMeeting(mt, parts) }, '👁 Preview'),
     el('button', { class: 'btn', onclick: () => printMeeting(mt, parts) }, '🖨 Print'),
-    el('button', { class: 'btn', onclick: () => pdfMeeting(mt, parts) }, '⬇ PDF'),
+    downloadMenu(mt, parts),
     printedBtn,
     el('button', { class: 'btn primary', onclick: save }, 'Save'),
     el('button', { class: 'btn danger', onclick: del }, 'Delete'),
@@ -342,7 +350,7 @@ function editMeeting(id) {
       el('div', { class: 'row', style: 'gap:6px;align-items:center' }, [el('span', { style: 'font-weight:700;white-space:nowrap' }, 'Awit'), inp])]);
   };
   const grid2 = el('div', { class: 'row' });
-  [['Semana (week label)', 'week_label'], ['Pagbasa sa Bibliya', 'reading'],
+  [['Semana (week label)', 'week_label'], ['Teksto nga Tun-an sa Semana', 'reading'],
    ['Petsa (optional)', 'meeting_date', 'date'], ['Awit pangbukas', 'opening_song', 'song'],
    ['Tsirman', 'chairman'], ['Pag-ampo pangbukas', 'opening_prayer'],
    ['Pag-ampo panapos', 'closing_prayer']].forEach(f => {
@@ -600,7 +608,7 @@ function meetingSheetHTML(mt, parts) {
   };
 
   h.push('<div class="sheet">');
-  h.push('<div class="hdr"><div class="cong">PROPER STA. FE CONGREGATION</div><div class="ttl">ESKEDYUL SA MIDWEEK NGA TIGOM</div></div>');
+  h.push(`<div class="hdr"><div class="cong">${esc(congForPrint())}</div>${congAddress() ? `<div class="addr">${esc(congAddress())}</div>` : ''}<div class="ttl">ESKEDYUL SA MIDWEEK NGA TIGOM</div></div>`);
 
   h.push('<div class="meta"><div class="left">');
   h.push(`<div class="wk">${esc(mt.week_label || '')}</div>`);
@@ -691,6 +699,56 @@ function pdfMeeting(mt, parts) {
     html2canvas: { scale: 2, useCORS: true }, jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
   }).from(holder.firstElementChild).save().finally(() => holder.remove());
   toast('Gi-download ang PDF…');
+}
+// build a sheet element (off-screen) with the fill applied, for image/preview
+function buildSheetEl(mt, parts) {
+  const html = meetingSheetHTML(mt, [...parts].sort((a, b) => (a.pos ?? 0) - (b.pos ?? 0)));
+  const holder = el('div');
+  holder.style.cssText = `position:fixed;left:-10000px;top:0;width:${A4_WIDTH_PX}px;background:#fff`;
+  holder.innerHTML = html;
+  holder.querySelector('.sheet').style.setProperty('--extra', computeExtra(html).toFixed(1) + 'px');
+  document.body.appendChild(holder);
+  return holder;
+}
+function imageMeeting(mt, parts) {
+  if (!window.html2canvas) { toast('Image library wala pa ma-load — sulayi usab'); return; }
+  const holder = buildSheetEl(mt, parts);
+  toast('Gi-download ang image…');
+  window.html2canvas(holder.firstElementChild, { scale: 2, useCORS: true, backgroundColor: '#fff' })
+    .then(canvas => {
+      const a = el('a', { href: canvas.toDataURL('image/png'), download: `Eskedyul ${mt.week_label || 'tigom'}.png`.replace(/[\\/:*?"<>|]/g, '-') });
+      document.body.appendChild(a); a.click(); a.remove();
+    })
+    .finally(() => holder.remove());
+}
+// on-screen A4 preview modal
+function previewMeeting(mt, parts) {
+  const html = meetingSheetHTML(mt, [...parts].sort((a, b) => (a.pos ?? 0) - (b.pos ?? 0)));
+  const bg = el('div', { class: 'modal-bg' });
+  bg.addEventListener('click', e => { if (e.target === bg) bg.remove(); });
+  const page = el('div', { style: 'width:210mm;max-width:100%;background:#fff;padding:12mm;box-shadow:0 0 14px rgba(0,0,0,.4)' });
+  page.innerHTML = html;
+  page.querySelector('.sheet').style.setProperty('--extra', computeExtra(html).toFixed(1) + 'px');
+  const wrap = el('div', { style: 'max-height:92vh;overflow:auto;background:#999;padding:14px;border-radius:10px' }, [
+    el('div', { class: 'row', style: 'margin-bottom:10px' }, [
+      el('span', { style: 'color:#fff;font-weight:700' }, 'Preview — ' + (mt.week_label || '')),
+      el('div', { class: 'spacer' }),
+      el('button', { class: 'btn', onclick: () => { bg.remove(); printMeeting(mt, parts); } }, '🖨 Print'),
+      el('button', { class: 'btn', onclick: () => bg.remove() }, 'Sirado'),
+    ]),
+    page,
+  ]);
+  bg.append(wrap); document.body.append(bg);
+}
+// Download ▾ dropdown (PDF / Image)
+function downloadMenu(mt, parts) {
+  const menu = el('div', { class: 'dl-menu hidden' }, [
+    el('button', { class: 'btn block', onclick: () => { menu.classList.add('hidden'); pdfMeeting(mt, parts); } }, 'PDF'),
+    el('button', { class: 'btn block', onclick: () => { menu.classList.add('hidden'); imageMeeting(mt, parts); } }, 'Image (PNG)'),
+  ]);
+  const btn = el('button', { class: 'btn', onclick: (e) => { e.stopPropagation(); menu.classList.toggle('hidden'); } }, '⬇ Download ▾');
+  document.addEventListener('click', () => menu.classList.add('hidden'));
+  return el('div', { class: 'dl-wrap' }, [btn, menu]);
 }
 
 /* =========================================================================
@@ -1101,9 +1159,32 @@ function viewLegend() {
 }
 
 /* ----------------------------- router --------------------------------- */
+/* =========================================================================
+   VIEW: SETTINGS
+   ========================================================================= */
+function viewSettings() {
+  const root = $('#view'); root.innerHTML = '';
+  root.append(el('div', { class: 'page-head' }, [el('h2', {}, 'Settings')]));
+  const nameInp = el('input', { value: congName() });
+  const addrInp = el('input', { value: congAddress() });
+  async function save() {
+    const name = nameInp.value.trim() || 'PROPER STA. FE', addr = addrInp.value.trim();
+    const { error } = await sb.from('app_settings').upsert([{ key: 'cong_name', value: name }, { key: 'cong_address', value: addr }], { onConflict: 'key' });
+    if (error) return toast('Error: ' + error.message);
+    state.appset.cong_name = name; state.appset.cong_address = addr;
+    applyCongTitle(); toast('Saved ✓');
+  }
+  root.append(el('div', { class: 'panel' }, [
+    el('label', { class: 'field' }, [el('span', {}, 'Congregation Name'), nameInp]),
+    el('label', { class: 'field' }, [el('span', {}, 'Address'), addrInp]),
+    el('div', { class: 'row', style: 'margin-top:12px' }, [el('button', { class: 'btn primary', onclick: save }, 'Save')]),
+    el('p', { class: 'hint', style: 'margin-top:10px' }, 'Ang ngalan mogawas sa title sa taas ug sa ulohan sa giprint nga eskedyul; ang address mogawas sa print kon naa.'),
+  ]));
+}
+
 function render() {
   $$('.tab[data-view]').forEach(t => t.classList.toggle('active', t.dataset.view === currentView));
-  ({ eskedyul: viewEskedyul, assign: viewAssign, members: viewMembers, legend: viewLegend }[currentView] || viewEskedyul)();
+  ({ eskedyul: viewEskedyul, assign: viewAssign, members: viewMembers, legend: viewLegend, settings: viewSettings }[currentView] || viewEskedyul)();
 }
 
 /* ----------------------------- boot ----------------------------------- */
