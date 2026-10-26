@@ -372,7 +372,7 @@ function editMeeting(id) {
   };
   const grid2 = el('div', { class: 'row' });
   [['Semana (week label)', 'week_label'], ['Teksto nga Tun-an sa Semana', 'reading'],
-   ['Petsa (optional)', 'meeting_date', 'date'], ['Awit pangbukas', 'opening_song', 'song'],
+   ['Awit pangbukas', 'opening_song', 'song'],
    ['Tsirman', 'chairman'], ['Pag-ampo pangbukas', 'opening_prayer'],
    ['Pag-ampo panapos', 'closing_prayer']].forEach(f => {
     const w = el('div', { style: 'flex:1;min-width:200px' }, f[2] === 'song' ? songField(f[0], f[1]) : field(...f));
