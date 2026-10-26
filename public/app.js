@@ -721,21 +721,17 @@ function pdfMeeting(mt, parts) {
   }).from(holder.firstElementChild).save().finally(() => holder.remove());
   toast('Gi-download ang PDF…');
 }
-// build a sheet element (off-screen) with the fill applied, for image/preview
-function buildSheetEl(mt, parts) {
+function imageMeeting(mt, parts) {
+  if (!window.html2canvas) { toast('Image library wala pa ma-load — sulayi usab'); return; }
   const html = meetingSheetHTML(mt, [...parts].sort((a, b) => (a.pos ?? 0) - (b.pos ?? 0)));
+  const PAD = 40; // px of white margin around the sheet in the exported image
   const holder = el('div');
-  holder.style.cssText = `position:fixed;left:-10000px;top:0;width:${A4_WIDTH_PX}px;background:#fff`;
+  holder.style.cssText = `position:fixed;left:-10000px;top:0;width:${A4_WIDTH_PX + PAD * 2}px;padding:${PAD}px;box-sizing:border-box;background:#fff`;
   holder.innerHTML = html;
   holder.querySelector('.sheet').style.setProperty('--extra', computeExtra(html).toFixed(1) + 'px');
   document.body.appendChild(holder);
-  return holder;
-}
-function imageMeeting(mt, parts) {
-  if (!window.html2canvas) { toast('Image library wala pa ma-load — sulayi usab'); return; }
-  const holder = buildSheetEl(mt, parts);
   toast('Gi-download ang image…');
-  window.html2canvas(holder.firstElementChild, { scale: 2, useCORS: true, backgroundColor: '#fff' })
+  window.html2canvas(holder, { scale: 2, useCORS: true, backgroundColor: '#fff' })
     .then(canvas => {
       const a = el('a', { href: canvas.toDataURL('image/png'), download: `Eskedyul ${mt.week_label || 'tigom'}.png`.replace(/[\\/:*?"<>|]/g, '-') });
       document.body.appendChild(a); a.click(); a.remove();
