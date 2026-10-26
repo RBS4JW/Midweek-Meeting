@@ -487,8 +487,10 @@ function editMeeting(id) {
     // line 2: assignee / assistant
     if (f.hasAssignee) body.append(assignLine(p, 'assignee', 'assignee_role', load));
     if (f.hasAssistant) {
-      if (p.assistant != null) body.append(assignLine(p, 'assistant', 'assistant_role', load));
-      else body.append(el('button', { class: 'btn sm', onclick: (e) => { p.assistant = ''; e.target.replaceWith(assignLine(p, 'assistant', 'assistant_role', load)); } }, '+ assistant/reader'));
+      // student parts (#4-#6) and the CBS reader show the assistant/reader field by default
+      if (p.assistant == null) p.assistant = '';
+      if (!p.assistant_role) p.assistant_role = f.cbs ? 'Tagabasa' : 'Assistant';
+      body.append(assignLine(p, 'assistant', 'assistant_role', load));
     } else { p.assistant = null; }
     // controls
     const ctl = el('div', { class: 'ln' }, [
