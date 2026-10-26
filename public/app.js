@@ -1183,13 +1183,25 @@ function viewLegend() {
 /* =========================================================================
    VIEW: SETTINGS
    ========================================================================= */
+let settingsTab = 'cong', registerTab = 'new';
+function subTabBar(tabs, active, pick) {
+  return el('div', { class: 'row subtabs', style: 'gap:4px;margin-bottom:12px;flex-wrap:wrap' },
+    tabs.map(([k, l]) => el('button', { class: 'tab' + (active === k ? ' active' : ''), onclick: () => pick(k) }, l)));
+}
 function viewSettings() {
   const root = $('#view'); root.innerHTML = '';
   const isAdmin = currentUser?.role === 'admin';
   root.append(el('div', { class: 'page-head' }, [el('h2', {}, 'Settings'), el('div', { class: 'spacer' }),
     el('span', { class: 'hint' }, currentUser ? `${currentUser.full_name || currentUser.username} · ${currentUser.role}` : '')]));
-
-  // ---- current congregation name/address ----
+  if (!isAdmin) { renderCongEditor(root); return; }
+  root.append(subTabBar(
+    [['cong', 'Kini nga Kongregasyon'], ['register', 'I-rehistro ang Bag-ong Kongregasyon'], ['users', 'Users']],
+    settingsTab, k => { settingsTab = k; viewSettings(); }));
+  if (settingsTab === 'cong') renderCongEditor(root);
+  else if (settingsTab === 'register') renderRegister(root);
+  else { const p = el('div', { class: 'panel' }, [el('h3', { style: 'margin:.1em 0 .6em' }, 'Users (Username + PIN)')]); root.append(p); loadUsers(p); }
+}
+function renderCongEditor(root) {
   const nameInp = el('input', { value: congName() });
   const addrInp = el('input', { value: congAddress() });
   async function saveCong() {
@@ -1207,18 +1219,18 @@ function viewSettings() {
     el('div', { class: 'row', style: 'margin-top:12px' }, [el('button', { class: 'btn primary', onclick: saveCong }, 'Save')]),
     el('p', { class: 'hint', style: 'margin-top:8px' }, 'Ang ngalan mogawas sa title ug sa giprint/download nga eskedyul.'),
   ]));
-  if (!isAdmin) return;
-
-  // ---- register a new congregation ----
+}
+function renderRegister(root) {
+  root.append(subTabBar([['new', 'Bag-ong Rehistro'], ['history', 'History']], registerTab, k => { registerTab = k; viewSettings(); }));
+  if (registerTab === 'history') return renderCongHistory(root);
   const rName = el('input', { placeholder: 'Ngalan sa kongregasyon' });
   const rAddr = el('input', { placeholder: 'Address (optional)' });
   async function registerCong() {
     const name = rName.value.trim(); if (!name) return toast('Butangi ug ngalan');
     const { data, error } = await sb.from('congregations').insert({ name, address: rAddr.value.trim() || null }).select().single();
     if (error) return toast('Error: ' + error.message);
-    const codes = DEFAULT_CODES.map((c, i) => ({ congregation_id: data.id, pool: c[0], code: c[1], label: c[2], sort: i }));
-    await sb.from('part_codes').insert(codes);
-    rName.value = ''; rAddr.value = ''; toast('Narehistro ✓ — pagdugang ug user niini sa ubos'); viewSettings();
+    await sb.from('part_codes').insert(DEFAULT_CODES.map((c, i) => ({ congregation_id: data.id, pool: c[0], code: c[1], label: c[2], sort: i })));
+    rName.value = ''; rAddr.value = ''; toast('Narehistro ✓ — pagdugang ug user niini sa Users tab'); registerTab = 'history'; viewSettings();
   }
   root.append(el('div', { class: 'panel' }, [
     el('h3', { style: 'margin:.1em 0 .6em' }, 'I-rehistro ang Bag-ong Kongregasyon'),
@@ -1228,11 +1240,30 @@ function viewSettings() {
     ]),
     el('div', { class: 'row', style: 'margin-top:10px' }, [el('button', { class: 'btn', onclick: registerCong }, '+ Register Congregation')]),
   ]));
-
-  // ---- users (admin can see PINs) ----
-  const usersPanel = el('div', { class: 'panel' }, [el('h3', { style: 'margin:.1em 0 .6em' }, 'Users (Username + PIN)')]);
-  root.append(usersPanel);
-  loadUsers(usersPanel);
+}
+async function renderCongHistory(root) {
+  const panel = el('div', { class: 'panel' }, [el('h3', { style: 'margin:.1em 0 .6em' }, 'History sa mga Narehistro nga Kongregasyon')]);
+  root.append(panel);
+  const [{ data: congs }, { data: mem }, { data: mt }, { data: usr }] = await Promise.all([
+    sb.from('congregations').select('*').order('created_at'),
+    sb.from('members').select('congregation_id'), sb.from('meetings').select('congregation_id'), sb.from('app_users').select('congregation_id'),
+  ]);
+  const cnt = (arr, id) => (arr || []).filter(r => r.congregation_id === id).length;
+  const tbl = el('table', { class: 'list' });
+  tbl.append(el('thead', {}, el('tr', {}, ['Ngalan', 'Address', 'Narehistro', 'Members', 'Programs', 'Users'].map(h => el('th', {}, h)))));
+  const tb = el('tbody');
+  for (const c of (congs || [])) {
+    const d = c.created_at ? new Date(c.created_at) : null;
+    tb.append(el('tr', {}, [
+      el('td', {}, [c.name, c.id === currentCong.id ? el('span', { class: 'chip', style: 'margin-left:6px' }, 'karon') : null]),
+      el('td', {}, c.address || '—'),
+      el('td', {}, d ? `${MONTHS[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}` : '—'),
+      el('td', {}, String(cnt(mem, c.id))), el('td', {}, String(cnt(mt, c.id))), el('td', {}, String(cnt(usr, c.id))),
+    ]));
+  }
+  tbl.append(tb);
+  panel.append(el('div', { style: 'overflow-x:auto' }, tbl),
+    el('p', { class: 'hint', style: 'margin-top:8px' }, `${(congs || []).length} ka kongregasyon ang narehistro.`));
 }
 function permCheckboxes(current) {
   const boxes = ALL_VIEWS.map(v => { const chk = el('input', { type: 'checkbox' }); chk.checked = (current || []).includes(v.key); return { v, chk }; });
