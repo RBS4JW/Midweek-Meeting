@@ -5,7 +5,8 @@
   "code": "CH",
   "label": "Chairman (Tsirman)",
   "sort": 0,
-  "needs_review": false
+  "needs_review": false,
+  "congregation_id": 1
  },
  {
   "id": 2,
@@ -13,7 +14,8 @@
   "code": "COP",
   "label": "Bahandi — Pakigpulong (10 min.)  [confirm label]",
   "sort": 1,
-  "needs_review": true
+  "needs_review": true,
+  "congregation_id": 1
  },
  {
   "id": 3,
@@ -21,7 +23,8 @@
   "code": "KP1",
   "label": "Kristohanong Pagkinabuhi 1",
   "sort": 2,
-  "needs_review": false
+  "needs_review": false,
+  "congregation_id": 1
  },
  {
   "id": 4,
@@ -29,7 +32,8 @@
   "code": "KP2",
   "label": "Kristohanong Pagkinabuhi 2 (optional)",
   "sort": 3,
-  "needs_review": false
+  "needs_review": false,
+  "congregation_id": 1
  },
  {
   "id": 5,
@@ -37,7 +41,8 @@
   "code": "CBS",
   "label": "Tigdumala — Pagtuon sa Kongregasyon sa Bibliya",
   "sort": 4,
-  "needs_review": false
+  "needs_review": false,
+  "congregation_id": 1
  },
  {
   "id": 6,
@@ -45,7 +50,8 @@
   "code": "CLP",
   "label": "Closing Prayer",
   "sort": 5,
-  "needs_review": false
+  "needs_review": false,
+  "congregation_id": 1
  },
  {
   "id": 7,
@@ -53,7 +59,8 @@
   "code": "OP",
   "label": "Opening Prayer",
   "sort": 6,
-  "needs_review": false
+  "needs_review": false,
+  "congregation_id": 1
  },
  {
   "id": 8,
@@ -61,7 +68,8 @@
   "code": "PP1",
   "label": "Bahandi Gikan sa Pulong sa Diyos — Pakigpulong (10 min.)",
   "sort": 7,
-  "needs_review": false
+  "needs_review": false,
+  "congregation_id": 1
  },
  {
   "id": 9,
@@ -69,7 +77,8 @@
   "code": "ENB",
   "label": "Espirituwal nga Bahandi (10 min.)",
   "sort": 8,
-  "needs_review": false
+  "needs_review": false,
+  "congregation_id": 1
  },
  {
   "id": 10,
@@ -77,7 +86,8 @@
   "code": "PP2",
   "label": "Magmaepektibo — Pakigpulong (5 min., optional)",
   "sort": 9,
-  "needs_review": false
+  "needs_review": false,
+  "congregation_id": 1
  },
  {
   "id": 11,
@@ -85,7 +95,8 @@
   "code": "CBSR",
   "label": "Tig-basa sa Pagtuon sa Kongregasyon sa Bibliya",
   "sort": 10,
-  "needs_review": false
+  "needs_review": false,
+  "congregation_id": 1
  },
  {
   "id": 12,
@@ -93,7 +104,8 @@
   "code": "OP",
   "label": "Opening Prayer",
   "sort": 11,
-  "needs_review": false
+  "needs_review": false,
+  "congregation_id": 1
  },
  {
   "id": 13,
@@ -101,7 +113,8 @@
   "code": "BR",
   "label": "Pagbasa sa Bibliya",
   "sort": 12,
-  "needs_review": false
+  "needs_review": false,
+  "congregation_id": 1
  },
  {
   "id": 14,
@@ -109,7 +122,8 @@
   "code": "BR",
   "label": "Pagbasa sa Bibliya",
   "sort": 13,
-  "needs_review": false
+  "needs_review": false,
+  "congregation_id": 1
  },
  {
   "id": 15,
@@ -117,7 +131,8 @@
   "code": "4E",
   "label": "Magmaepektibo — #4 Estudyante",
   "sort": 14,
-  "needs_review": false
+  "needs_review": false,
+  "congregation_id": 1
  },
  {
   "id": 16,
@@ -125,7 +140,8 @@
   "code": "4A",
   "label": "Magmaepektibo — #4 Assistant",
   "sort": 15,
-  "needs_review": false
+  "needs_review": false,
+  "congregation_id": 1
  },
  {
   "id": 17,
@@ -133,7 +149,8 @@
   "code": "5E",
   "label": "Magmaepektibo — #5 Estudyante",
   "sort": 16,
-  "needs_review": false
+  "needs_review": false,
+  "congregation_id": 1
  },
  {
   "id": 18,
@@ -141,7 +158,8 @@
   "code": "5A",
   "label": "Magmaepektibo — #5 Assistant",
   "sort": 17,
-  "needs_review": false
+  "needs_review": false,
+  "congregation_id": 1
  },
  {
   "id": 19,
@@ -149,7 +167,8 @@
   "code": "6E",
   "label": "Magmaepektibo — #6 Estudyante",
   "sort": 18,
-  "needs_review": false
+  "needs_review": false,
+  "congregation_id": 1
  },
  {
   "id": 20,
@@ -157,7 +176,8 @@
   "code": "6A",
   "label": "Magmaepektibo — #6 Assistant",
   "sort": 19,
-  "needs_review": false
+  "needs_review": false,
+  "congregation_id": 1
  },
  {
   "id": 21,
@@ -165,7 +185,8 @@
   "code": "7E",
   "label": "Magmaepektibo — #7 Estudyante",
   "sort": 20,
-  "needs_review": false
+  "needs_review": false,
+  "congregation_id": 1
  },
  {
   "id": 22,
@@ -173,7 +194,8 @@
   "code": "7A",
   "label": "Magmaepektibo — #7 Assistant",
   "sort": 21,
-  "needs_review": false
+  "needs_review": false,
+  "congregation_id": 1
  },
  {
   "id": 23,
@@ -181,6 +203,205 @@
   "code": "PP1",
   "label": "PP1 (from schedule)",
   "sort": 22,
-  "needs_review": true
+  "needs_review": true,
+  "congregation_id": 1
+ },
+ {
+  "id": 46,
+  "pool": "elder",
+  "code": "CH",
+  "label": "Chairman (Tsirman)",
+  "sort": 0,
+  "needs_review": false,
+  "congregation_id": 3
+ },
+ {
+  "id": 47,
+  "pool": "elder",
+  "code": "COP",
+  "label": "Bahandi — Pakigpulong (10 min.)",
+  "sort": 1,
+  "needs_review": false,
+  "congregation_id": 3
+ },
+ {
+  "id": 48,
+  "pool": "elder",
+  "code": "KP1",
+  "label": "Kristohanong Pagkinabuhi 1",
+  "sort": 2,
+  "needs_review": false,
+  "congregation_id": 3
+ },
+ {
+  "id": 49,
+  "pool": "elder",
+  "code": "KP2",
+  "label": "Kristohanong Pagkinabuhi 2 (optional)",
+  "sort": 3,
+  "needs_review": false,
+  "congregation_id": 3
+ },
+ {
+  "id": 50,
+  "pool": "elder",
+  "code": "CBS",
+  "label": "Tigdumala — Pagtuon sa Kongregasyon sa Bibliya",
+  "sort": 4,
+  "needs_review": false,
+  "congregation_id": 3
+ },
+ {
+  "id": 51,
+  "pool": "elder",
+  "code": "CLP",
+  "label": "Closing Prayer",
+  "sort": 5,
+  "needs_review": false,
+  "congregation_id": 3
+ },
+ {
+  "id": 52,
+  "pool": "elder",
+  "code": "OP",
+  "label": "Opening Prayer",
+  "sort": 6,
+  "needs_review": false,
+  "congregation_id": 3
+ },
+ {
+  "id": 53,
+  "pool": "ms",
+  "code": "PP1",
+  "label": "Bahandi — Pakigpulong (10 min.)",
+  "sort": 7,
+  "needs_review": false,
+  "congregation_id": 3
+ },
+ {
+  "id": 54,
+  "pool": "ms",
+  "code": "ENB",
+  "label": "Espirituwal nga Bahandi (10 min.)",
+  "sort": 8,
+  "needs_review": false,
+  "congregation_id": 3
+ },
+ {
+  "id": 55,
+  "pool": "ms",
+  "code": "PP2",
+  "label": "Magmaepektibo — Pakigpulong (5 min.)",
+  "sort": 9,
+  "needs_review": false,
+  "congregation_id": 3
+ },
+ {
+  "id": 56,
+  "pool": "ms",
+  "code": "CBSR",
+  "label": "Tig-basa sa Pagtuon sa Kongregasyon",
+  "sort": 10,
+  "needs_review": false,
+  "congregation_id": 3
+ },
+ {
+  "id": 57,
+  "pool": "ms",
+  "code": "OP",
+  "label": "Opening Prayer",
+  "sort": 11,
+  "needs_review": false,
+  "congregation_id": 3
+ },
+ {
+  "id": 58,
+  "pool": "ms",
+  "code": "BR",
+  "label": "Pagbasa sa Bibliya",
+  "sort": 12,
+  "needs_review": false,
+  "congregation_id": 3
+ },
+ {
+  "id": 59,
+  "pool": "bible_reading",
+  "code": "BR",
+  "label": "Pagbasa sa Bibliya",
+  "sort": 13,
+  "needs_review": false,
+  "congregation_id": 3
+ },
+ {
+  "id": 60,
+  "pool": "female",
+  "code": "4E",
+  "label": "Magmaepektibo — #4 Estudyante",
+  "sort": 14,
+  "needs_review": false,
+  "congregation_id": 3
+ },
+ {
+  "id": 61,
+  "pool": "female",
+  "code": "4A",
+  "label": "Magmaepektibo — #4 Assistant",
+  "sort": 15,
+  "needs_review": false,
+  "congregation_id": 3
+ },
+ {
+  "id": 62,
+  "pool": "female",
+  "code": "5E",
+  "label": "Magmaepektibo — #5 Estudyante",
+  "sort": 16,
+  "needs_review": false,
+  "congregation_id": 3
+ },
+ {
+  "id": 63,
+  "pool": "female",
+  "code": "5A",
+  "label": "Magmaepektibo — #5 Assistant",
+  "sort": 17,
+  "needs_review": false,
+  "congregation_id": 3
+ },
+ {
+  "id": 64,
+  "pool": "female",
+  "code": "6E",
+  "label": "Magmaepektibo — #6 Estudyante",
+  "sort": 18,
+  "needs_review": false,
+  "congregation_id": 3
+ },
+ {
+  "id": 65,
+  "pool": "female",
+  "code": "6A",
+  "label": "Magmaepektibo — #6 Assistant",
+  "sort": 19,
+  "needs_review": false,
+  "congregation_id": 3
+ },
+ {
+  "id": 66,
+  "pool": "female",
+  "code": "7E",
+  "label": "Magmaepektibo — #7 Estudyante",
+  "sort": 20,
+  "needs_review": false,
+  "congregation_id": 3
+ },
+ {
+  "id": 67,
+  "pool": "female",
+  "code": "7A",
+  "label": "Magmaepektibo — #7 Assistant",
+  "sort": 21,
+  "needs_review": false,
+  "congregation_id": 3
  }
 ]
