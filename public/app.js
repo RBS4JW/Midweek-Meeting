@@ -1451,7 +1451,7 @@ async function showLogin(msg) {
   const rememberChk = el('input', { type: 'checkbox' }); rememberChk.checked = true;
   const msgP = el('p', { class: 'msg' }, msg || '');
   let congs = [];
-  try { const { data } = await sb.from('congregations').select('*').order('name'); congs = data || []; } catch (e) { msgP.textContent = 'Dili makuha ang kongregasyon: ' + (e.message || e); }
+  try { const { data, error } = await sb.from('congregations').select('*').order('name'); if (error) throw error; congs = data || []; } catch (e) { msgP.textContent = 'Dili makuha ang kongregasyon: ' + (e.message || e); }
   for (const c of congs) congSel.append(el('option', { value: c.id }, c.name));
   if (!congs.length) msgP.textContent = msgP.textContent || 'Walay narehistro nga kongregasyon.';
   async function login() {
